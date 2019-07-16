@@ -23,9 +23,5 @@ public class LoginDIwebTest extends BaseTest {
 		String titlles = driver.getTitle();
 		Assert.assertEquals(driver.getTitle(), titlles);  
 	  }
-	@Test
-	public void changeGeneral() {
-		
-		
-	}
+	
 }
