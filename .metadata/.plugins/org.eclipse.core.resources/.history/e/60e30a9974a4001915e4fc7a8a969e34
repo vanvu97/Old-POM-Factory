@@ -1,0 +1,39 @@
+package newPOM;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class LoginTest {
+	
+	String URL_login = "http://diweb5test.dicentral.com/";
+	String URL_dashBoard = "http://localhost/wp/wp-admin/";
+	
+	WebDriver driver;
+	
+	public void login(String userName, String password) {
+		driver = new FirefoxDriver();
+		driver.get(URL_login);
+		driver.findElement(By.cssSelector("fTbxUserName")).sendKeys(userName);
+		driver.findElement(By.cssSelector("fTbxPassword")).sendKeys(password);
+		driver.findElement(By.cssSelector("fBtnLogin")).click();
+	}
+	
+	  @Test
+	  public void loginByAdmin() {
+		  login("URL_login", "di17625;mai");
+			Assert.assertEquals(driver.getCurrentUrl(), URL_login);
+			driver.quit();
+	  }
+		@Test
+		public void loginWithBlankField() {
+			WebDriver driver = new FirefoxDriver();
+			driver.get("http://localhost/wp/wp-login.php");
+			driver.findElement(By.id("user_login")).sendKeys("");
+			driver.findElement(By.id("user_pass")).sendKeys("");
+			driver.findElement(By.id("wp-submit")).click();
+		}
+		
+	}

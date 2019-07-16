@@ -1,0 +1,19 @@
+package newPOM;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+public class generalPage {
+	
+	WebDriver driver;
+	
+  @Test
+  public void masterpageSetting() {
+	  
+	  driver.findElement(By.cssSelector("[name='fInboxControl$fCbxUpAction']")).click();
+	  driver.findElement(By.xpath(".//*[text@='Master Page Settings']")).click();
+	  
+	  
+  }
+}

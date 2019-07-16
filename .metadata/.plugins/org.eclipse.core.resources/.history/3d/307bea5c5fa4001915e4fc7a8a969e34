@@ -1,0 +1,34 @@
+package newPOM;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class LoginPage {
+
+	String URLfb = "fb.com";
+	
+	@FindBy(css = "input[name='email']")
+	WebElement inputEmail;
+	
+	@FindBy(css = "[name='pass']")
+	WebElement inputPassword;
+	
+	@FindBy(css = "#loginbutton")
+	WebElement submitBtn;
+
+	WebDriver driver;
+
+	public LoginPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	public void login(String userName, String password) {
+		inputEmail.sendKeys(userName);
+		inputPassword.sendKeys(password);
+		submitBtn.click();
+	}
+
+}

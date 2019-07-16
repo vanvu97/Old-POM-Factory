@@ -1,0 +1,28 @@
+package newPOM;
+
+import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+public class LoginTest extends BaseTest {
+	
+	LoginPage loginPg;
+
+	@Test
+	  public void loginByAdmin() {
+		loginPg = new LoginPage(driver);
+		  //login 1st
+		loginPg.LoginDI1("diallusers","di17625;mai");
+		loginDIWEB1("diallusers","di17625;mai");
+		  //login 2nd
+		  loginDIWEB1("drupp","dicentral");
+		  //Search customer's Name
+		  CustomerName("CTI");
+		  //Check Login
+		  String titlles = driver.getTitle();
+		  Assert.assertEquals(driver.getTitle(), titlles);
+		  
+		  
+	  }
+	  
+	}

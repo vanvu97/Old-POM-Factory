@@ -1,0 +1,40 @@
+package newPOM;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class LoginTest {
+	
+	String URL_login = "http://diweb5test.dicentral.com/";
+	String URL_dashBoard = "http://localhost/wp/wp-admin/";
+	
+	WebDriver driver;
+	
+	public void login(String userName, String password) {
+		driver = new FirefoxDriver();
+		driver.get(URL_login);
+		driver.findElement(By.cssSelector("fTbxUserName")).sendKeys(userName);
+		driver.findElement(By.cssSelector("fTbxPassword")).sendKeys(password);
+		driver.findElement(By.cssSelector("fBtnLogin")).click();
+	}
+	
+	  @Test
+	  public void loginByAdmin() {
+			WebDriver driver = new FirefoxDriver();
+			driver.get("http://fb.com");
+			driver.findElement(By.cssSelector("input[name='email']")).sendKeys("test");
+			driver.findElement(By.cssSelector("[name='pass']")).sendKeys("123456789");
+			driver.findElement(By.cssSelector("wp-#loginbutton")).click();
+	  }
+		@Test
+		public void loginWithBlankField() {
+			WebDriver driver = new FirefoxDriver();
+			driver.get("http://localhost/wp/wp-login.php");
+			driver.findElement(By.id("user_login")).sendKeys("");
+			driver.findElement(By.id("user_pass")).sendKeys("");
+			driver.findElement(By.id("wp-submit")).click();
+		}
+		
+	}

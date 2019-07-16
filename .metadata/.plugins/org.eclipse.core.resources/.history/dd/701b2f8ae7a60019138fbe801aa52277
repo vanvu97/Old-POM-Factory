@@ -1,0 +1,21 @@
+package newPOM;
+
+import org.testng.annotations.Test;
+
+public class generalSetting extends BaseTest{
+	
+	LoginTest loginT;
+	generalPage genePg;
+	
+	
+  @Test
+  public void settingDIWEB() {
+	  
+	  loginT = new LoginTest();
+	  genePg = new generalPage();
+	  
+	  loginT.loginDIWeb();
+	  genePg.masterpageSetting();
+	  
+  }
+}

@@ -1,0 +1,21 @@
+package newPOM;
+
+import org.testng.annotations.Test;
+
+public class generalSetting extends BaseTest{
+	
+	LoginTest loginAdmin;
+	generalPage generalPg;
+	
+  @Test
+  public void settingDIWEB() {
+	  
+	  loginAdmin = new LoginTest();
+	  generalPg = new generalPage();
+	  
+	  loginAdmin.loginByAdmin();
+	  
+	  generalPg.masterpageSetting();
+	  
+  }
+}

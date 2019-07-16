@@ -1,0 +1,27 @@
+package newPOM;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Test;
+
+public class LoginTest {
+	  @Test
+	  public void loginByAdmin() {
+			WebDriver driver = new FirefoxDriver();
+			driver.get("http://fb.com");
+			driver.findElement(By.cssSelector("input[name='email']")).sendKeys("test");
+			driver.findElement(By.cssSelector("[name='pass']")).sendKeys("123456789");
+			driver.findElement(By.cssSelector("wp-#loginbutton")).click();
+	  }
+		@Test
+		public void loginWithBlankField() {
+			WebDriver driver = new FirefoxDriver();
+			driver.get("http://localhost/wp/wp-login.php");
+			driver.findElement(By.id("user_login")).sendKeys("");
+			driver.findElement(By.id("user_pass")).sendKeys("");
+			driver.findElement(By.id("wp-submit")).click();
+		}
+		
+	}

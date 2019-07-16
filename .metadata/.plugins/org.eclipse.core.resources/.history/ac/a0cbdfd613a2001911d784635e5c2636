@@ -1,0 +1,9 @@
+package firstDayAtWork;
+
+import org.testng.annotations.Test;
+
+public class FacebookLogin {
+  @Test
+  public void f() {
+  }
+}

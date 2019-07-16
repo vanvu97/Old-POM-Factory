@@ -1,0 +1,29 @@
+package newPOM;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class LoginTest {
+	
+	String URL_login = "http://diweb5test.dicentral.com/";
+	
+	WebDriver driver;
+	
+	public void login(String userName, String password) {
+		driver = new FirefoxDriver();
+		driver.get(URL_login);
+		driver.findElement(By.cssSelector("fTbxUserName")).sendKeys(userName);
+		driver.findElement(By.cssSelector("fTbxPassword")).sendKeys(password);
+		driver.findElement(By.cssSelector("fBtnLogin")).click();
+	}
+	
+	  @Test
+	  public void loginByAdmin() {
+		  login("URL_login", "di17625;mai");
+			Assert.assertEquals(driver.getCurrentUrl(), URL_login);
+			driver.quit();
+	  }
+	}

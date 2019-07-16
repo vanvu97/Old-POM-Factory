@@ -1,0 +1,27 @@
+Element is not clickable at point (x, y). Other element would receive the click
+
+		WebElement ele = driver.findElement(By.cssSelector("#fBtnLogin"));
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", ele);
+
+Swith Frame
+		driver.switchTo().frame("frameUserSelection");
+		driver.findElement(By.id("fCbpUserSelection_ASPxPanel1_fPnlEmpIdentification_fTbxEmpUserId_I")).sendKeys(sUserID);
+		driver.findElement(By.id("fCbpUserSelection_ASPxPanel1_fPnlEmpIdentification_fTbxEmpSecPassword_I")).sendKeys(sPassword2);
+		driver.findElement(By.id("fCbpUserSelection_ASPxPanel1_fPnlEmpIdentification_fBtnLogin_B")).click();
+		driver.switchTo().defaultContent();
+
+Handle new opened browser windows
+	 // Store the current window handle
+	String winHandleBefore = driver.getWindowHandle();
+	// Perform the click operation that opens new window
+	// Switch to new window opened
+	for(String winHandle : driver.getWindowHandles()){
+  	  driver.switchTo().window(winHandle);
+	}
+	// Perform the actions on new window
+	// Close the new window, if that window no more required
+	driver.close();
+	// Switch back to original browser (first window)
+	driver.switchTo().window(winHandleBefore);
+	// Continue with original browser (first window)

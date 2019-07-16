@@ -1,0 +1,22 @@
+package newPOM;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
+public class BaseTest {
+	
+	WebDriver driver;
+	
+	public static final String URL_login = "http://fb.com";
+ 
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
+	  
+  }

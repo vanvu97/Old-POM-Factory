@@ -1,0 +1,13 @@
+package newPOM;
+
+import org.testng.annotations.Test;
+
+public class generalSetting extends BaseTest{
+	
+	
+  @Test
+  public void settingDIWEB() {
+	  
+	  
+  }
+}

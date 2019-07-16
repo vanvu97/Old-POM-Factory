@@ -1,0 +1,31 @@
+package newPOM;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+
+public class LoginTest extends BaseTest {
+	
+	public void login(String userName, String password) {
+		driver = new FirefoxDriver();
+		driver.get(URL_login);
+		driver.findElement(By.cssSelector("input[name='email']")).sendKeys(userName);
+		driver.findElement(By.cssSelector("[name='pass']")).sendKeys(password);
+		driver.findElement(By.cssSelector("#loginbutton")).click();
+	}
+	
+	  @Test
+	  public void loginByAdmin() {
+		  login("vanvu.vv97@gmail.com", "zdsawdsa");
+//			Assert.assertEquals(driver.getTitle(), fbTitle);
+			
+	  }
+	  
+	  @AfterMethod
+		public void tearDown() {
+			
+		}
+	}

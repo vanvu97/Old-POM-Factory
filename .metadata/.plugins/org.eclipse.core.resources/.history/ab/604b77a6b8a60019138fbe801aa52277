@@ -1,0 +1,22 @@
+package newPOM;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+
+public class LoginTest extends BaseTest {
+	
+	  @Test
+	  public void loginByAdmin() {
+		  loginDIWEB("vanvu.vv97@gmail.com","zHelicopter123@!z");
+		 // Assert.assertEquals(driver.getTitle(), "Facebook");
+		 
+	  }
+	  
+	  @AfterMethod
+		public void tearDown() {
+			
+		}
+	}

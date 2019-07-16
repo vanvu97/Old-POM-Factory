@@ -1,0 +1,19 @@
+package newPOM;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+import junit.framework.Assert;
+
+public class LoginTest {
+  @Test
+  public void loginByAdmin() {
+		WebDriver driver = new FirefoxDriver();
+		driver.get("http://fb.com");
+		driver.findElement(By.cssSelector("input[name='email']")).sendKeys("test");
+		driver.findElement(By.cssSelector("[name='pass']")).sendKeys("123456789");
+		driver.findElement(By.cssSelector("wp-#loginbutton")).click();
+	}
+}

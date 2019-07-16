@@ -1,0 +1,114 @@
+package firstDayAtWork;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
+
+
+public class NewTest {
+	private String sUserID = "dicentraluser";
+	private String sPassword = "Dicentral2";
+	
+	WebDriver driver;
+  @Test
+  public void main() {
+	  
+	  WebElement inpUserID = driver.findElement(By.id("__control0-user-inner"));
+	  inpUserID.click();
+	  inpUserID.sendKeys(sUserID);
+	  
+	  WebElement inpPassword = driver.findElement(By.id("__control0-pass-inner"));
+	  inpPassword.click();
+	  inpPassword.sendKeys(sPassword);
+	  //click login button
+	  driver.findElement(By.id("__control0-logonBtn-content")).click();
+	  //click continue button
+	  driver.findElement(By.id("__control1-continueBtn-content")).click();
+	  
+//	  //Wait until visible
+//	  WebDriverWait waitTitle = new WebDriverWait(driver, 15);
+//	  waitTitle.until(ExpectedConditions.visibilityOfElementLocated(By.id("__text3")));
+//	  //Click to show list select
+//	  driver.findElement(By.id("__button0")).click();
+//	  //Click Sales Orders line
+//	  driver.findElement(By.xpath(".//*[@id='__item127']")).click();
+//	  //Click on New Sales Order
+//	  driver.findElement(By.xpath(".//*[@class='sapBUiCenterMnuItem sapBUiCenterMnuItemHoverable sapBUiCenterMnuItemIndent']//*[contains(text(), 'New Sales Order')]")).click();
+//	  //Wait for New Sales Order
+//	  WebDriverWait waitNewSalesOrder = new WebDriverWait(driver, 15);
+//	  waitNewSalesOrder.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='__input2']//*[@class='sapMInputBaseInner']")));
+//	  
+//	  //Wait until the overlay disappears
+//	 
+//
+//	  //Input Account'Name
+//	  WebElement AccountName = driver.findElement(By.xpath(".//*[@id='__input2']//*[@class='sapMInputBaseInner']"));
+//	  AccountName.click();
+//	  AccountName.sendKeys("N-082");
+//	  //Choose Name
+//	  WebElement ExternalReference = driver.findElement(By.id("__item406-__input2-0-dli-content"));
+//	  ExternalReference.click();
+//	  ExternalReference.sendKeys("112233");
+	  
+	  driver.get("http://diweb5test.dicentral.com/Main.aspx");
+	  
+	  WebElement element = driver.findElement(By.id("fTbxUserName"));
+	  Actions actions = new Actions(driver);
+	  actions.moveToElement(element).click().build().perform();
+	  
+	  WebElement diwebUser = driver.findElement(By.id("fTbxUserName"));
+	  diwebUser.click();
+	  diwebUser.sendKeys("diallusers");
+	  
+	  WebElement diwebPass = driver.findElement(By.id("fTbxPassword"));
+	  diwebPass.click();
+	  diwebPass.sendKeys("di17625;mai");
+	  
+	  WebElement secondsUserID = driver.findElement(By.id("fCbpUserSelection_ASPxPanel1_fPnlEmpIdentification_fTbxEmpUserId_I"));
+	  secondsUserID.click();
+	  secondsUserID.sendKeys("drupp");
+	  
+	  WebElement secondsPassword = driver.findElement(By.id("fCbpUserSelection_ASPxPanel1_fPnlEmpIdentification_fTbxEmpSecPassword_I"));
+	  secondsPassword.click();
+	  secondsPassword.sendKeys("dicentral");
+	  
+	  driver.findElement(By.id("fCbpUserSelection_ASPxPanel1_fPnlEmpIdentification_fBtnLogin_CD")).click();
+	  
+	  
+	  
+  }
+  @BeforeTest
+  public void beforeTest() {
+	  System.setProperty("webdriver.gecko.driver", "C:\\Users\\vuvan\\Downloads\\Driver\\geckodriver-v0.24.0-win64\\geckodriver.exe");
+	  FirefoxOptions options = new FirefoxOptions();
+		options.setProfile(new FirefoxProfile());
+		options.addPreference("dom.webnotifications.enabled", false);
+		driver = new FirefoxDriver(options);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//	  ChromeOptions options = new ChromeOptions();
+//	  options.addArguments("disable-infobars");
+//	  WebDriver driver = new ChromeDriver(options);
+	  driver.get("http://my346832.sapbydesign.com");
+		
+  }
+
+  @AfterTest
+  public void afterTest() {
+  }
+
+}
