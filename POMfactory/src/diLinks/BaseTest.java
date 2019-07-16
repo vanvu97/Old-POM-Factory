@@ -21,9 +21,9 @@ public class BaseTest {
 //		driver = new FirefoxDriver(options);
 //		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vuvan\\eclipse-workspace\\RemoteSystemsTempFiles\\ChromeDriver 75.0.3770.140\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vuvan\\Downloads\\Driver\\ChromeDriver 75.0.3770.140\\chromedriver");
 		WebDriver driver =new ChromeDriver(options);
 		
 		driver.get(URL_Login_SapByDesign);
