@@ -2,12 +2,12 @@
 <testng-results skipped="1" failed="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="395" started-at="2019-07-16T03:34:02Z" finished-at="2019-07-16T03:34:03Z">
+  <suite name="Default suite" duration-ms="392" started-at="2019-07-16T04:29:39Z" finished-at="2019-07-16T04:29:39Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="395" started-at="2019-07-16T03:34:02Z" finished-at="2019-07-16T03:34:03Z">
+    <test name="Default test" duration-ms="392" started-at="2019-07-16T04:29:39Z" finished-at="2019-07-16T04:29:39Z">
       <class name="diTest.LoginByDTest">
-        <test-method status="FAIL" signature="setUp()[pri:0, instance:diTest.LoginByDTest@1753acfe]" name="setUp" is-config="true" duration-ms="0" started-at="2019-07-16T10:34:02Z" finished-at="2019-07-16T10:34:02Z">
+        <test-method status="FAIL" signature="setUp()[pri:0, instance:diTest.LoginByDTest@1753acfe]" name="setUp" is-config="true" duration-ms="0" started-at="2019-07-16T11:29:39Z" finished-at="2019-07-16T11:29:39Z">
           <exception class="java.lang.NoSuchMethodError">
             <message>
               <![CDATA[com.google.common.util.concurrent.SimpleTimeLimiter.create(Ljava/util/concurrent/ExecutorService;)Lcom/google/common/util/concurrent/SimpleTimeLimiter;]]>
@@ -57,11 +57,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="loginByD()[pri:0, instance:diTest.LoginByDTest@1753acfe]" name="loginByD" duration-ms="2" started-at="2019-07-16T10:34:03Z" finished-at="2019-07-16T10:34:03Z">
+        <test-method status="SKIP" signature="loginByD()[pri:0, instance:diTest.LoginByDTest@1753acfe]" name="loginByD" duration-ms="1" started-at="2019-07-16T11:29:39Z" finished-at="2019-07-16T11:29:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginByD -->
-        <test-method status="SKIP" signature="tearDown()[pri:0, instance:diTest.LoginByDTest@1753acfe]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-16T10:34:03Z" finished-at="2019-07-16T10:34:03Z">
+        <test-method status="SKIP" signature="tearDown()[pri:0, instance:diTest.LoginByDTest@1753acfe]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-16T11:29:39Z" finished-at="2019-07-16T11:29:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
