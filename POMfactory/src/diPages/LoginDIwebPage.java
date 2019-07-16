@@ -40,7 +40,7 @@ public class LoginDIwebPage{
 	
 	WebDriver driver;
 	WebDriverWait wait;
-	
+	 
 	public LoginDIwebPage(WebDriver driver) {
 		this.driver = driver;
 		wait = new WebDriverWait(driver, 20);

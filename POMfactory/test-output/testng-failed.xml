@@ -6,6 +6,7 @@
       <class name="diTest.LoginDIwebTest">
         <methods>
           <include name="setUp"/>
+          <include name="tearDown"/>
           <include name="loginDIWeb"/>
         </methods>
       </class> <!-- diTest.LoginDIwebTest -->

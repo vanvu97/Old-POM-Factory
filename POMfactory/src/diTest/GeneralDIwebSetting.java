@@ -2,16 +2,16 @@ package diTest;
 
 import org.testng.annotations.Test;
 
-import diLinks.BaseTest;
+import diLinks.Links;
 import diPages.GeneralDIwebPage;
 import diPages.LoginDIwebPage;
 
-public class GeneralDIwebSetting extends BaseTest{
+public class GeneralDIwebSetting extends Links{
 	
 	LoginDIwebPage loginPg;//phai lay tu LoginPage vi find Element nam o LoginPage
 	GeneralDIwebPage genePg;
 	
-	
+	 
   @Test
   public void settingDIWEB() {
 	  loginPg = new LoginDIwebPage(driver);

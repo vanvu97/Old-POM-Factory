@@ -3,16 +3,18 @@ package diTest;
 import org.junit.Assert;
 import org.testng.annotations.Test;
 
-import diLinks.BaseTest;
+import diLinks.Links;
 import diPages.LoginDIwebPage;
-
-public class LoginDIwebTest extends BaseTest {
+ 
+public class LoginDIwebTest extends Links {
 	
 	LoginDIwebPage loginPg;
 
 	@Test
 	public void loginDIWeb() {
 		loginPg = new LoginDIwebPage(driver);
+		
+		driver.get(Links.URL_login_DIWeb);
 		  //login 1st
 		loginPg.login("diallusers","di17625;mai");
 		  //login 2nd

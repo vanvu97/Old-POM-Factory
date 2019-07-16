@@ -49,7 +49,6 @@ INDEX VERSION 1.131+C:\Users\vuvan\eclipse-workspace\.metadata\.plugins\org.ecli
 2907734487.index
 582839066.index
 3626673536.index
-1977524778.index
 1525087677.index
 3516200807.index
 172700296.index
