@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="newPOM.generalSetting">
+      <class name="diTest.LoginByDTest">
         <methods>
+          <include name="loginByD"/>
           <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="settingDIWEB"/>
         </methods>
-      </class> <!-- newPOM.generalSetting -->
+      </class> <!-- diTest.LoginByDTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

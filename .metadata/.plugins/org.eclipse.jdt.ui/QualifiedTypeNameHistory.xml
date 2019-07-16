@@ -20,4 +20,5 @@
 <fullyQualifiedTypeName name="java.util.Locale"/>
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+<fullyQualifiedTypeName name="diPages.LoginByDPage"/>
 </qualifiedTypeNameHistroy>

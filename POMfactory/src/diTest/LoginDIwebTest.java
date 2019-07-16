@@ -4,15 +4,15 @@ import org.junit.Assert;
 import org.testng.annotations.Test;
 
 import diLinks.BaseTest;
-import diPages.LoginPage;
+import diPages.LoginDIwebPage;
 
-public class LoginTest extends BaseTest {
+public class LoginDIwebTest extends BaseTest {
 	
-	LoginPage loginPg;
+	LoginDIwebPage loginPg;
 
 	@Test
 	public void loginDIWeb() {
-		loginPg = new LoginPage(driver);
+		loginPg = new LoginDIwebPage(driver);
 		  //login 1st
 		loginPg.login("diallusers","di17625;mai");
 		  //login 2nd

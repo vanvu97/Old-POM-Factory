@@ -4,15 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class generalPage {
+public class GeneralDIwebPage {
 	
 	WebDriver driver;
 
-	public generalPage(WebDriver driver) {
+	public GeneralDIwebPage(WebDriver driver) {
 		this.driver = driver;
 	}
 	
-  public void masterpageSetting() {
+  public void masterPageSetting() {
 	  //Click on actions list
 	  driver.findElement(By.cssSelector("[name='fInboxControl$fCbxUpAction']")).click();
 	  //Chooses Master Page Setting

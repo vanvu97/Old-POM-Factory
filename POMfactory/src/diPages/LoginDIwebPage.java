@@ -7,11 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage{
+public class LoginDIwebPage{
 	
 	WebDriver driver;
 	
-	public LoginPage(WebDriver driver) {
+	public LoginDIwebPage(WebDriver driver) {
 		this.driver = driver;
 	}
 	public void login(String userName, String password) {
