@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="35443" started-at="2019-07-16T02:25:04Z" finished-at="2019-07-16T02:25:39Z">
+  <suite name="Default suite" duration-ms="58564" started-at="2019-07-16T03:02:33Z" finished-at="2019-07-16T03:03:32Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="35443" started-at="2019-07-16T02:25:04Z" finished-at="2019-07-16T02:25:39Z">
-      <class name="newPOM.generalSetting">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:newPOM.generalSetting@1753acfe]" name="setUp" is-config="true" duration-ms="10119" started-at="2019-07-16T09:25:04Z" finished-at="2019-07-16T09:25:14Z">
+    <test name="Default test" duration-ms="58564" started-at="2019-07-16T03:02:33Z" finished-at="2019-07-16T03:03:32Z">
+      <class name="diTest.generalSetting">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.generalSetting@1753acfe]" name="setUp" is-config="true" duration-ms="10943" started-at="2019-07-16T10:02:33Z" finished-at="2019-07-16T10:02:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="settingDIWEB()[pri:0, instance:newPOM.generalSetting@1753acfe]" name="settingDIWEB" duration-ms="25311" started-at="2019-07-16T09:25:14Z" finished-at="2019-07-16T09:25:39Z">
+        <test-method status="PASS" signature="settingDIWEB()[pri:0, instance:diTest.generalSetting@1753acfe]" name="settingDIWEB" duration-ms="47607" started-at="2019-07-16T10:02:44Z" finished-at="2019-07-16T10:03:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- settingDIWEB -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:newPOM.generalSetting@1753acfe]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-16T09:25:39Z" finished-at="2019-07-16T09:25:39Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.generalSetting@1753acfe]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-16T10:03:32Z" finished-at="2019-07-16T10:03:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- newPOM.generalSetting -->
+      </class> <!-- diTest.generalSetting -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
