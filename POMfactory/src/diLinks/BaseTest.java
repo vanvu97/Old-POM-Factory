@@ -11,7 +11,7 @@ public class BaseTest {
 	public WebDriver driver;
 	
 	public static final String URL_login_DIWeb = "http://diweb5test.dicentral.com/Main.aspx";
-	public static final String URL_Login_SapByDesign = "https://my347733.sapbydesign.com/sap/public/ap/ui/repository/SAP_UI/HTMLOBERON5/client.html?app.component=/SAP_UI_CT/Main/root.uiccwoc&rootWindow=X&redirectUrl=/sap/public/byd/runtime";
+	public static final String URL_Login_SapByDesign = "https://my347733.sapbydesign.com/";
 	
 	@BeforeMethod
 	public void setUp() {
@@ -21,7 +21,7 @@ public class BaseTest {
 //		driver = new FirefoxDriver(options);
 //		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vuvan\\Downloads\\Driver\\ChromeDriver-76.0.3809.25\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vuvan\\Downloads\\Driver\\ChromeDriver-75.0.3770.140\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
 		WebDriver driver = new ChromeDriver(options);
