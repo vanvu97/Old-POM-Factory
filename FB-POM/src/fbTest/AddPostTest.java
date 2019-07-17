@@ -1,15 +1,15 @@
-package diTest;
+package fbTest;
 
 import org.testng.annotations.Test;
 
-import diPages.AddPostPage;
-import diPages.LoginFbPage;
-import diPages.PersonalWall;
-import diUtlities.BaseTest;
-import diUtlities.Links;
+import fbPages.AddPostPage;
+import fbPages.LoginFbPage;
+import fbUtlities.BaseTest;
+import fbUtlities.Links;
+import fbUtlities.PersonalWall;
 
 public class AddPostTest extends BaseTest{
-	
+
 	LoginFbPage loginFB;
 	PersonalWall dashboardPg;
 	AddPostPage addNewPg;
@@ -21,6 +21,6 @@ public class AddPostTest extends BaseTest{
 	  driver.get(Links.URL_Facebook);
 	  dashboardPg = loginFB.loginSucces("vanvu.vv97@gmail.com", "zHelicopter123@!z");
 	  addNewPg = dashboardPg.moveToAddPostPage();
-	  addNewPg.AddNewPost();
+	  dashboardPg.moveToAddPostPage();
   }
 }

@@ -1,8 +1,8 @@
-package diPages;
+package fbUtlities;
 
 import org.openqa.selenium.WebDriver;
 
-import diUtlities.Links;
+import fbPages.AddPostPage;
 
 public class PersonalWall {
 	

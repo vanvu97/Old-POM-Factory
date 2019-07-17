@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17735" started-at="2019-07-17T07:04:27Z" finished-at="2019-07-17T07:04:45Z">
+  <suite name="Default suite" duration-ms="12837" started-at="2019-07-17T07:09:14Z" finished-at="2019-07-17T07:09:26Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17735" started-at="2019-07-17T07:04:27Z" finished-at="2019-07-17T07:04:45Z">
+    <test name="Default test" duration-ms="12837" started-at="2019-07-17T07:09:14Z" finished-at="2019-07-17T07:09:26Z">
       <class name="diTest.AddPostTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.AddPostTest@1753acfe]" name="setUp" is-config="true" duration-ms="7082" started-at="2019-07-17T14:04:27Z" finished-at="2019-07-17T14:04:34Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.AddPostTest@1753acfe]" name="setUp" is-config="true" duration-ms="4387" started-at="2019-07-17T14:09:14Z" finished-at="2019-07-17T14:09:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="addPost()[pri:0, instance:diTest.AddPostTest@1753acfe]" name="addPost" duration-ms="10635" started-at="2019-07-17T14:04:34Z" finished-at="2019-07-17T14:04:45Z">
+        <test-method status="FAIL" signature="addPost()[pri:0, instance:diTest.AddPostTest@1753acfe]" name="addPost" duration-ms="8437" started-at="2019-07-17T14:09:18Z" finished-at="2019-07-17T14:09:26Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
@@ -46,7 +46,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addPost -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.AddPostTest@1753acfe]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-17T14:04:45Z" finished-at="2019-07-17T14:04:45Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.AddPostTest@1753acfe]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-17T14:09:26Z" finished-at="2019-07-17T14:09:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

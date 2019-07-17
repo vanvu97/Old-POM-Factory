@@ -1,4 +1,4 @@
-package diPages;
+package fbPages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddPostPage {
 	
-	@FindBy (xpath = ".//*[@class='_1mwp navigationFocus _395 _1mwq _4c_p _5bu_ _3t-3 _34nd _21mu _5yk1']//*[@id='placeholder-e3mqa']")
+	@FindBy (xpath = ".//*[@class='_5rpb']//*[@class='notranslate _5rpu']")
 	WebElement addNewPost;
 	@FindBy (xpath = ".//*[@class='_1mf7 _4r1q _4jy0 _4jy3 _4jy1 _51sy selected _42ft _42fr']")
 	WebElement btnShare;
@@ -26,8 +26,10 @@ public class AddPostPage {
 	public void AddNewPost() {
 		addNewPost.click();
 		addNewPost.sendKeys("Test");
-		btnShare.click();
+		btnShare.click();	
 		
+		driver.quit();
 	}
+	
 	
 }

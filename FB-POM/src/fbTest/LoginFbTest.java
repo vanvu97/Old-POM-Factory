@@ -1,14 +1,14 @@
-package diTest;
+package fbTest;
 
 import org.testng.annotations.Test;
 
-import diPages.PersonalWall;
-import diPages.LoginFbPage;
-import diUtlities.BaseTest;
-import diUtlities.Links;
+import fbPages.LoginFbPage;
+import fbUtlities.BaseTest;
+import fbUtlities.Links;
+import fbUtlities.PersonalWall;
 
 public class LoginFbTest extends BaseTest {
-	
+
 	LoginFbPage loginByD;
 	PersonalWall dashboardPg;
 	 
