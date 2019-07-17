@@ -1,4 +1,4 @@
-package diLinks;
+package diUtlities;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,13 +9,9 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-public class Links {
-
-	public WebDriver driver;
+public class BaseTest {
 	
-	public static final String URL_login_DIWeb = "http://diweb5test.dicentral.com/Main.aspx";
-	public static final String URL_Login_SapByDesign = "https://my347733.sapbydesign.com/";
-	public static final String URL_Facebook = "https://fb.com";
+	public WebDriver driver;
 	
 	@BeforeMethod
 	public void setUp() {
@@ -36,6 +32,6 @@ public class Links {
 	@AfterMethod
 	public void tearDown() {
 		System.out.println("Done!!!!");
-		driver.quit();
+		
 	}
-  }
+}

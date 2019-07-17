@@ -3,10 +3,11 @@ package diTest;
 import org.junit.Assert;
 import org.testng.annotations.Test;
 
-import diLinks.Links;
 import diPages.LoginDIwebPage;
+import diUtlities.BaseTest;
+import diUtlities.Links;
  
-public class LoginDIwebTest extends Links {
+public class LoginDIwebTest extends BaseTest {
 	
 	LoginDIwebPage loginPg;
 

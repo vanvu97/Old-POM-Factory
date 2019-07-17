@@ -11,7 +11,7 @@ public class GeneralDIwebPage {
 	//Windows 1
 	@FindBy (css = "[name='fInboxControl$fCbxUpAction']")
 	WebElement click_Action_List;
-	@FindBy (css = ".//*[@value='btnImportFromCloudImportInvoice|cloud/BYD/Syn.aspx?type=SET']")
+	@FindBy (xpath = ".//*[@value='btnImportFromCloudImportInvoice|cloud/BYD/Syn.aspx?type=SET']")
 	WebElement choose_Master_Page_Setting;
 	@FindBy (id = "fInboxControl_btnUpGo")
 	WebElement btnOK;

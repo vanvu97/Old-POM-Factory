@@ -8,3 +8,7 @@
 1563246725029	Rename type 'generalPage'
 1563246733077	Rename type 'generalSetting'
 1563268162022	Rename type 'BaseTest'
+1563339265334	Rename package 'diLinks'
+1563344750270	Rename type 'LoginByDPage'
+1563344758727	Rename type 'LoginByDTest'
+1563346505198	Rename type 'DashboardPage'
