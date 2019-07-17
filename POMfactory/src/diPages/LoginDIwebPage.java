@@ -149,7 +149,7 @@ public class LoginDIwebPage{
 		btnReSend.click();	
 	}
 	
-	public void getTextBox() throws InterruptedException {
+	public void getTextBox(String args[]) throws InterruptedException {
 		
 		WebDriverWait waitMessageBox = new WebDriverWait(driver, 15);
 		waitMessageBox.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#\\32 019030000038392 > td:nth-child(9)")));
@@ -157,10 +157,17 @@ public class LoginDIwebPage{
 		String getTextMessages = messageBox.getText();
 		int DoDai = getTextMessages.length();
 		
-		if(!getTextMessages.isEmpty()) {
-			//String output = getTextMessages.substring(-4);
-			System.out.println(getTextMessages);
-			System.out.println(DoDai);
+//		if(!getTextMessages.isEmpty()) {
+//			//String output = getTextMessages.substring(-4);
+//			System.out.println(getTextMessages);
+//			System.out.println(DoDai);
+//		}else {
+//			System.out.println("Can't Get Sales Ordder ID!!!");
+//		}
+		
+		if(DoDai >= 60) {
+			String[] getText222 = getTextMessages.split(" = ", DoDai);
+			System.out.println(getText222);
 		}else {
 			System.out.println("Can't Get Sales Ordder ID!!!");
 		}
