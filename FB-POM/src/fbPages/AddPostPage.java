@@ -28,7 +28,6 @@ public class AddPostPage {
 		addNewPost.sendKeys("Test");
 		btnShare.click();	
 		
-		driver.quit();
 	}
 	
 	

@@ -24,7 +24,24 @@ public class LoginDIwebTest extends BaseTest {
 		loginPg.chooseCustomer("CTI");
 		  //Check Login
 		String titlles = driver.getTitle();
-		Assert.assertEquals(driver.getTitle(), titlles);  
+		Assert.assertEquals(driver.getTitle(), titlles); 
+		loginPg.searchSaleOrder("6838226");
+		
 	  }
+	
+//	@Test(dataProvider="loginData")
+//	public void loginFail(String userName, String password) {
+//		loginPg = new LoginDIwebPage(driver);
+//		loginPg.login(userName, password);
+//		Assert.assertTrue(loginPg.isDisplayed());
+//	}
+//	
+//	@DataProvider (name = "loginData")
+//	public Object[][] dataProvider() throws Exception {
+//		ReadExcelFile.setExcelFile(Links.PATH_TO_EXCEL, "LoginTest");
+//		Object[][] testData = ReadExcelFile.getTestData("invalid");
+//		return testData;
+//	}
+	
 	
 }

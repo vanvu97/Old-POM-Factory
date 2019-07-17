@@ -20,7 +20,6 @@ public class AddPostTest extends BaseTest{
 	  
 	  driver.get(Links.URL_Facebook);
 	  dashboardPg = loginFB.loginSucces("vanvu.vv97@gmail.com", "zHelicopter123@!z");
-	  addNewPg = dashboardPg.moveToAddPostPage();
-	  dashboardPg.moveToAddPostPage();
+
   }
 }

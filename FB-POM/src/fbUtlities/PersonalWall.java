@@ -2,8 +2,6 @@ package fbUtlities;
 
 import org.openqa.selenium.WebDriver;
 
-import fbPages.AddPostPage;
-
 public class PersonalWall {
 	
 	WebDriver driver;
@@ -12,17 +10,17 @@ public class PersonalWall {
 		this.driver = driver;
 	}
  
-	public boolean isDisplayed() {
-		if (Links.URL_Facebook.equals(driver.getCurrentUrl())) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	public AddPostPage moveToAddPostPage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	public boolean isDisplayed() {
+//		if (Links.URL_Facebook.equals(driver.getCurrentUrl())) {
+//			return true;
+//		} else {
+//			return false;
+//		}
+//	}
+//
+//	public AddPostPage moveToAddPostPage() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
  
 }
