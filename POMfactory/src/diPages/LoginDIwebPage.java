@@ -15,7 +15,7 @@ public class LoginDIwebPage{
 	@FindBy (css = "input[name='fTbxUserName']")
 	WebElement inpUsername;
 	@FindBy (css = "[name='fTbxPassword']")
-	WebElement inputPassword;
+	WebElement inpPassword;
 	@FindBy (css = "#fBtnLogin")
 	WebElement btnLogin;
 	
@@ -48,7 +48,7 @@ public class LoginDIwebPage{
 	}
 	public void login(String userName, String password) {
 		inpUsername.sendKeys(userName);
-		inputPassword.sendKeys(password);
+		inpPassword.sendKeys(password);
 		
 		//WebElement ele = driver.findElement(By.cssSelector("#fBtnLogin"));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;

@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="12191" started-at="2019-07-16T09:10:08Z" finished-at="2019-07-16T09:10:20Z">
+  <suite name="Default suite" duration-ms="27837" started-at="2019-07-16T09:11:35Z" finished-at="2019-07-16T09:12:03Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="12191" started-at="2019-07-16T09:10:08Z" finished-at="2019-07-16T09:10:20Z">
-      <class name="diTest.LoginByDTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.LoginByDTest@1753acfe]" name="setUp" is-config="true" duration-ms="4438" started-at="2019-07-16T16:10:08Z" finished-at="2019-07-16T16:10:12Z">
+    <test name="Default test" duration-ms="27837" started-at="2019-07-16T09:11:35Z" finished-at="2019-07-16T09:12:03Z">
+      <class name="diTest.LoginDIwebTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.LoginDIwebTest@1753acfe]" name="setUp" is-config="true" duration-ms="4570" started-at="2019-07-16T16:11:35Z" finished-at="2019-07-16T16:11:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginByD()[pri:0, instance:diTest.LoginByDTest@1753acfe]" name="loginByD" duration-ms="5095" started-at="2019-07-16T16:10:12Z" finished-at="2019-07-16T16:10:17Z">
+        <test-method status="PASS" signature="loginDIWeb()[pri:0, instance:diTest.LoginDIwebTest@1753acfe]" name="loginDIWeb" duration-ms="21329" started-at="2019-07-16T16:11:39Z" finished-at="2019-07-16T16:12:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginByD -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.LoginByDTest@1753acfe]" name="tearDown" is-config="true" duration-ms="2643" started-at="2019-07-16T16:10:17Z" finished-at="2019-07-16T16:10:20Z">
+        </test-method> <!-- loginDIWeb -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.LoginDIwebTest@1753acfe]" name="tearDown" is-config="true" duration-ms="1926" started-at="2019-07-16T16:12:01Z" finished-at="2019-07-16T16:12:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- diTest.LoginByDTest -->
+      </class> <!-- diTest.LoginDIwebTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
