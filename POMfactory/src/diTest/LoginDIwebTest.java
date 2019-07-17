@@ -12,7 +12,7 @@ public class LoginDIwebTest extends BaseTest {
 	LoginDIwebPage loginPg;
 
 	@Test
-	public void loginDIWeb() {
+	public void loginDIWeb() throws InterruptedException {
 		loginPg = new LoginDIwebPage(driver);
 		
 		driver.get(Links.URL_login_DIWeb);
@@ -26,7 +26,7 @@ public class LoginDIwebTest extends BaseTest {
 		String titlles = driver.getTitle();
 		Assert.assertEquals(driver.getTitle(), titlles); 
 		loginPg.searchSaleOrder("6838226");
-		
+		loginPg.getTextBox();
 	  }
 	
 //	@Test(dataProvider="loginData")

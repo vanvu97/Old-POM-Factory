@@ -146,19 +146,28 @@ public class LoginDIwebPage{
 	  	  driver.switchTo().window(winHandle);
 		}
 		tickCheckBox2.click();
-		btnReSend.click();
-		
+		btnReSend.click();	
+	}
+	
+	public void getTextBox() throws InterruptedException {
 		
 		WebDriverWait waitMessageBox = new WebDriverWait(driver, 15);
 		waitMessageBox.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#\\32 019030000038392 > td:nth-child(9)")));
 		
 		String getTextMessages = messageBox.getText();
-		String[] output = getTextMessages.split("SalesOrder ID = ");
-		System.out.println(output[1]);
+		int DoDai = getTextMessages.length();
 		
+		if(!getTextMessages.isEmpty()) {
+			//String output = getTextMessages.substring(-4);
+			System.out.println(getTextMessages);
+			System.out.println(DoDai);
+		}else {
+			System.out.println("Can't Get Sales Ordder ID!!!");
+		}
 		
 		
 	}
+	
 	public boolean bodyHasKeyword(String keyword) {
 		List<WebElement> paragraphs = driver.findElements(By.id("headerRepeater"));
 		for (int i = 0; i < paragraphs.size(); i++) {
