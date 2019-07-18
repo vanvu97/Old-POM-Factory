@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -58,7 +59,7 @@ public class LoginDIwebPage{
 	WebElement btnOK2;
 	
 	//Switch to new windows and perform
-	@FindBy (css = "#jqg_jsGrid_2019030000046436")
+	@FindBy (xpath = ".//*[@role='gridcell']//*[@class='cbox cbox']")
 	WebElement tickCheckBox2;
 	@FindBy (id = "reSend")
 	WebElement btnReSend;
@@ -113,14 +114,24 @@ public class LoginDIwebPage{
 	public void search850files(String keyword) throws InterruptedException {
 		
 	//Wait for element is display
-//				WebDriverWait waitTitle = new WebDriverWait(driver, 15);
-//				waitTitle.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[name='fInboxControl$fTbxDocId']")));
-//			searchBox.sendKeys(keyword);
-//			btnSearchKeyWord.click();
-//			
-//			//Wait for element is display
-//			
-//			Thread.sleep(2000);
+		WebDriverWait waitTitle = new WebDriverWait(driver, 15);
+		waitTitle.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[name='fInboxControl$fTbxDocId']")));
+		searchBox.sendKeys(keyword);
+		btnSearchKeyWord.click();
+//		------------------------------
+		
+		 WebDriverWait wait = new WebDriverWait(driver, 30);
+		    wait.until(new ExpectedCondition<Boolean>() {
+		        public Boolean apply(WebDriver wdriver) {
+		            return ((JavascriptExecutor) driver).executeScript(
+		                "return document.readyState"
+		            ).equals("complete");
+		        }
+		    });
+		
+//		------------------------------
+		
+		Thread.sleep(5000);
 		
 		//tickCheckBox.click();
 		WebDriverWait waitTitle2 = new WebDriverWait(driver, 15);
@@ -130,7 +141,6 @@ public class LoginDIwebPage{
 		WebElement ele = driver.findElement(By.cssSelector("#headerRepeater > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(1) > input:nth-child(1)"));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", ele);
-
 		
 		//actionLists.click();
 		WebElement ele2 = driver.findElement(By.cssSelector("[name='fInboxControl$fCbxUpAction']"));
@@ -139,28 +149,39 @@ public class LoginDIwebPage{
 		//choose Export
 		chooseExport.click();
 		btnOK2.click();
-		
-		 // Store the current window handle
-			
 		}
+	
+	 // Store the current window handle
 	public void getSalesID() throws InterruptedException {
 		for(String winHandle : driver.getWindowHandles()){
 		  	  driver.switchTo().window(winHandle);
 			}
-		tickCheckBox2.click();
-		btnReSend.click();
-		
-		Thread.sleep(10000);
 		
 		String getTextMessages = messageBox.getText();
 		int DoDai = getTextMessages.length();
-	
+		
+		if(tickCheckBox2.isDisplayed()) {
+		//Tick on check box and resends
+		tickCheckBox2.click();
+		btnReSend.click();
+		
+		//Wait for Message Box appears
+		WebDriverWait waitMessageBox = new WebDriverWait(driver, 15);
+		waitMessageBox.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/form/div[4]/div/div/div/div/div[3]/div[3]/div/table/tbody/tr[2]/td[9]")));
+		//Get text on messages box and print
+		String Sales_Order_ID = getTextMessages.substring(getTextMessages.lastIndexOf(" ")+1);
+		System.out.println(DoDai);
+		System.out.println(Sales_Order_ID);
+		
+		}else{
+		
 		WebDriverWait waitMessageBox = new WebDriverWait(driver, 15);
 		waitMessageBox.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/form/div[4]/div/div/div/div/div[3]/div[3]/div/table/tbody/tr[2]/td[9]")));
 		
 		String Sales_Order_ID = getTextMessages.substring(getTextMessages.lastIndexOf(" ")+1);
 		System.out.println(DoDai);
 		System.out.println(Sales_Order_ID);
+		}
 	}
 	
 	public boolean bodyHasKeyword(String keyword) {
