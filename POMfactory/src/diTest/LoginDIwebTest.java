@@ -25,8 +25,6 @@ public class LoginDIwebTest extends BaseTest {
 		  //Check Login
 		String titlles = driver.getTitle();
 		Assert.assertEquals(driver.getTitle(), titlles); 
-		loginPg.searchSaleOrder("6838226");
-		loginPg.getTextBox(null);
 	  }
 	
 //	@Test(dataProvider="loginData")

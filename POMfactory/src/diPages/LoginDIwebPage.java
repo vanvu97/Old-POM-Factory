@@ -58,18 +58,16 @@ public class LoginDIwebPage{
 	WebElement btnOK2;
 	
 	//Switch to new windows and perform
-	@FindBy (id = "jqg_jsGrid_2019030000038392")
+	@FindBy (css = "#jqg_jsGrid_2019030000046436")
 	WebElement tickCheckBox2;
 	@FindBy (id = "reSend")
 	WebElement btnReSend;
 	
 	//Get text in Message box
-	@FindBy (css = "#\\32 019030000038392 > td:nth-child(9)")
+	@FindBy (xpath = "/html/body/form/div[4]/div/div/div/div/div[3]/div[3]/div/table/tbody/tr[2]/td[9]")
 	WebElement messageBox;
-	
-	//research
-	@FindBy (css = "#the-list td a")
-	private List<WebElement> postList; 
+	@FindBy (xpath = "/html/body/form/div[4]/div/div/div/div/div[3]/div[3]/div/table/tbody/tr[2]/td[9]")
+	WebElement getSaleID;
 	
 	WebDriver driver;
 	WebDriverWait wait;
@@ -112,16 +110,17 @@ public class LoginDIwebPage{
 		//Switch back to default page
 		driver.switchTo().defaultContent();
 	}
-	
-	public void searchSaleOrder(String keyword) {
+	public void search850files(String keyword) throws InterruptedException {
 		
-//		searchBox.sendKeys(keyword);
-//		btnSearchKeyWord.click();
-		
-		//Wait for element is display
-//		WebDriverWait waitTitle = new WebDriverWait(driver, 15);
-//		waitTitle.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@class='HeaderNonSelected']//*[@title='6838226']")));
-		
+	//Wait for element is display
+//				WebDriverWait waitTitle = new WebDriverWait(driver, 15);
+//				waitTitle.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[name='fInboxControl$fTbxDocId']")));
+//			searchBox.sendKeys(keyword);
+//			btnSearchKeyWord.click();
+//			
+//			//Wait for element is display
+//			
+//			Thread.sleep(2000);
 		
 		//tickCheckBox.click();
 		WebDriverWait waitTitle2 = new WebDriverWait(driver, 15);
@@ -142,37 +141,26 @@ public class LoginDIwebPage{
 		btnOK2.click();
 		
 		 // Store the current window handle
-		for(String winHandle : driver.getWindowHandles()){
-	  	  driver.switchTo().window(winHandle);
+			
 		}
+	public void getSalesID() throws InterruptedException {
+		for(String winHandle : driver.getWindowHandles()){
+		  	  driver.switchTo().window(winHandle);
+			}
 		tickCheckBox2.click();
-		btnReSend.click();	
-	}
-	
-	public void getTextBox(String args[]) throws InterruptedException {
+		btnReSend.click();
 		
-		WebDriverWait waitMessageBox = new WebDriverWait(driver, 15);
-		waitMessageBox.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/form/div[4]/div/div/div/div/div[3]/div[3]/div/table/tbody/tr[2]/td[9]")));
+		Thread.sleep(10000);
 		
 		String getTextMessages = messageBox.getText();
 		int DoDai = getTextMessages.length();
+	
+		WebDriverWait waitMessageBox = new WebDriverWait(driver, 15);
+		waitMessageBox.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/form/div[4]/div/div/div/div/div[3]/div[3]/div/table/tbody/tr[2]/td[9]")));
 		
-//		if(!getTextMessages.isEmpty()) {
-//			//String output = getTextMessages.substring(-4);
-//			System.out.println(getTextMessages);
-//			System.out.println(DoDai);
-//		}else {
-//			System.out.println("Can't Get Sales Ordder ID!!!");
-//		}
-		
-		if(DoDai >= 60) {
-			String[] getText222 = getTextMessages.split(" = ", DoDai);
-			System.out.println(getText222);
-		}else {
-			System.out.println("Can't Get Sales Ordder ID!!!" + getTextMessages);
-		}
-		
-		
+		String Sales_Order_ID = getTextMessages.substring(getTextMessages.lastIndexOf(" ")+1);
+		System.out.println(DoDai);
+		System.out.println(Sales_Order_ID);
 	}
 	
 	public boolean bodyHasKeyword(String keyword) {
