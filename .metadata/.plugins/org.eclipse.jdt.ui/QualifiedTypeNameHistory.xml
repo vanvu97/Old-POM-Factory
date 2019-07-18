@@ -20,10 +20,10 @@
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
 <fullyQualifiedTypeName name="diPages.LoginByDPage"/>
-<fullyQualifiedTypeName name="diUtlities.Links"/>
 <fullyQualifiedTypeName name="fbUtlities.BasePage"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="diUtlities.Links"/>
 </qualifiedTypeNameHistroy>
