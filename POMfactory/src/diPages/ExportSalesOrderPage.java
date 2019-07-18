@@ -113,7 +113,7 @@ public class ExportSalesOrderPage {
 			waitMessageBox.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/form/div[4]/div/div/div/div/div[3]/div[3]/div/table/tbody/tr[2]/td[9]")));
 			
 			String Sales_Order_ID = getTextMessages.substring(getTextMessages.lastIndexOf(" ")+1);
-			System.out.println(DoDai);
+			System.out.println(DoDai); 
 			System.out.println(Sales_Order_ID);
 			
 		}	
