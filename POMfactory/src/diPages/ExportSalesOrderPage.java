@@ -72,15 +72,12 @@ public class ExportSalesOrderPage {
 		waitTitle2.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#headerRepeater > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(1) > input:nth-child(1)")));
 		
 		//tickCheckBox.click();
-		WebElement ele = driver.findElement(By.cssSelector("#headerRepeater > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(1) > input:nth-child(1)"));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
-		executor.executeScript("arguments[0].click();", ele);
+		executor.executeScript("arguments[0].click();", tickCheckBox);
 
-		
 		//actionLists.click();
-		WebElement ele2 = driver.findElement(By.cssSelector("[name='fInboxControl$fCbxUpAction']"));
 		JavascriptExecutor executor2 = (JavascriptExecutor)driver;
-		executor2.executeScript("arguments[0].click();", ele2);
+		executor2.executeScript("arguments[0].click();", actionLists);
 		//choose Export
 		chooseExport.click();
 		btnOK2.click();
@@ -112,24 +109,24 @@ public class ExportSalesOrderPage {
 			waitMessageBox.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/form/div[4]/div/div/div/div/div[3]/div[3]/div/table/tbody/tr[2]/td[9]")));
 			
 			String Sales_Order_ID = getTextMessages.substring(getTextMessages.lastIndexOf(" ")+1);
-			System.out.println(DoDai); 
+			System.out.println(DoDai + "words"); 
 			System.out.println(Sales_Order_ID);
 			
 		}	
 	}
 	
-	public boolean bodyHasKeyword(String keyword) {
-		List<WebElement> paragraphs = driver.findElements(By.id("headerRepeater"));
-		for (int i = 0; i < paragraphs.size(); i++) {
-			String p = paragraphs.get(i).getText();
-			if (!(p.contains(keyword))) {
-				return true;
-			}
-		}
-		return false;
-	}
-	public boolean isDisplayed() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+//	public boolean bodyHasKeyword(String keyword) {
+//		List<WebElement> paragraphs = driver.findElements(By.id("headerRepeater"));
+//		for (int i = 0; i < paragraphs.size(); i++) {
+//			String p = paragraphs.get(i).getText();
+//			if (!(p.contains(keyword))) {
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
+//	public boolean isDisplayed() {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
 }
