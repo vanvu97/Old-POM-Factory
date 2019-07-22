@@ -163,7 +163,7 @@ public class ByDesignPage{
 	  btnSaveEditOrder.click();
   }
   
-  public void OutBoundLogicsControl(String Sales_ID) throws InterruptedException {
+  public void OutBoundLogicsControl(String SoSalesID) throws InterruptedException {
 
 	  btn_SapMenu.click();
 	  ((JavascriptExecutor) driver).executeScript ("arguments[0].scrollIntoView();", OutboundLogisticsControl);
@@ -176,7 +176,17 @@ public class ByDesignPage{
 	  
 	  AllOrdersDemand.click();
 	  
-	  searchCustomerDemand.sendKeys(Sales_ID);
+	  WebDriverWait waitLoading2 = new WebDriverWait(driver, 30);
+	  waitLoading2.until(new ExpectedCondition<Boolean>() {
+	        public Boolean apply(WebDriver wdriver) {
+	            return ((JavascriptExecutor) driver).executeScript(
+	                "return document.readyState"
+	            ).equals("complete");
+	        }
+	    });
+	  Thread.sleep(2000);
+	  
+	  searchCustomerDemand.sendKeys(SoSalesID);
 	  
 	  searchCustomerDemandButton.click();
 	  

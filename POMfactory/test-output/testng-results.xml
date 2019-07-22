@@ -2,32 +2,32 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="85068" started-at="2019-07-22T07:07:18Z" finished-at="2019-07-22T07:08:43Z">
+  <suite name="Default suite" duration-ms="79225" started-at="2019-07-22T08:50:39Z" finished-at="2019-07-22T08:51:58Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="85068" started-at="2019-07-22T07:07:18Z" finished-at="2019-07-22T07:08:43Z">
+    <test name="Default test" duration-ms="79225" started-at="2019-07-22T08:50:39Z" finished-at="2019-07-22T08:51:58Z">
       <class name="diTest.ByDesignTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.ByDesignTest@610df783]" name="setUp" is-config="true" duration-ms="5692" started-at="2019-07-22T14:07:18Z" finished-at="2019-07-22T14:07:24Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.ByDesignTest@1753acfe]" name="setUp" is-config="true" duration-ms="4438" started-at="2019-07-22T15:50:39Z" finished-at="2019-07-22T15:50:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@610df783]" name="createSalesOrderTest" duration-ms="79348" started-at="2019-07-22T14:07:24Z" finished-at="2019-07-22T14:08:43Z">
+        <test-method status="FAIL" signature="createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@1753acfe]" name="createSalesOrderTest" duration-ms="74771" started-at="2019-07-22T15:50:43Z" finished-at="2019-07-22T15:51:58Z">
           <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[Element <div id="__pane10-searchField-search" class="sapMSFB sapMSFBF sapMSFS"> is not clickable at point (1235,152) because another element <div id="__pane10-busyIndicator" class="sapUiBlockLayer  sapUiLocalBusyIndicator sapUiLocalBusyIndicatorSizeMedium sapUiLocalBusyIndicatorFade"> obscures it
+              <![CDATA[Element <span id="__button118-content" class="sapMBtnContent sapUiIconMirrorInRTL"> is not clickable at point (945,189) because another element <div id="__pane10-busyIndicator" class="sapUiBlockLayer  sapUiLocalBusyIndicator sapUiLocalBusyIndicatorSizeMedium sapUiLocalBusyIndicatorFade"> obscures it
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190718172058, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2124, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: f62c5c09-6d53-4c96-ad0f-97e2d7d07b3a]]>
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190718172058, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 16464, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 705ba682-a48e-416d-b5cc-90d11ca6f150]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: Element <div id="__pane10-searchField-search" class="sapMSFB sapMSFBF sapMSFS"> is not clickable at point (1235,152) because another element <div id="__pane10-busyIndicator" class="sapUiBlockLayer  sapUiLocalBusyIndicator sapUiLocalBusyIndicatorSizeMedium sapUiLocalBusyIndicatorFade"> obscures it
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: Element <span id="__button118-content" class="sapMBtnContent sapUiIconMirrorInRTL"> is not clickable at point (945,189) because another element <div id="__pane10-busyIndicator" class="sapUiBlockLayer  sapUiLocalBusyIndicator sapUiLocalBusyIndicatorSizeMedium sapUiLocalBusyIndicatorFade"> obscures it
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190718172058, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2124, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: f62c5c09-6d53-4c96-ad0f-97e2d7d07b3a
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190718172058, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 16464, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 705ba682-a48e-416d-b5cc-90d11ca6f150
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -46,7 +46,7 @@ Session ID: f62c5c09-6d53-4c96-ad0f-97e2d7d07b3a
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at diPages.ByDesignPage.OutBoundLogicsControl(ByDesignPage.java:181)
+	at diPages.ByDesignPage.OutBoundLogicsControl(ByDesignPage.java:193)
 	at diTest.ByDesignTest.createSalesOrderTest(ByDesignTest.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -78,7 +78,7 @@ Session ID: f62c5c09-6d53-4c96-ad0f-97e2d7d07b3a
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createSalesOrderTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.ByDesignTest@610df783]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-22T14:08:43Z" finished-at="2019-07-22T14:08:43Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.ByDesignTest@1753acfe]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-22T15:51:58Z" finished-at="2019-07-22T15:51:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

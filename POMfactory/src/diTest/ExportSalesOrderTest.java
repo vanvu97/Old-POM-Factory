@@ -29,7 +29,7 @@ public class ExportSalesOrderTest extends BaseTest{
 	  String titlles = driver.getTitle();
 	  Assert.assertEquals(driver.getTitle(), titlles); 
 	  //Search 850 file
-	  loginPg.search850files("78787878");
+	  loginPg.search850files("99999999");
 	  //Get Sales Order ID
 	  loginPg.getSalesID();
 	  

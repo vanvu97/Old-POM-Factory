@@ -28,7 +28,7 @@ public class ReadExcelFile {
 	}
 
 	public static String[][] getTestData(String tableName) {
-		String[][] testData = null;
+		String[][] testData = null; 
 
 		try {
 			// Handle numbers and strings

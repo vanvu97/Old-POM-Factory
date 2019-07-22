@@ -92,7 +92,7 @@ public class ExportSalesOrderPage {
 			}
 			tickCheckBox2.click();
 			btnReSend.click();	
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			
 		String getTextMessages = messageBox.getText();
 		int DoDai = getTextMessages.length();
