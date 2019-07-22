@@ -22,7 +22,7 @@ public class ByDesignTest extends BaseTest {
 	  ByDesign.loginByDesign("dicentral", "EDIforSAP1");
 	  ByDesign.createSalesOrder();
 	  ByDesign.searhSalesOrder(SalesOrderID);
-	  ByDesign.editSalesOrder("10081","10");
+	  ByDesign.editSalesOrder("10081","1");
 	  ByDesign.OutBoundLogicsControl(SalesOrderID);
   }
   

@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\vuvan\AppData\Local\Temp\testng-eclipse--1230579681\testng-customsuite.xml</span>
+                    <span>C:\Users\vuvan\AppData\Local\Temp\testng-eclipse-1758949439\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -127,14 +127,12 @@
                   <a name="createSalesOrderTest">
                   </a> <!-- createSalesOrderTest -->
                   <span class="method-name">createSalesOrderTest</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: #__pane10-defaultSetDDLB-label
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: Element &lt;div id=&quot;__pane10-searchField-search&quot; class=&quot;sapMSFB sapMSFBF sapMSFS&quot;&gt; is not clickable at point (1235,152) because another element &lt;div id=&quot;__pane10-busyIndicator&quot; class=&quot;sapUiBlockLayer  sapUiLocalBusyIndicator sapUiLocalBusyIndicatorSizeMedium sapUiLocalBusyIndicatorFade&quot;&gt; obscures it
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:48&apos;
 System info: host: &apos;DICVUVAN&apos;, ip: &apos;192.168.0.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190715173502, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 9572, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a17009bc-4f10-40e0-9054-7058fc37e34e
-*** Element info: {Using=css selector, value=#__pane10-defaultSetDDLB-label}
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190718172058, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2124, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f62c5c09-6d53-4c96-ad0f-97e2d7d07b3a
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -145,14 +143,15 @@ Session ID: a17009bc-4f10-40e0-9054-7058fc37e34e
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at diPages.ByDesignPage.OutBoundLogicsControl(ByDesignPage.java:166)
+	at diPages.ByDesignPage.OutBoundLogicsControl(ByDesignPage.java:181)
 	at diTest.ByDesignTest.createSalesOrderTest(ByDesignTest.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -187,7 +186,7 @@ Session ID: a17009bc-4f10-40e0-9054-7058fc37e34e
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\vuvan\AppData\Local\Temp\testng-eclipse--1230579681\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\vuvan\AppData\Local\Temp\testng-eclipse-1758949439\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -240,7 +239,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'createSalesOrderTest')
 data.setCell(0, 2, 'diTest.ByDesignTest')
-data.setCell(0, 3, 104752);
+data.setCell(0, 3, 79348);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -280,11 +279,11 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">createSalesOrderTest</span>
-                <span class="method-start">5633 ms</span>
+                <span class="method-start">5692 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">110387 ms</span>
+                <span class="method-start">85043 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -1,11 +1,13 @@
 package diPages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ByDesignPage{
@@ -50,14 +52,18 @@ public class ByDesignPage{
 	//Outbound Logistics Control
 	@FindBy (css = "#__item397 > div:nth-child(3)")
 	WebElement OutboundLogisticsControl;
-	@FindBy (css = "#__item1149")
+	@FindBy (xpath = ".//*[@id='__group96']//*[@class='sapBUiCenterMnuItem sapBUiCenterMnuItemHoverable']")
 	WebElement CustomerDemand;
 	@FindBy (css = "#__pane10-defaultSetDDLB-label")
 	WebElement CustomerDemandList;
 	@FindBy (css = "#__pane10-searchField-I")
 	WebElement searchCustomerDemand;
-	@FindBy (css = "#__item1169")
+	@FindBy (css = "#__list27 > li:nth-child(10)")
 	WebElement AllOrdersDemand;
+	@FindBy (css = "#__pane10-searchField-search")
+	WebElement searchCustomerDemandButton;
+	@FindBy (css = "#__button118-content")
+	WebElement btnRelease;
 	
 	
 	WebDriver driver;
@@ -148,6 +154,7 @@ public class ByDesignPage{
 	  
 	  if(check_Prices != null) {
 		  System.out.println("There is no Prices! Sending....!!!");
+		  inpPrices.clear();
 		  inpPrices.sendKeys(sPrices);
 	  }else {
 		  System.out.println("Employee Responsible : " + check_Employee_Responsible);
@@ -156,17 +163,24 @@ public class ByDesignPage{
 	  btnSaveEditOrder.click();
   }
   
-  public void OutBoundLogicsControl(String Sales_ID) {
+  public void OutBoundLogicsControl(String Sales_ID) throws InterruptedException {
 
 	  btn_SapMenu.click();
 	  ((JavascriptExecutor) driver).executeScript ("arguments[0].scrollIntoView();", OutboundLogisticsControl);
 	  OutboundLogisticsControl.click();
 	  
+	  wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(".//*[@id='__group96']//*[@class='sapBUiCenterMnuItem sapBUiCenterMnuItemHoverable']"))));
+	  
 	  CustomerDemand.click();
 	  CustomerDemandList.click();
-	 
+	  
 	  AllOrdersDemand.click();
+	  
 	  searchCustomerDemand.sendKeys(Sales_ID);
+	  
+	  searchCustomerDemandButton.click();
+	  
+	  btnRelease.click();
   
   }
 

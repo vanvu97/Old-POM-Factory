@@ -2,36 +2,32 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="110408" started-at="2019-07-19T09:22:34Z" finished-at="2019-07-19T09:24:25Z">
+  <suite name="Default suite" duration-ms="85068" started-at="2019-07-22T07:07:18Z" finished-at="2019-07-22T07:08:43Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="110408" started-at="2019-07-19T09:22:34Z" finished-at="2019-07-19T09:24:25Z">
+    <test name="Default test" duration-ms="85068" started-at="2019-07-22T07:07:18Z" finished-at="2019-07-22T07:08:43Z">
       <class name="diTest.ByDesignTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.ByDesignTest@610df783]" name="setUp" is-config="true" duration-ms="5633" started-at="2019-07-19T16:22:34Z" finished-at="2019-07-19T16:22:40Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.ByDesignTest@610df783]" name="setUp" is-config="true" duration-ms="5692" started-at="2019-07-22T14:07:18Z" finished-at="2019-07-22T14:07:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@610df783]" name="createSalesOrderTest" duration-ms="104752" started-at="2019-07-19T16:22:40Z" finished-at="2019-07-19T16:24:25Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="FAIL" signature="createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@610df783]" name="createSalesOrderTest" duration-ms="79348" started-at="2019-07-22T14:07:24Z" finished-at="2019-07-22T14:08:43Z">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[Unable to locate element: #__pane10-defaultSetDDLB-label
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[Element <div id="__pane10-searchField-search" class="sapMSFB sapMSFBF sapMSFS"> is not clickable at point (1235,152) because another element <div id="__pane10-busyIndicator" class="sapUiBlockLayer  sapUiLocalBusyIndicator sapUiLocalBusyIndicatorSizeMedium sapUiLocalBusyIndicatorFade"> obscures it
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190715173502, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 9572, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a17009bc-4f10-40e0-9054-7058fc37e34e
-*** Element info: {Using=css selector, value=#__pane10-defaultSetDDLB-label}]]>
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190718172058, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2124, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f62c5c09-6d53-4c96-ad0f-97e2d7d07b3a]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: #__pane10-defaultSetDDLB-label
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: Element <div id="__pane10-searchField-search" class="sapMSFB sapMSFBF sapMSFS"> is not clickable at point (1235,152) because another element <div id="__pane10-busyIndicator" class="sapUiBlockLayer  sapUiLocalBusyIndicator sapUiLocalBusyIndicatorSizeMedium sapUiLocalBusyIndicatorFade"> obscures it
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190715173502, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 9572, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a17009bc-4f10-40e0-9054-7058fc37e34e
-*** Element info: {Using=css selector, value=#__pane10-defaultSetDDLB-label}
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190718172058, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2124, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f62c5c09-6d53-4c96-ad0f-97e2d7d07b3a
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -42,14 +38,15 @@ Session ID: a17009bc-4f10-40e0-9054-7058fc37e34e
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at diPages.ByDesignPage.OutBoundLogicsControl(ByDesignPage.java:166)
+	at diPages.ByDesignPage.OutBoundLogicsControl(ByDesignPage.java:181)
 	at diTest.ByDesignTest.createSalesOrderTest(ByDesignTest.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -77,11 +74,11 @@ Session ID: a17009bc-4f10-40e0-9054-7058fc37e34e
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createSalesOrderTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.ByDesignTest@610df783]" name="tearDown" is-config="true" duration-ms="1" started-at="2019-07-19T16:24:25Z" finished-at="2019-07-19T16:24:25Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.ByDesignTest@610df783]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-22T14:08:43Z" finished-at="2019-07-22T14:08:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
