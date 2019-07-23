@@ -1,5 +1,6 @@
 package diPages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -98,8 +99,10 @@ public class ByDesignPage{
 	WebElement searchTaskControlButton;
 	@FindBy (css = "#__button156-content")
 	WebElement btnConfirm;
+	@FindBy (css = "#__table4_r0_c0")
+	WebElement assertTaskControl;
 	//Outbound Deliveries
-	@FindBy (css = "#__item1343 > div:nth-child(1)")
+	@FindBy (css = ".sapBUiCenterMenuCol > div:nth-child(6)")
 	WebElement outboundDeliveries;
 	@FindBy (css = "#__pane23-defaultSetDDLB-label")
 	WebElement listOutboundDeliveries;
@@ -142,9 +145,6 @@ public class ByDesignPage{
 		  System.out.println("Continues....");
 		  System.out.println("Login Successfull!");
 	  }
-	  
-	  
-	  System.out.println("Login Successfull!");
   }
   
   public void createSalesOrder() {
@@ -314,7 +314,7 @@ public class ByDesignPage{
 	 
 	  if(errListProposals.isDisplayed()) {
 		  String getErrorText = errorText.getText();
-		  System.out.println("b/n" + "== Error == " + getErrorText + "== Error == ");
+		  System.out.println("Error!!!: " + getErrorText + " :Error!!!");
 	  }else {
 		  System.out.println("Create Warehouse Request Successfull!!!");
 	  } 
@@ -330,19 +330,19 @@ public class ByDesignPage{
 	  //List task control
 	  listTaskControl.click();
 	  allWarehouse.click();
-	  searchTaskControl.sendKeys(SoSalesID);
 	  
-	  WebDriverWait waitLoading4 = new WebDriverWait(driver, 30);
-	  waitLoading4.until(new ExpectedCondition<Boolean>() {
-	        public Boolean apply(WebDriver wdriver) {
-	            return ((JavascriptExecutor) driver).executeScript(
-	                "return document.readyState"
-	            ).equals("complete");
-	        }
-	    });
+	  Thread.sleep(1000);
+	  
+	  searchTaskControl.sendKeys(SoSalesID);
 	  
 	  Actions actions = new Actions(driver);
 	  actions.moveToElement(searchTaskControlButton).click().build().perform();
+	  
+	  Thread.sleep(2000);
+	  
+	  String compareTaskControlID = assertTaskControl.getText();
+	  Assert.assertEquals(compareTaskControlID, SoSalesID);
+	  System.out.println("Assert PASSED!!!!" + compareTaskControlID + " = " + SoSalesID);
 	  
 	  //searchTaskControlButton.click();
 	  
@@ -358,6 +358,8 @@ public class ByDesignPage{
 	  outboundDeliveries.click();
 	  listOutboundDeliveries.click();
 	  allOutboundDeliveries.click();
+	  
+	  Thread.sleep(1000);
 	  
 	  searchOutboundDeliveries.sendKeys(SoSalesID);
 	  
