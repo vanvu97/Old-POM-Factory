@@ -11,7 +11,7 @@ public class ByDesignTest extends BaseTest {
 	
 	ByDesignPage ByDesign;
 	ExportSalesOrderPage exportSales;
-	String SalesOrderID = "6868";
+	String SalesOrderID = "6867";
 	
   @Test
   public void createSalesOrderTest() throws InterruptedException {
@@ -24,6 +24,8 @@ public class ByDesignTest extends BaseTest {
 	  ByDesign.searhSalesOrder(SalesOrderID);
 	  ByDesign.editSalesOrder("10081","1");
 	  ByDesign.OutBoundLogicsControl(SalesOrderID);
+	  ByDesign.OutboundLogistics(SalesOrderID);
+	  
   } 
   
 }

@@ -2,32 +2,32 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="79225" started-at="2019-07-22T08:50:39Z" finished-at="2019-07-22T08:51:58Z">
+  <suite name="Default suite" duration-ms="112857" started-at="2019-07-23T04:35:45Z" finished-at="2019-07-23T04:37:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="79225" started-at="2019-07-22T08:50:39Z" finished-at="2019-07-22T08:51:58Z">
+    <test name="Default test" duration-ms="112857" started-at="2019-07-23T04:35:45Z" finished-at="2019-07-23T04:37:38Z">
       <class name="diTest.ByDesignTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.ByDesignTest@1753acfe]" name="setUp" is-config="true" duration-ms="4438" started-at="2019-07-22T15:50:39Z" finished-at="2019-07-22T15:50:43Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.ByDesignTest@f3fcd59]" name="setUp" is-config="true" duration-ms="5531" started-at="2019-07-23T11:35:45Z" finished-at="2019-07-23T11:35:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@1753acfe]" name="createSalesOrderTest" duration-ms="74771" started-at="2019-07-22T15:50:43Z" finished-at="2019-07-22T15:51:58Z">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+        <test-method status="FAIL" signature="createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@f3fcd59]" name="createSalesOrderTest" duration-ms="107302" started-at="2019-07-23T11:35:51Z" finished-at="2019-07-23T11:37:38Z">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
             <message>
-              <![CDATA[Element <span id="__button118-content" class="sapMBtnContent sapUiIconMirrorInRTL"> is not clickable at point (945,189) because another element <div id="__pane10-busyIndicator" class="sapUiBlockLayer  sapUiLocalBusyIndicator sapUiLocalBusyIndicatorSizeMedium sapUiLocalBusyIndicatorFade"> obscures it
+              <![CDATA[Element <div> could not be scrolled into view
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190718172058, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 16464, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 705ba682-a48e-416d-b5cc-90d11ca6f150]]>
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190718172058, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 8512, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 544c7910-578b-4240-b24a-1100eaefb699]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: Element <span id="__button118-content" class="sapMBtnContent sapUiIconMirrorInRTL"> is not clickable at point (945,189) because another element <div id="__pane10-busyIndicator" class="sapUiBlockLayer  sapUiLocalBusyIndicator sapUiLocalBusyIndicatorSizeMedium sapUiLocalBusyIndicatorFade"> obscures it
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: Element <div> could not be scrolled into view
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190718172058, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 16464, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 705ba682-a48e-416d-b5cc-90d11ca6f150
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190718172058, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 8512, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 544c7910-578b-4240-b24a-1100eaefb699
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -40,14 +40,13 @@ Session ID: 705ba682-a48e-416d-b5cc-90d11ca6f150
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at diPages.ByDesignPage.OutBoundLogicsControl(ByDesignPage.java:193)
-	at diTest.ByDesignTest.createSalesOrderTest(ByDesignTest.java:26)
+	at diPages.ByDesignPage.OutboundLogistics(ByDesignPage.java:358)
+	at diTest.ByDesignTest.createSalesOrderTest(ByDesignTest.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -74,11 +73,11 @@ Session ID: 705ba682-a48e-416d-b5cc-90d11ca6f150
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createSalesOrderTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.ByDesignTest@1753acfe]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-22T15:51:58Z" finished-at="2019-07-22T15:51:58Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.ByDesignTest@f3fcd59]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-23T11:37:38Z" finished-at="2019-07-23T11:37:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

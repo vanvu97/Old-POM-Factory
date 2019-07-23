@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -22,6 +23,10 @@ public class ByDesignPage{
 	WebElement btnLogin_ByDesign;
 	@FindBy (id = "__control1-continueBtn-inner")
 	WebElement btnContinue_ByDesign;
+	@FindBy (css = ".sapBUiSessionListContainer > li")
+	int DICENTRAL;
+	@FindBy (css = "#__box0-CbBg")
+	WebElement tickBoxDelete;
 	
 	//Create Sales Order
 	@FindBy (id = "__button0")
@@ -62,9 +67,52 @@ public class ByDesignPage{
 	WebElement AllOrdersDemand;
 	@FindBy (css = "#__pane10-searchField-search")
 	WebElement searchCustomerDemandButton;
-	@FindBy (css = "#__button118-content")
+	@FindBy (xpath = "//*[@id=\"__button118-content\"]")
 	WebElement btnRelease;
 	
+	//Outbound Logistics
+	@FindBy (id = "__group25")
+	WebElement btnOutboundLogistics;
+	@FindBy (css = "#__group109 > div:nth-child(2)")
+	WebElement deliveryProposals;
+	@FindBy (css = "#__pane14-defaultSetDDLB-label")
+	WebElement listDeliveryProposals;
+	@FindBy (css = "#__list30 > li:nth-child(11)")
+	WebElement allProposals;
+	@FindBy (css = "#__pane14-searchField-I")
+	WebElement searchDeliveryProposals;
+	@FindBy (id = "__pane14-searchField-search")
+	WebElement searchDeliveryProposalsButton;
+	@FindBy (css = "#__button134-content")
+	WebElement createWarehouseRequest;
+	//Task COntrol
+	@FindBy (css = "#__item1281")
+	WebElement taskControl;
+	@FindBy (css = "#__pane19-defaultSetDDLB-label")
+	WebElement listTaskControl;
+	@FindBy (css = "#__list33 > li:nth-child(7)")
+	WebElement allWarehouse;
+	@FindBy (css = "#__pane19-searchField-I")
+	WebElement searchTaskControl;
+	@FindBy (id = "__pane19-searchField-search")
+	WebElement searchTaskControlButton;
+	@FindBy (css = "#__button156-content")
+	WebElement btnConfirm;
+	//Outbound Deliveries
+	@FindBy (css = "#__item1343 > div:nth-child(1)")
+	WebElement outboundDeliveries;
+	@FindBy (css = "#__pane23-defaultSetDDLB-label")
+	WebElement listOutboundDeliveries;
+	@FindBy (css = "#__list36 > li:nth-child(8)")
+	WebElement allOutboundDeliveries;
+	@FindBy (css = "#__pane23-searchField-I")
+	WebElement searchOutboundDeliveries;
+	@FindBy (css = "#__pane23-searchField-search")
+	WebElement searchOutboundDeliveriesButton;
+	@FindBy (css = ".sapBUiMessageAreaInner")
+	WebElement errListProposals;
+	@FindBy (css = "#__text207")
+	WebElement errorText;
 	
 	WebDriver driver;
 	WebDriverWait wait;
@@ -81,7 +129,22 @@ public class ByDesignPage{
 	  sapUsername.sendKeys(ByDesign_Username);
 	  sapPassword.sendKeys(ByDeign_Password);
 	  btnLogin_ByDesign.click();
-	  btnContinue_ByDesign.click();
+	  
+	  if(DICENTRAL <= 5) {
+		  tickBoxDelete.click();
+		  btnContinue_ByDesign.click();
+		  System.out.println("Login Successfull!");
+	  }else if(btnContinue_ByDesign.isDisplayed()) {
+		  btnContinue_ByDesign.click();
+	  }else if (!btnContinue_ByDesign.isDisplayed()) {
+		  System.out.println("There is no Continues button! Skip this step...");
+	  }else {
+		  System.out.println("Continues....");
+		  System.out.println("Login Successfull!");
+	  }
+	  
+	  
+	  System.out.println("Login Successfull!");
   }
   
   public void createSalesOrder() {
@@ -108,6 +171,7 @@ public class ByDesignPage{
 	    });
 	
 	  Thread.sleep(5000);
+	  System.out.println("Search Sales Order Successfull!");
 //	------------------------------
 	}
   public void editSalesOrder(String EmployeeResponsible, String sPrices) throws InterruptedException {
@@ -129,7 +193,7 @@ public class ByDesignPage{
 	  
 	  String check_Employee_Responsible = Employee_Responsible.getText();
 	  
-	  if(check_Employee_Responsible != null) {
+	  if(!check_Employee_Responsible.isEmpty()) {
 		  System.out.println("There is no Employee Responsible! Sending....!!!");
 		  Employee_Responsible.sendKeys(EmployeeResponsible);
 	  }else {
@@ -152,15 +216,16 @@ public class ByDesignPage{
 	  
 	  String check_Prices = inpPrices.getText();
 	  
-	  if(check_Prices != null) {
+	  if(!check_Prices.isEmpty()) {
 		  System.out.println("There is no Prices! Sending....!!!");
 		  inpPrices.clear();
 		  inpPrices.sendKeys(sPrices);
 	  }else {
-		  System.out.println("Employee Responsible : " + check_Employee_Responsible);
+		  System.out.println("Prices is : " + check_Prices);
 	  }
 	  
 	  btnSaveEditOrder.click();
+	  
   }
   
   public void OutBoundLogicsControl(String SoSalesID) throws InterruptedException {
@@ -190,8 +255,125 @@ public class ByDesignPage{
 	  
 	  searchCustomerDemandButton.click();
 	  
-	  btnRelease.click();
+	  Thread.sleep(2000);
+//	  JavascriptExecutor executor = (JavascriptExecutor)driver;
+//	  executor.executeScript("arguments[0].click();", btnRelease);
+	  
+	  if(btnRelease.isDisplayed()) {
+		  btnRelease.click();
+		  System.out.println("Clicked on Release");
+	  }else {
+		  System.out.println("Customer Demand Released....");
+	  }
+  }
   
+  public void OutboundLogistics(String SoSalesID) throws InterruptedException {
+	  
+	  System.out.println("Creating Warehouse Request (Delivery Proposals)...");
+	  //Click on outbound logistics
+	  btnOutboundLogistics.click();
+	  //Click on delivery proposal
+	  deliveryProposals.click();
+	  //Click on list Delivery Proposals
+	  listDeliveryProposals.click();
+	  //Chooses all proposals
+	  allProposals.click();
+	  
+	  //Input sales order ID
+	  searchDeliveryProposals.sendKeys(SoSalesID);
+	  
+	  WebDriverWait waitLoading2 = new WebDriverWait(driver, 30);
+	  waitLoading2.until(new ExpectedCondition<Boolean>() {
+	        public Boolean apply(WebDriver wdriver) {
+	            return ((JavascriptExecutor) driver).executeScript(
+	                "return document.readyState"
+	            ).equals("complete");
+	        }
+	    });
+	  
+	  Thread.sleep(1000);
+	  //Click on search button;
+	  searchDeliveryProposalsButton.click();
+	  
+	  WebDriverWait waitLoading3 = new WebDriverWait(driver, 30);
+	  waitLoading3.until(new ExpectedCondition<Boolean>() {
+	        public Boolean apply(WebDriver wdriver) {
+	            return ((JavascriptExecutor) driver).executeScript(
+	                "return document.readyState"
+	            ).equals("complete");
+	        }
+	    });
+	  
+	  Thread.sleep(2000);
+	  
+	  //Click on create Warehouse Request
+	  createWarehouseRequest.click();
+	  
+//	  ----------------------------------
+	  
+	 
+	  if(errListProposals.isDisplayed()) {
+		  String getErrorText = errorText.getText();
+		  System.out.println("b/n" + "== Error == " + getErrorText + "== Error == ");
+	  }else {
+		  System.out.println("Create Warehouse Request Successfull!!!");
+	  } 
+
+	  Thread.sleep(1000);
+	  
+	  btnOutboundLogistics.click();
+	  
+	  //Click on outbound logistics
+	  //btnOutboundLogistics.click();
+	  //Click on Task control
+	  taskControl.click();
+	  //List task control
+	  listTaskControl.click();
+	  allWarehouse.click();
+	  searchTaskControl.sendKeys(SoSalesID);
+	  
+	  WebDriverWait waitLoading4 = new WebDriverWait(driver, 30);
+	  waitLoading4.until(new ExpectedCondition<Boolean>() {
+	        public Boolean apply(WebDriver wdriver) {
+	            return ((JavascriptExecutor) driver).executeScript(
+	                "return document.readyState"
+	            ).equals("complete");
+	        }
+	    });
+	  
+	  Actions actions = new Actions(driver);
+	  actions.moveToElement(searchTaskControlButton).click().build().perform();
+	  
+	  //searchTaskControlButton.click();
+	  
+	  Thread.sleep(2000);
+	  
+	  btnConfirm.click();
+	  
+//	  ----------------------------------
+	  
+	  //Click on outbound logistics
+	  btnOutboundLogistics.click();
+	  //
+	  outboundDeliveries.click();
+	  listOutboundDeliveries.click();
+	  allOutboundDeliveries.click();
+	  
+	  searchOutboundDeliveries.sendKeys(SoSalesID);
+	  
+	  WebDriverWait waitLoading6 = new WebDriverWait(driver, 30);
+	  waitLoading6.until(new ExpectedCondition<Boolean>() {
+	        public Boolean apply(WebDriver wdriver) {
+	            return ((JavascriptExecutor) driver).executeScript(
+	                "return document.readyState"
+	            ).equals("complete");
+	        }
+	    });
+	  
+	  searchOutboundDeliveriesButton.click();
+	  
+	  
+	  
   }
 
 }

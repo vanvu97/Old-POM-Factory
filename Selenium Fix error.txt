@@ -3,6 +3,9 @@ Element is not clickable at point (x, y). Other element would receive the click
 		WebElement ele = driver.findElement(By.cssSelector("#fBtnLogin"));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", ele);
+			------------------------------------
+		Actions actions = new Actions(driver);
+	  	actions.moveToElement(searchTaskControlButton).click().build().perform();
 
 Swith Frame
 		driver.switchTo().frame("frameUserSelection");
