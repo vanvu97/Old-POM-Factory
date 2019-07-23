@@ -17,7 +17,7 @@ public class LoginFbTest extends BaseTest {
 	  loginByD = new LoginFbPage(driver);
 	  
 	  driver.get(Links.URL_Facebook);
-	  dashboardPg = loginByD.loginSucces("vanvu.vv97@gmail.com", "zHelicopter123@!z");
+	  dashboardPg = loginByD.loginSucces("tesst", "tesst");
 	  
   }
 }
