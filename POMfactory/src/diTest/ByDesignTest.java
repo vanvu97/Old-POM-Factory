@@ -25,7 +25,7 @@ public class ByDesignTest extends BaseTest {
 	  ByDesign.editSalesOrder("10081","1");
 	  ByDesign.OutBoundLogicsControl(SalesOrderID);
 	  ByDesign.OutboundLogistics(SalesOrderID);
-	  
+	  ByDesign.CustomerInvoices(SalesOrderID);
   } 
   
 }

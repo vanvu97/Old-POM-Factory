@@ -116,6 +116,20 @@ public class ByDesignPage{
 	WebElement errListProposals;
 	@FindBy (css = "#__text207")
 	WebElement errorText;
+	//Customer Invoices
+	@FindBy (css = "#__item172 > div:nth-child(3)")
+	WebElement customerInvoices;
+	@FindBy (css = ".sapBUiCenterMenuCol > div:nth-child(03)")
+	WebElement InvoiceRequest;
+	@FindBy (css = ".sapBUiDefSetBar > div:nth-child(1)")
+	WebElement listInvoiceRequest;
+	@FindBy (css = "#__list39 > li:nth-child(7)")
+	WebElement allInvoiceRequests;
+	@FindBy (css = "#__pane28-searchField-I")
+	WebElement searchInvoiceRequests;
+	@FindBy (css = "#__pane28-searchField-search")
+	WebElement searchInvoiceRequestsButton;
+	
 	
 	WebDriver driver;
 	WebDriverWait wait;
@@ -372,8 +386,32 @@ public class ByDesignPage{
 	        }
 	    });
 	  
-	  searchOutboundDeliveriesButton.click();
+	  searchOutboundDeliveriesButton.click();	  
+  }
+  
+  public void CustomerInvoices(String SoSalesID) throws InterruptedException {
 	  
+	  ((JavascriptExecutor) driver).executeScript ("arguments[0].scrollIntoView();", customerInvoices);
+	  customerInvoices.click();
+	  InvoiceRequest.click();
+	  
+	  //List invoice request
+	  listInvoiceRequest.click();
+	  allInvoiceRequests.click();
+	  //Search invoice requests
+	  Thread.sleep(1000);
+	  searchInvoiceRequests.sendKeys(SoSalesID);
+	  
+	  WebDriverWait waitLoading6 = new WebDriverWait(driver, 30);
+	  waitLoading6.until(new ExpectedCondition<Boolean>() {
+	        public Boolean apply(WebDriver wdriver) {
+	            return ((JavascriptExecutor) driver).executeScript(
+	                "return document.readyState"
+	            ).equals("complete");
+	        }
+	    });
+	  
+	  searchInvoiceRequestsButton.click();
 	  
 	  
   }
