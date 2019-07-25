@@ -30,7 +30,7 @@ public class ByDesignPage{
 	WebElement tickBoxDelete;
 	
 	//Create Sales Order
-	@FindBy (id = "__button0")
+	@FindBy (css = "#__button0")
 	WebElement btn_SapMenu;
 	@FindBy (css = "#__item151 > div:nth-child(3)")
 	WebElement btn_SalesOrder;
@@ -84,7 +84,7 @@ public class ByDesignPage{
 	WebElement allProposals;
 	@FindBy (css = "#__pane14-searchField-I")
 	WebElement searchDeliveryProposals;
-	@FindBy (id = "__pane14-searchField-search")
+	@FindBy (css = "#__pane14-searchField-search")
 	WebElement searchDeliveryProposalsButton;
 	@FindBy (css = "#__button134-content")
 	WebElement createWarehouseRequest;
@@ -209,7 +209,7 @@ public class ByDesignPage{
 	  //check_Employee_Responsible
 	  ((JavascriptExecutor) driver).executeScript ("arguments[0].scrollIntoView();", Employee_Responsible);
 	  
-	  String check_Employee_Responsible = Employee_Responsible.getText();
+	  String check_Employee_Responsible = Employee_Responsible.getTagName();
 	  
 	  if(!check_Employee_Responsible.isEmpty()) {
 		  System.out.println("There is no Employee Responsible! Sending....!!!");
