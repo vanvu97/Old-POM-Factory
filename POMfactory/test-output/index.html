@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\vuvan\AppData\Local\Temp\testng-eclipse-392860186\testng-customsuite.xml</span>
+                    <span>C:\Users\vuvan\AppData\Local\Temp\testng-eclipse--1198110225\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -101,7 +101,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="diTest.ByDesignTest" hash-for-method="createSalesOrderTest">createSalesOrderTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="diTest.GeneralDIwebSetting" hash-for-method="settingDIWEB">settingDIWEB</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -119,21 +119,17 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">diTest.ByDesignTest</span>
+              <span class="class-name">diTest.GeneralDIwebSetting</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="createSalesOrderTest">
-                  </a> <!-- createSalesOrderTest -->
-                  <span class="method-name">createSalesOrderTest</span>
-                  <div class="stack-trace">java.lang.AssertionError: Values should be different. Actual: Save failed; refresh list to perform further actions
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failEquals(Assert.java:185)
-	at org.junit.Assert.assertNotEquals(Assert.java:161)
-	at org.junit.Assert.assertNotEquals(Assert.java:175)
-	at diPages.ByDesignPage.OutboundLogistics(ByDesignPage.java:348)
-	at diTest.ByDesignTest.createSalesOrderTest(ByDesignTest.java:27)
+                  <a name="settingDIWEB">
+                  </a> <!-- settingDIWEB -->
+                  <span class="method-name">settingDIWEB</span>
+                  <div class="stack-trace">java.lang.ClassCastException: com.sun.proxy.$Proxy9 cannot be cast to org.openqa.selenium.By
+	at diPages.GeneralDIwebPage.masterPageSetting(GeneralDIwebPage.java:58)
+	at diTest.GeneralDIwebSetting.settingDIWEB(GeneralDIwebSetting.java:29)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -167,7 +163,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\vuvan\AppData\Local\Temp\testng-eclipse-392860186\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\vuvan\AppData\Local\Temp\testng-eclipse--1198110225\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -176,7 +172,7 @@
 &lt;suite name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;diTest.ByDesignTest&quot;/&gt;
+      &lt;class name=&quot;diTest.GeneralDIwebSetting&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -218,14 +214,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'createSalesOrderTest')
-data.setCell(0, 2, 'diTest.ByDesignTest')
-data.setCell(0, 3, 111001);
+data.setCell(0, 1, 'settingDIWEB')
+data.setCell(0, 2, 'diTest.GeneralDIwebSetting')
+data.setCell(0, 3, 23746);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 23 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -251,7 +247,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">diTest.ByDesignTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">diTest.GeneralDIwebSetting</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
@@ -259,12 +255,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">createSalesOrderTest</span>
-                <span class="method-start">6079 ms</span>
+                <span class="method-name">settingDIWEB</span>
+                <span class="method-start">5331 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">117082 ms</span>
+                <span class="method-start">29085 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

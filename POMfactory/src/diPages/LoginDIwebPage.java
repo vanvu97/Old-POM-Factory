@@ -95,6 +95,9 @@ public class LoginDIwebPage{
 		btnLogin2.click();
 		//Switch back to default page
 		driver.switchTo().defaultContent();
+		
+		System.out.println("Login Successfull!!!");
+		
 	}	
 		
 	public void chooseCustomer(String customersName) {

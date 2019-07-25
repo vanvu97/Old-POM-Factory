@@ -2,28 +2,24 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="117106" started-at="2019-07-25T06:55:08Z" finished-at="2019-07-25T06:57:05Z">
+  <suite name="Default suite" duration-ms="29109" started-at="2019-07-25T07:49:30Z" finished-at="2019-07-25T07:49:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="117106" started-at="2019-07-25T06:55:08Z" finished-at="2019-07-25T06:57:05Z">
-      <class name="diTest.ByDesignTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.ByDesignTest@2b56f5f8]" name="setUp" is-config="true" duration-ms="6079" started-at="2019-07-25T13:55:08Z" finished-at="2019-07-25T13:55:14Z">
+    <test name="Default test" duration-ms="29109" started-at="2019-07-25T07:49:30Z" finished-at="2019-07-25T07:49:59Z">
+      <class name="diTest.GeneralDIwebSetting">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.GeneralDIwebSetting@48535004]" name="setUp" is-config="true" duration-ms="5330" started-at="2019-07-25T14:49:30Z" finished-at="2019-07-25T14:49:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@2b56f5f8]" name="createSalesOrderTest" duration-ms="111001" started-at="2019-07-25T13:55:14Z" finished-at="2019-07-25T13:57:05Z">
-          <exception class="java.lang.AssertionError">
+        <test-method status="FAIL" signature="settingDIWEB()[pri:0, instance:diTest.GeneralDIwebSetting@48535004]" name="settingDIWEB" duration-ms="23746" started-at="2019-07-25T14:49:35Z" finished-at="2019-07-25T14:49:59Z">
+          <exception class="java.lang.ClassCastException">
             <message>
-              <![CDATA[Values should be different. Actual: Save failed; refresh list to perform further actions]]>
+              <![CDATA[com.sun.proxy.$Proxy9 cannot be cast to org.openqa.selenium.By]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Values should be different. Actual: Save failed; refresh list to perform further actions
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failEquals(Assert.java:185)
-	at org.junit.Assert.assertNotEquals(Assert.java:161)
-	at org.junit.Assert.assertNotEquals(Assert.java:175)
-	at diPages.ByDesignPage.OutboundLogistics(ByDesignPage.java:348)
-	at diTest.ByDesignTest.createSalesOrderTest(ByDesignTest.java:27)
+              <![CDATA[java.lang.ClassCastException: com.sun.proxy.$Proxy9 cannot be cast to org.openqa.selenium.By
+	at diPages.GeneralDIwebPage.masterPageSetting(GeneralDIwebPage.java:58)
+	at diTest.GeneralDIwebSetting.settingDIWEB(GeneralDIwebSetting.java:29)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -50,15 +46,15 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.ClassCastException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createSalesOrderTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.ByDesignTest@2b56f5f8]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-25T13:57:05Z" finished-at="2019-07-25T13:57:05Z">
+        </test-method> <!-- settingDIWEB -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.GeneralDIwebSetting@48535004]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-25T14:49:59Z" finished-at="2019-07-25T14:49:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- diTest.ByDesignTest -->
+      </class> <!-- diTest.GeneralDIwebSetting -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

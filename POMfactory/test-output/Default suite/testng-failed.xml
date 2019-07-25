@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="diTest.ByDesignTest">
+      <class name="diTest.GeneralDIwebSetting">
         <methods>
+          <include name="settingDIWEB"/>
           <include name="tearDown"/>
-          <include name="createSalesOrderTest"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- diTest.ByDesignTest -->
+      </class> <!-- diTest.GeneralDIwebSetting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

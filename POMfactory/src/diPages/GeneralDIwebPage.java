@@ -1,9 +1,11 @@
 package diPages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GeneralDIwebPage {
@@ -38,7 +40,7 @@ public class GeneralDIwebPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-  public void masterPageSetting() {
+  public void masterPageSetting() throws InterruptedException {
 	  //Click on actions list
 	  click_Action_List.click();
 	  //Chooses Master Page Setting
@@ -51,6 +53,11 @@ public class GeneralDIwebPage {
 		for(String winHandle : driver.getWindowHandles()){
 		    driver.switchTo().window(winHandle);
 		}
+		
+		WebDriverWait waitTitle = new WebDriverWait(driver, 15);
+		waitTitle.until(ExpectedConditions.visibilityOfElementLocated((By) btnGenearal));
+		  
+		  
 	  //Setting general
 		btnGenearal.click();
 	  //click on list trading partner

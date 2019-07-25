@@ -14,7 +14,7 @@ public class GeneralDIwebSetting extends BaseTest{
 	
 	 
   @Test
-  public void settingDIWEB() {
+  public void settingDIWEB() throws InterruptedException {
 	  loginPg = new LoginDIwebPage(driver);
 	  genePg = new GeneralDIwebPage(driver);
 	 
