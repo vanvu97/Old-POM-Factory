@@ -33,4 +33,9 @@ lay chuoi ky tu cuoi cung den khoang trong tiep theo
 	String Sales_Order_ID = getTextMessages.substring(getTextMessages.lastIndexOf(" ")+1);
 
 Scroll up, down to element 
-((JavascriptExecutor) driver).executeScript ("arguments[0].scrollIntoView();", colator);
+	((JavascriptExecutor) driver).executeScript ("arguments[0].scrollIntoView();", colator);
+
+Hover
+	Actions builder = new Actions(driver);
+
+	builder.moveToElement(element).build().perform();

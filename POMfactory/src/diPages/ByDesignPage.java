@@ -118,6 +118,8 @@ public class ByDesignPage{
 	WebElement errListProposals;
 	@FindBy (css = "#__text207")
 	WebElement errorText;
+	@FindBy (css = "#__text209")
+	WebElement errorText2;
 	//Customer Invoices
 	@FindBy (css = "#__item172 > div:nth-child(3)")
 	WebElement customerInvoices;
@@ -252,6 +254,8 @@ public class ByDesignPage{
 	  
 	  wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(".//*[@id='__group96']//*[@class='sapBUiCenterMnuItem sapBUiCenterMnuItemHoverable']"))));
 	  
+	  System.out.println("Customer Demand customing...");
+	  
 	  CustomerDemand.click();
 	  CustomerDemandList.click();
 	  
@@ -285,9 +289,8 @@ public class ByDesignPage{
 	  }
   }
   
-  @SuppressWarnings("unlikely-arg-type")
 public void OutboundLogistics(String SoSalesID) throws InterruptedException {
-	  
+	  Actions builder = new Actions(driver);
 	  System.out.println("Creating Warehouse Request (Delivery Proposals)...");
 	  //Click on outbound logistics
 	  btnOutboundLogistics.click();
@@ -332,9 +335,17 @@ public void OutboundLogistics(String SoSalesID) throws InterruptedException {
 	  
 	 
 	  if(errListProposals.isDisplayed()) {
+		  builder.moveToElement(errListProposals).build().perform();
+		  
+		  Thread.sleep(500);
+		  
 		  String getErrorText = errorText.getText();
 		  System.out.println("Error!!!: " + getErrorText + " :Error!!!");
-		  Assert.assertFalse(errListProposals.equals(getErrorText));
+		  
+		  String getErrorText2 = errorText2.getText();
+		  System.out.println("Error!!!: " + getErrorText2 + " :Error!!!");
+		  
+		  Assert.assertNotEquals(getErrorText, "Save failed; refresh list to perform further actions");
 	  }else {
 		  System.out.println("Create Warehouse Request Successfull!!!");
 	  } 
