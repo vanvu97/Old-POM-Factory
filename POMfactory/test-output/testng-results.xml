@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="135401" started-at="2019-07-24T06:53:34Z" finished-at="2019-07-24T06:55:49Z">
+  <suite name="Default suite" duration-ms="137214" started-at="2019-07-25T03:46:57Z" finished-at="2019-07-25T03:49:14Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="135401" started-at="2019-07-24T06:53:34Z" finished-at="2019-07-24T06:55:49Z">
+    <test name="Default test" duration-ms="137214" started-at="2019-07-25T03:46:57Z" finished-at="2019-07-25T03:49:14Z">
       <class name="diTest.ByDesignTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.ByDesignTest@2b56f5f8]" name="setUp" is-config="true" duration-ms="6619" started-at="2019-07-24T13:53:34Z" finished-at="2019-07-24T13:53:40Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.ByDesignTest@2b56f5f8]" name="setUp" is-config="true" duration-ms="5159" started-at="2019-07-25T10:46:57Z" finished-at="2019-07-25T10:47:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@2b56f5f8]" name="createSalesOrderTest" duration-ms="128754" started-at="2019-07-24T13:53:40Z" finished-at="2019-07-24T13:55:49Z">
+        <test-method status="PASS" signature="createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@2b56f5f8]" name="createSalesOrderTest" duration-ms="132015" started-at="2019-07-25T10:47:02Z" finished-at="2019-07-25T10:49:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createSalesOrderTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.ByDesignTest@2b56f5f8]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-24T13:55:49Z" finished-at="2019-07-24T13:55:49Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.ByDesignTest@2b56f5f8]" name="tearDown" is-config="true" duration-ms="1" started-at="2019-07-25T10:49:14Z" finished-at="2019-07-25T10:49:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

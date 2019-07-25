@@ -70,6 +70,8 @@ public class ByDesignPage{
 	WebElement searchCustomerDemandButton;
 	@FindBy (xpath = "//*[@id=\"__button118-content\"]")
 	WebElement btnRelease;
+	@FindBy (css = "#__table2_r0_c4 >div:nth-child(1)")
+	WebElement releaseStatus;
 	
 	//Outbound Logistics
 	@FindBy (id = "__group25")
@@ -273,15 +275,18 @@ public class ByDesignPage{
 //	  JavascriptExecutor executor = (JavascriptExecutor)driver;
 //	  executor.executeScript("arguments[0].click();", btnRelease);
 	  
-	  if(btnRelease.isDisplayed()) {
+	  String getReleaseStatus = releaseStatus.getText();
+	  
+	  if(getReleaseStatus != "Released") {
+		  System.out.println("Customer Demand Released....");
+	  }else {
 		  btnRelease.click();
 		  System.out.println("Clicked on Release");
-	  }else {
-		  System.out.println("Customer Demand Released....");
 	  }
   }
   
-  public void OutboundLogistics(String SoSalesID) throws InterruptedException {
+  @SuppressWarnings("unlikely-arg-type")
+public void OutboundLogistics(String SoSalesID) throws InterruptedException {
 	  
 	  System.out.println("Creating Warehouse Request (Delivery Proposals)...");
 	  //Click on outbound logistics
@@ -329,6 +334,7 @@ public class ByDesignPage{
 	  if(errListProposals.isDisplayed()) {
 		  String getErrorText = errorText.getText();
 		  System.out.println("Error!!!: " + getErrorText + " :Error!!!");
+		  Assert.assertFalse(errListProposals.equals(getErrorText));
 	  }else {
 		  System.out.println("Create Warehouse Request Successfull!!!");
 	  } 
@@ -357,8 +363,6 @@ public class ByDesignPage{
 	  String compareTaskControlID = assertTaskControl.getText();
 	  Assert.assertEquals(compareTaskControlID, SoSalesID);
 	  System.out.println("Assert PASSED!!!!" + compareTaskControlID + " = " + SoSalesID);
-	  
-	  //searchTaskControlButton.click();
 	  
 	  Thread.sleep(2000);
 	  
