@@ -43,12 +43,11 @@ public class BaseTest {
 	
 	@AfterMethod
 	public void tearDown(ITestResult testResult) throws IOException {
+	  		
         if (testResult.getStatus() == ITestResult.FAILURE) { 
         	String directory = Links.PATHTO_IMG;
         	File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        	FileUtils.copyFile(screenshot, new File("C:\\Users\\vuvan\\Desktop\\screenshot.jpg" + gen.getTime()));
-        	
-        	
+        	FileUtils.copyFile(screenshot, new File(directory));
         	
         	System.out.print("Screenshot is captured and stored in your " + directory);
         }
