@@ -10,8 +10,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import net.sf.cglib.beans.BeanCopier.Generator;
-
 public class BaseTest {
 	
 	public WebDriver driver;
@@ -19,7 +17,7 @@ public class BaseTest {
 	
 	@BeforeMethod
 	public void setUp() {
-		screenshot = new Screenshot (gen, driver);
+		screenshot = new Screenshot(driver);
 		
 //		FirefoxOptions options = new FirefoxOptions();
 //		options.setProfile(new FirefoxProfile());
@@ -41,6 +39,6 @@ public class BaseTest {
         if (testResult.getStatus() == ITestResult.FAILURE) {
             screenshot.takeScreenshot(testResult.getName());
         }
-		
-	}
+        driver.quit();
+    }
 }

@@ -13,7 +13,7 @@ public class Screenshot {
     Generator gen;
     WebDriver driver;
  
-    public Screenshot(Generator gen, WebDriver driver) {
+    public Screenshot(WebDriver driver) {
         this.gen = gen;
         this.driver = driver;
     }
