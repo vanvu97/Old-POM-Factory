@@ -2,7 +2,7 @@ package diUtlities;
  
 import java.io.File;
 import java.io.IOException;
- 
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -13,7 +13,7 @@ public class Screenshot {
     Generator gen;
     WebDriver driver;
  
-    public Screenshot(WebDriver driver) {
+    public Screenshot(Generator gen ,WebDriver driver) {
         this.gen = gen;
         this.driver = driver;
     }

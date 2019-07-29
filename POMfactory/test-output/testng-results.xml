@@ -1,38 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" total="1" passed="0">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="639" started-at="2019-07-29T02:51:10Z" finished-at="2019-07-29T02:51:10Z">
+  <suite name="Default suite" duration-ms="130816" started-at="2019-07-29T03:48:32Z" finished-at="2019-07-29T03:50:43Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="639" started-at="2019-07-29T02:51:10Z" finished-at="2019-07-29T02:51:10Z">
-      <class name="diTest.LoginDIwebTest">
-        <test-method status="FAIL" signature="setUp()[pri:0, instance:diTest.LoginDIwebTest@48535004]" name="setUp" is-config="true" duration-ms="0" started-at="2019-07-29T09:51:10Z" finished-at="2019-07-29T09:51:10Z">
-          <exception class="java.lang.NoSuchMethodError">
+    <test name="Default test" duration-ms="130816" started-at="2019-07-29T03:48:32Z" finished-at="2019-07-29T03:50:43Z">
+      <class name="diTest.ByDesignTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.ByDesignTest@1753acfe]" name="setUp" is-config="true" duration-ms="4869" started-at="2019-07-29T10:48:32Z" finished-at="2019-07-29T10:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@1753acfe]" name="createSalesOrderTest" duration-ms="124826" started-at="2019-07-29T10:48:37Z" finished-at="2019-07-29T10:50:42Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[com.google.common.util.concurrent.SimpleTimeLimiter.create(Ljava/util/concurrent/ExecutorService;)Lcom/google/common/util/concurrent/SimpleTimeLimiter;]]>
+              <![CDATA[Unable to locate element: #__text207
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190725174626, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 13272, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 210130b2-6ce2-4dd8-acdd-e36466e5f72b
+*** Element info: {Using=css selector, value=#__text207}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NoSuchMethodError: com.google.common.util.concurrent.SimpleTimeLimiter.create(Ljava/util/concurrent/ExecutorService;)Lcom/google/common/util/concurrent/SimpleTimeLimiter;
-	at org.openqa.selenium.net.UrlChecker.<init>(UrlChecker.java:62)
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:197)
-	at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:188)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:79)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: #__text207
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190725174626, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 13272, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 210130b2-6ce2-4dd8-acdd-e36466e5f72b
+*** Element info: {Using=css selector, value=#__text207}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:168)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:157)
-	at diUtlities.BaseTest.setUp(BaseTest.java:31)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.getText(Unknown Source)
+	at diPages.ByDesignPage.OutboundLogistics(ByDesignPage.java:342)
+	at diTest.ByDesignTest.createSalesOrderTest(ByDesignTest.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:653)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
@@ -53,19 +77,22 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NoSuchMethodError -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="loginDIWeb()[pri:0, instance:diTest.LoginDIwebTest@48535004]" name="loginDIWeb" duration-ms="6" started-at="2019-07-29T09:51:10Z" finished-at="2019-07-29T09:51:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginDIWeb -->
-        <test-method status="SKIP" signature="tearDown(org.testng.ITestResult)[pri:0, instance:diTest.LoginDIwebTest@48535004]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-29T09:51:10Z" finished-at="2019-07-29T09:51:10Z">
+        </test-method> <!-- createSalesOrderTest -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:diTest.ByDesignTest@1753acfe]" name="tearDown" is-config="true" duration-ms="1105" started-at="2019-07-29T10:50:42Z" finished-at="2019-07-29T10:50:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createSalesOrderTest status=FAILURE method=ByDesignTest.createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@1753acfe] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- diTest.LoginDIwebTest -->
+      </class> <!-- diTest.ByDesignTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
