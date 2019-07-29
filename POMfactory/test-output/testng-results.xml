@@ -1,60 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="29109" started-at="2019-07-25T07:49:30Z" finished-at="2019-07-25T07:49:59Z">
+  <suite name="Default suite" duration-ms="163" started-at="2019-07-29T02:30:46Z" finished-at="2019-07-29T02:30:46Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="29109" started-at="2019-07-25T07:49:30Z" finished-at="2019-07-25T07:49:59Z">
-      <class name="diTest.GeneralDIwebSetting">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.GeneralDIwebSetting@48535004]" name="setUp" is-config="true" duration-ms="5330" started-at="2019-07-25T14:49:30Z" finished-at="2019-07-25T14:49:35Z">
+    <test name="Default test" duration-ms="163" started-at="2019-07-29T02:30:46Z" finished-at="2019-07-29T02:30:46Z">
+      <class name="diUtlities.MyUnitTest">
+        <test-method status="PASS" signature="testGenerator()[pri:0, instance:diUtlities.MyUnitTest@6cc4c815]" name="testGenerator" duration-ms="128" started-at="2019-07-29T09:30:46Z" finished-at="2019-07-29T09:30:46Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="settingDIWEB()[pri:0, instance:diTest.GeneralDIwebSetting@48535004]" name="settingDIWEB" duration-ms="23746" started-at="2019-07-25T14:49:35Z" finished-at="2019-07-25T14:49:59Z">
-          <exception class="java.lang.ClassCastException">
-            <message>
-              <![CDATA[com.sun.proxy.$Proxy9 cannot be cast to org.openqa.selenium.By]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.ClassCastException: com.sun.proxy.$Proxy9 cannot be cast to org.openqa.selenium.By
-	at diPages.GeneralDIwebPage.masterPageSetting(GeneralDIwebPage.java:58)
-	at diTest.GeneralDIwebSetting.settingDIWEB(GeneralDIwebSetting.java:29)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.ClassCastException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- settingDIWEB -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:diTest.GeneralDIwebSetting@48535004]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-25T14:49:59Z" finished-at="2019-07-25T14:49:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- diTest.GeneralDIwebSetting -->
+        </test-method> <!-- testGenerator -->
+      </class> <!-- diUtlities.MyUnitTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

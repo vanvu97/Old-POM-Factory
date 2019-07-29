@@ -1,9 +1,0 @@
-package diTest;
-
-import org.testng.annotations.Test;
-
-public class generalSetting {
-  @Test
-  public void f() {
-  }
-}
