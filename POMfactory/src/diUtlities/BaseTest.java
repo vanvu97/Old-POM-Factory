@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -43,10 +42,7 @@ public class BaseTest {
 	}
 	
 	@AfterMethod
-	public void tearDown(ITestResult testResult) throws IOException {
-		
-		
-	  		
+	public void tearDown(ITestResult testResult) throws IOException {	  		
         if (testResult.getStatus() == ITestResult.FAILURE) { 
         	String directory = Links.PATHTO_IMG;
         	File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -54,6 +50,6 @@ public class BaseTest {
         	
         	System.out.print("Screenshot is captured and stored in your " + directory);
         }
-        driver.quit();
+//        driver.quit();
     }
 }

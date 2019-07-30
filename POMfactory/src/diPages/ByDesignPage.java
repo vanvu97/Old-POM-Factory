@@ -116,9 +116,9 @@ public class ByDesignPage{
 	WebElement searchOutboundDeliveriesButton;
 	@FindBy (css = ".sapBUiMessageAreaInner")
 	WebElement errListProposals;
-	@FindBy (css = "#__text207")
+	@FindBy (css = ".sapMMsgStripMessage > span:nth-child(1)")
 	WebElement errorText;
-	@FindBy (css = "#__text209")
+	@FindBy (css = ".sapMMsgStripMessage > span:nth-child(1)")
 	WebElement errorText2;
 	//Customer Invoices
 	@FindBy (css = "#__item172 > div:nth-child(3)")

@@ -2,54 +2,27 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="126366" started-at="2019-07-30T03:04:24Z" finished-at="2019-07-30T03:06:30Z">
+  <suite name="Default suite" duration-ms="98270" started-at="2019-07-30T08:36:00Z" finished-at="2019-07-30T08:37:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="126366" started-at="2019-07-30T03:04:24Z" finished-at="2019-07-30T03:06:30Z">
+    <test name="Default test" duration-ms="98270" started-at="2019-07-30T08:36:00Z" finished-at="2019-07-30T08:37:38Z">
       <class name="diTest.ByDesignTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.ByDesignTest@a20b94b]" name="setUp" is-config="true" duration-ms="6074" started-at="2019-07-30T10:04:24Z" finished-at="2019-07-30T10:04:30Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.ByDesignTest@a20b94b]" name="setUp" is-config="true" duration-ms="5643" started-at="2019-07-30T15:36:00Z" finished-at="2019-07-30T15:36:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@a20b94b]" name="createSalesOrderTest" duration-ms="119071" started-at="2019-07-30T10:04:30Z" finished-at="2019-07-30T10:06:29Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="FAIL" signature="createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@a20b94b]" name="createSalesOrderTest" duration-ms="92485" started-at="2019-07-30T15:36:06Z" finished-at="2019-07-30T15:37:38Z">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Unable to locate element: #__text207
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190725174626, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 13956, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 282c1819-6ee0-4267-bb51-8d11726d3901
-*** Element info: {Using=css selector, value=#__text207}]]>
+              <![CDATA[Values should be different. Actual: Save failed; refresh list to perform further actions]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: #__text207
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190725174626, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 13956, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 282c1819-6ee0-4267-bb51-8d11726d3901
-*** Element info: {Using=css selector, value=#__text207}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.getText(Unknown Source)
-	at diPages.ByDesignPage.OutboundLogistics(ByDesignPage.java:342)
+              <![CDATA[java.lang.AssertionError: Values should be different. Actual: Save failed; refresh list to perform further actions
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failEquals(Assert.java:185)
+	at org.junit.Assert.assertNotEquals(Assert.java:161)
+	at org.junit.Assert.assertNotEquals(Assert.java:175)
+	at diPages.ByDesignPage.OutboundLogistics(ByDesignPage.java:348)
 	at diTest.ByDesignTest.createSalesOrderTest(ByDesignTest.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -77,11 +50,11 @@ Session ID: 282c1819-6ee0-4267-bb51-8d11726d3901
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createSalesOrderTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:diTest.ByDesignTest@a20b94b]" name="tearDown" is-config="true" duration-ms="1192" started-at="2019-07-30T10:06:29Z" finished-at="2019-07-30T10:06:30Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:diTest.ByDesignTest@a20b94b]" name="tearDown" is-config="true" duration-ms="117" started-at="2019-07-30T15:37:38Z" finished-at="2019-07-30T15:37:38Z">
           <params>
             <param index="0">
               <value>
