@@ -1,71 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="98270" started-at="2019-07-30T08:36:00Z" finished-at="2019-07-30T08:37:38Z">
+  <suite name="Default suite" duration-ms="5" started-at="2019-08-02T08:33:13Z" finished-at="2019-08-02T08:33:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="98270" started-at="2019-07-30T08:36:00Z" finished-at="2019-07-30T08:37:38Z">
-      <class name="diTest.ByDesignTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:diTest.ByDesignTest@a20b94b]" name="setUp" is-config="true" duration-ms="5643" started-at="2019-07-30T15:36:00Z" finished-at="2019-07-30T15:36:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@a20b94b]" name="createSalesOrderTest" duration-ms="92485" started-at="2019-07-30T15:36:06Z" finished-at="2019-07-30T15:37:38Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Values should be different. Actual: Save failed; refresh list to perform further actions]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Values should be different. Actual: Save failed; refresh list to perform further actions
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failEquals(Assert.java:185)
-	at org.junit.Assert.assertNotEquals(Assert.java:161)
-	at org.junit.Assert.assertNotEquals(Assert.java:175)
-	at diPages.ByDesignPage.OutboundLogistics(ByDesignPage.java:348)
-	at diTest.ByDesignTest.createSalesOrderTest(ByDesignTest.java:27)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createSalesOrderTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:diTest.ByDesignTest@a20b94b]" name="tearDown" is-config="true" duration-ms="117" started-at="2019-07-30T15:37:38Z" finished-at="2019-07-30T15:37:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=createSalesOrderTest status=FAILURE method=ByDesignTest.createSalesOrderTest()[pri:0, instance:diTest.ByDesignTest@a20b94b] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- diTest.ByDesignTest -->
+    <test name="Default test" duration-ms="5" started-at="2019-08-02T08:33:13Z" finished-at="2019-08-02T08:33:13Z">
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

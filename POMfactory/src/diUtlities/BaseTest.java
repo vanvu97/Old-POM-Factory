@@ -32,7 +32,7 @@ public class BaseTest {
 		driver = new FirefoxDriver(options);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
-//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vuvan\\Downloads\\Driver\\ChromeDriver-76.0.3809.25\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vuvan\\Downloads\\Driver\\ChromeDriver-76.0.3809.68\\chromedriver.exe");
 //		ChromeOptions options = new ChromeOptions();
 //		options.addArguments("--disable-notifications");
 //		WebDriver driver = new ChromeDriver(options);
@@ -47,6 +47,8 @@ public class BaseTest {
         	String directory = Links.PATHTO_IMG;
         	File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         	FileUtils.copyFile(screenshot, new File(directory));
+        	
+        	
         	
         	System.out.print("Screenshot is captured and stored in your " + directory);
         }

@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\vuvan\eclipse-workspace\UCUA\src\vUtility\vBase.java"/>
 			<item value="C:\Users\vuvan\eclipse-workspace\FirstProject\src"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -26,10 +27,8 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="org.o7planning"/>
 		</list>
 		<list key="groupId">
-			<item value="org.o7planning"/>
 		</list>
 		<list key="artifactId">
 		</list>
@@ -47,12 +46,10 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
-			<item value="org.o7planning"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
-			<item value="MavenNew"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
