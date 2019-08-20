@@ -51,15 +51,12 @@ public class buildPages {
 	public void buildSection() throws InterruptedException {
 		btnBUILD.click();
 		btnNew.click();
-		
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-	    wait.until(new ExpectedCondition<Boolean>() {
-	        public Boolean apply(WebDriver wdriver) {
-	            return ((JavascriptExecutor) driver).executeScript(
-	                "return document.readyState"
-	            ).equals("complete");
-	        }
-	    });
+		try {
+			Thread.sleep(3000);
+			} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			}
 		//driver.switchTo().frame("newComponentForm");
 		choiceType.click();
 		choiceProcess.click();
@@ -75,9 +72,12 @@ public class buildPages {
 	    //Dragged and dropped.      
 		Action dragAndDrop2 = act.clickAndHold(iconSOAP).moveToElement(EndP1, 15, 15).release(iconSOAP).build();
 		dragAndDrop2.perform();
-		
-		Thread.sleep(2000);
-		
+		try {
+			Thread.sleep(3000);
+			} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			}
 		Actions act2 = new Actions(driver);
 		Action dragAndDrop = act2.clickAndHold(StartP1).moveToElement(EndP1).release(StartP1).build();
 		dragAndDrop.perform();
