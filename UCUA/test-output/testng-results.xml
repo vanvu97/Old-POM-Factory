@@ -1,46 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="654" started-at="2019-09-04T12:19:03Z" finished-at="2019-09-04T12:19:03Z">
+  <suite name="Default suite" duration-ms="18710" started-at="2019-09-04T12:22:37Z" finished-at="2019-09-04T12:22:56Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="654" started-at="2019-09-04T12:19:03Z" finished-at="2019-09-04T12:19:03Z">
-      <class name="vTest.UCLoginTest">
-        <test-method status="FAIL" signature="login(java.lang.String, java.lang.String)[pri:0, instance:vTest.UCLoginTest@4c70fda8]" name="login" duration-ms="639" started-at="2019-09-04T19:19:03Z" data-provider="loginData" finished-at="2019-09-04T19:19:03Z">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-The data provider is trying to pass 4 parameters but the method vTest.UCLoginTest#login takes 2]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-The data provider is trying to pass 4 parameters but the method vTest.UCLoginTest#login takes 2
-	at org.testng.internal.Invoker.injectParameters(Invoker.java:1337)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1225)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+    <test name="Default test" duration-ms="18710" started-at="2019-09-04T12:22:37Z" finished-at="2019-09-04T12:22:56Z">
+      <class name="vTest.CustomerMngTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@4c70fda8]" name="setUp" is-config="true" duration-ms="4891" started-at="2019-09-04T19:22:38Z" finished-at="2019-09-04T19:22:42Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-      </class> <!-- vTest.UCLoginTest -->
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="CreateAccount(java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@4c70fda8]" name="CreateAccount" duration-ms="13184" started-at="2019-09-04T19:22:42Z" data-provider="loginData" finished-at="2019-09-04T19:22:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateAccount -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@4c70fda8]" name="tearDown" is-config="true" duration-ms="1" started-at="2019-09-04T19:22:56Z" finished-at="2019-09-04T19:22:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CreateAccount status=SUCCESS method=CustomerMngTest.CreateAccount(java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@4c70fda8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- vTest.CustomerMngTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

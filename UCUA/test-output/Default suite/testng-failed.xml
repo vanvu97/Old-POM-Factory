@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="vTest.UCLoginTest">
+      <class name="vTest.CustomerMngTest">
         <methods>
-          <include name="login"/>
+          <include name="CreateAccount"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- vTest.UCLoginTest -->
+      </class> <!-- vTest.CustomerMngTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
