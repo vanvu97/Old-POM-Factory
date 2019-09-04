@@ -1,12 +1,11 @@
 package vPages;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.io.*;
-import java.util.*;
+import java.io.FileNotFoundException;
+import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,7 +24,7 @@ public class CustomerMngPage {
 	@FindBy (css = ".font-black")
 	WebElement addCustomer;
 	//Create a Account
-	@FindBy (css = ".form-control-static")
+	@FindBy (css = "#collapse_fieldAccount > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")
 	WebElement inpAccountName;
 	@FindBy (css = "input.ng-valid-email")
 	WebElement inpEmail;
@@ -53,9 +52,12 @@ public class CustomerMngPage {
 	WebElement inpPhoneNo;
 	@FindBy (css = "button.btn")
 	WebElement btnSave;
-	//
-	@FindBy (css = ".pagination > li:nth-child(4) > a:nth-child(1)")
+	//Click Next button
+	@FindBy (css = ".pagination > li:nth-child(6) > a")
 	static WebElement btnNext;
+	//Get table
+	@FindBy (css = ".table")
+	WebElement customerTable;
 	
 	//Create account Name
 	String randomAccountName = RandomStringUtils.randomNumeric(5);
@@ -97,7 +99,7 @@ public class CustomerMngPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void CustomerMngSection() throws InterruptedException {
+	public void reachToCustomerSection() throws InterruptedException {
 		String titleUA = driver.getTitle();
 		Assert.assertEquals("Universal Center | DiCentral", titleUA);
 		//Hover on MonitorButton
@@ -119,14 +121,14 @@ public class CustomerMngPage {
 		//Choose account Type
 		accType.click();
 		types.click();
-		if(radioSynch.isSelected()) {
-			System.out.println("Synchronize is Selected");
-		}else if(radioEnable.isSelected()) {
-			System.out.println("Enable is Selected");
-		}else if(!radioEnable.isSelected()) {
-			System.out.println("Enable is Checking");
-			radioSynch.click();
-		}
+//		if(radioSynch.isSelected()) {
+//			System.out.println("Synchronize is Selected");
+//		}else if(radioEnable.isSelected()) {
+//			System.out.println("Enable is Selected");
+//		}else if(!radioEnable.isSelected()) {
+//			System.out.println("Enable is Checking");
+//			radioEnable.click();
+//		}
 		//Create random Code & Send String
 		inpCode.sendKeys(createRandomCode);
 		//Create full-name & Send String
@@ -155,40 +157,27 @@ public class CustomerMngPage {
 		System.out.println("Country : " + Country[1]);
 		System.out.println("Country Code : " + CountryCode[1]);
 		System.out.println("PhoneNo : " + PhoneNo);
+		System.out.println("=======================================");
 	}
-	public void setPassword() throws FileNotFoundException {
+	public void setPassword() throws FileNotFoundException, InterruptedException { 
 		
-//		try {
-//	        Thread.sleep(5000);
-//	    } catch (InterruptedException e) {
-//	        e.printStackTrace();
-//	    }   
+		List<WebElement> tableRows = customerTable.findElements(By.tagName("tr"));
+		//Count numb rows in table
+		int rowCount = tableRows.size();
+		for (int row = 0; row < rowCount; row++) {
+			List<WebElement> columnsRow = customerTable.findElements(By.tagName("td"));
+			int columnsCount = columnsRow.size();
+//			System.out.println("Numb of cells in Row " + row + " are " + columnsCount);
+			for (int column = 0; column < columnsCount; column++) {
+				 String celtext = columnsRow.get(column).getText();
+//	    	        System.out.println("Cell Value of row number " + row + " and column number " + column + " Is " + celtext);
+				 if(celtext=="AccountTest29626") {
+					 System.out.println("+++++++++++");
+				 }
+			}
+			System.out.println("=======================================");
+		}
+
 		
-		 Map<String,Integer> map = new HashMap<String,Integer>();
-	     for(int i = 0; i < 1000; ++i)
-	     {
-	        String s = choose(new String(accountName));
-	        if(!map.containsKey(s))
-	           map.put(s, 0);
-	     }
-	     System.out.println(map);
-	     
-	     
-	  }
-	
-	  public static String choose(String accountName) throws FileNotFoundException
-	  {
-		  
-	     String result = null;
-	     Random rand = new Random();
-	     int n = 0;
-	     for(Scanner sc = new Scanner(accountName); sc.hasNext(); )
-	     {
-	        ++n;
-	        String line = sc.nextLine();
-	        if(rand.nextInt(n) != 0) 
-	        	result = line;
-	     }
-	     return result;   
-	  }
+	}
 }

@@ -21,9 +21,9 @@ public class CustomerMngTest extends BaseTest {
 		
 		driver.get(Links.URL_UC);
 		loginUC.LoginUC("admin", "123456");
-		MngPgs.CustomerMngSection();
-		MngPgs.AddCustomer();
-		MngPgs.PrintInfo();
+		MngPgs.reachToCustomerSection();
+//		MngPgs.AddCustomer();
+//		MngPgs.PrintInfo();
 		MngPgs.setPassword();
   }
 }

@@ -23,6 +23,8 @@ public class Links {
 	public static final String PATH_TO_EXCEL = System.getProperty("user.dir") + File.separator + "data" + File.separator + "data.xlsx";
 	public static final String PATHTO_IMG = "D:\\Selenium Error img\\Error" + randomMiddle + ".jpg";
 	public static final String URL_UC = "http://172.16.0.104:8089/#!/";
+	public static final String URL_UC_Customer = "http://172.16.0.104:8089/#!/customers";
+	
 	
 
   }
