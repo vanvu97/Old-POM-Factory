@@ -6,7 +6,6 @@
       <class name="vTest.UCLoginTest">
         <methods>
           <include name="login"/>
-          <include name="setUp"/>
         </methods>
       </class> <!-- vTest.UCLoginTest -->
     </classes>

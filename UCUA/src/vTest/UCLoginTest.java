@@ -17,7 +17,7 @@ public class UCLoginTest extends BaseTest{
 	}
 	@DataProvider(name = "loginData")
 	public Object[][] dataProvider() throws Exception {
-		String filePath = System.getProperty("user.dir")+"\\src\\vUtilyty\\";
+		String filePath = System.getProperty("user.dir")+"\\src\\data\\";
 		
 	     Object[][] testObjArray = ExportFile.getTableArray(filePath + "ExportExcel.xlsx","LoginData", 0);
 
