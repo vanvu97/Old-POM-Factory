@@ -24,6 +24,7 @@ public class Links {
 	public static final String PATHTO_IMG = "D:\\Selenium Error img\\Error" + randomMiddle + ".jpg";
 	public static final String URL_UC = "http://172.16.0.104:8089/#!/";
 	public static final String URL_UC_Customer = "http://172.16.0.104:8089/#!/customers";
+	static String filePath = System.getProperty("user.dir")+"\\Error\\Error" + randomMiddle + ".jpg";
 	
 	
 
