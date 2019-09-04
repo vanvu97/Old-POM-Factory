@@ -8,21 +8,21 @@ import org.testng.annotations.Test;
 import vPages.CustomerMngPage;
 import vPages.UCLoginPage;
 import vUtilyty.BaseTest;
+import vUtilyty.ExportFile;
 import vUtilyty.Links;
-import vUtilyty.readExcelFile;
 
 public class CustomerMngTest extends BaseTest {
   
 	UCLoginPage loginUC;
 	CustomerMngPage MngPgs;
 	
-	@Test
-  public void CreateAccount() throws InterruptedException, FileNotFoundException {
+	@Test(dataProvider="Authentication")
+  public void CreateAccount(String sUserName,String sPassword) throws InterruptedException, FileNotFoundException {
 		loginUC = new UCLoginPage(driver);
 		MngPgs = new CustomerMngPage(driver);
 		
 		driver.get(Links.URL_UC);
-		loginUC.LoginUC("admin", "123456");
+		loginUC.LoginUC("sUserName", "sPassword");
 		MngPgs.reachToCustomerSection();
 //		MngPgs.AddCustomer();
 //		MngPgs.PrintInfo();
@@ -33,7 +33,7 @@ public class CustomerMngTest extends BaseTest {
 	public Object[][] Authentication() throws Exception{
 		String filePath = System.getProperty("user.dir")+"\\src\\vUtilyty";
 		
-	     Object[][] testObjArray = readExcelFile.getTableArray(filePath + "ExportExcel.xlsx","LoginData", 0);
+	     Object[][] testObjArray = ExportFile.getTableArray(filePath + "ExportExcel.xlsx","LoginData", 0);
 
 	     return (testObjArray);
 

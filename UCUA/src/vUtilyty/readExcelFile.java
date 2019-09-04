@@ -38,7 +38,7 @@ public class readExcelFile {
         //Create a loop to print cell values in a row
         for (int j = 0; j < row.getLastCellNum(); j++) {
             //Print Excel data in console
-            System.out.print(row.getCell(j).getStringCellValue()+"|| ");
+            System.out.print(row.getCell(j).getStringCellValue()+" || ");
         }
         System.out.println();
     }

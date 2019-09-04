@@ -6,8 +6,6 @@
       <class name="vTest.CustomerMngTest">
         <methods>
           <include name="CreateAccount"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
         </methods>
       </class> <!-- vTest.CustomerMngTest -->
     </classes>
