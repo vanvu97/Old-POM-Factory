@@ -2,12 +2,14 @@ package vTest;
 
 import java.io.FileNotFoundException;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import vPages.CustomerMngPage;
 import vPages.UCLoginPage;
 import vUtilyty.BaseTest;
 import vUtilyty.Links;
+import vUtilyty.readExcelFile;
 
 public class CustomerMngTest extends BaseTest {
   
@@ -26,4 +28,14 @@ public class CustomerMngTest extends BaseTest {
 //		MngPgs.PrintInfo();
 		MngPgs.setPassword();
   }
+	@DataProvider
+
+	public Object[][] Authentication() throws Exception{
+		String filePath = System.getProperty("user.dir")+"\\src\\vUtilyty";
+		
+	     Object[][] testObjArray = readExcelFile.getTableArray(filePath + "ExportExcel.xlsx","LoginData", 0);
+
+	     return (testObjArray);
+
+		}
 }

@@ -52,4 +52,8 @@ public class readExcelFile {
     //Call read file method of the class to read data
     objExcelFile.readExcel(filePath,"ExportExcel.xlsx","LoginData");
     }
+	public static Object[][] getTableArray(String string, String string2, int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
