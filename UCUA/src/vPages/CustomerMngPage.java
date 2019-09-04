@@ -171,9 +171,12 @@ public class CustomerMngPage {
 			for (int column = 0; column < columnsCount; column++) {
 				 String celtext = columnsRow.get(column).getText();
 //	    	        System.out.println("Cell Value of row number " + row + " and column number " + column + " Is " + celtext);
-				 if(celtext=="AccountTest29626") {
+				 if(celtext=="000") {
 					 System.out.println("+++++++++++");
+				 }else {
+					 System.out.println("-----------");
 				 }
+				 System.out.println(celtext);
 			}
 			System.out.println("=======================================");
 		}

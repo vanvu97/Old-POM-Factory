@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import vUtilyty.Links;
+
 public class UCLoginPage {
 	
 	@FindBy (id = "Username")
@@ -27,6 +29,7 @@ public class UCLoginPage {
 	}
 	
 	public void LoginUC(String vUser, String vPass) {
+		driver.get(Links.URL_UC);
 		vUsername.sendKeys(vUser);
 		vPassword.sendKeys(vPass);
 		btnLogin.click();

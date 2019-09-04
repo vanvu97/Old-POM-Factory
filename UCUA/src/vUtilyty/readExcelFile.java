@@ -1,59 +1,78 @@
 package vUtilyty;
-import java.io.File;
-
 import java.io.FileInputStream;
-import java.io.IOException;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class readExcelFile {
-    public void readExcel(String filePath,String fileName,String sheetName) throws IOException{
-    //Create an object of File class to open xlsx file
-    File file =    new File(filePath+"\\"+fileName);
-    //Create an object of FileInputStream class to read excel file
-    FileInputStream inputStream = new FileInputStream(file);
-    Workbook UAWorkbook = null;
-    //Find the file extension by splitting file name in substring  and getting only extension name
-    String fileExtensionName = fileName.substring(fileName.indexOf("."));
-    //Check condition if the file is xlsx file
-    if(fileExtensionName.equals(".xlsx")){
-    //If it is xlsx file then create object of XSSFWorkbook class
-    	UAWorkbook = new XSSFWorkbook(inputStream);
-    }
-    //Check condition if the file is xls file
-    else if(fileExtensionName.equals(".xls")){
-        //If it is xls file then create object of HSSFWorkbook class
-    	UAWorkbook = new HSSFWorkbook(inputStream);
-    }
-    //Read sheet inside the workbook by its name
-    Sheet UASheetTest = UAWorkbook.getSheet(sheetName);
-    //Find number of rows in excel file
-    int rowCount = UASheetTest.getLastRowNum()-UASheetTest.getFirstRowNum();
-    //Create a loop over all the rows of excel file to read it
-    for (int i = 0; i < rowCount+1; i++) {
-        Row row = UASheetTest.getRow(i);
-        //Create a loop to print cell values in a row
-        for (int j = 0; j < row.getLastCellNum(); j++) {
-            //Print Excel data in console
-            System.out.print(row.getCell(j).getStringCellValue()+" || ");
-        }
-        System.out.println();
-    }
-    }  
-    //Main function is calling readExcel function to read data from excel file
-    public static void main(String...strings) throws IOException{
-    //Create an object of ReadGuru99ExcelFile class
-    readExcelFile objExcelFile = new readExcelFile();
-    //Prepare the path of excel file
-    String filePath = System.getProperty("user.dir")+"\\src\\vUtilyty";
-    //Call read file method of the class to read data
-    objExcelFile.readExcel(filePath,"ExportExcel.xlsx","LoginData");
-    }
-	public static Object[][] getTableArray(String string, String string2, int i) {
-		// TODO Auto-generated method stub
-		return null;
+	private static XSSFWorkbook ExcelWBook;
+	private static XSSFSheet ExcelWSheet;
+ 
+	public static void setExcelFile(String path, String sheetName) throws Exception {
+		try {
+			// Open the Excel file
+			FileInputStream ExcelFile = new FileInputStream(path);
+ 
+			// Access the excel data sheet
+			ExcelWBook = new XSSFWorkbook(ExcelFile);
+			ExcelWSheet = ExcelWBook.getSheet(sheetName);
+		} catch (Exception e) {
+			throw (e);
+		}
 	}
+ 
+	public static String[][] getTestData(String tableName) {
+		String[][] testData = null;
+ 
+		try {
+			// Handle numbers and strings
+			DataFormatter formatter = new DataFormatter();
+			XSSFCell[] boundaryCells = findCells(tableName);
+			XSSFCell startCell = boundaryCells[0];
+ 
+			XSSFCell endCell = boundaryCells[1];
+ 
+			int startRow = startCell.getRowIndex() + 1;
+			int endRow = endCell.getRowIndex() - 1;
+			int startCol = startCell.getColumnIndex() + 1;
+			int endCol = endCell.getColumnIndex() - 1;
+ 
+			testData = new String[endRow - startRow + 1][endCol - startCol + 1];
+ 
+			for (int i = startRow; i < endRow + 1; i++) {
+				for (int j = startCol; j < endCol + 1; j++) {
+					Cell cell = ExcelWSheet.getRow(i).getCell(j);
+					testData[i - startRow][j - startCol] = formatter.formatCellValue(cell);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return testData;
+	}
+ 
+	public static XSSFCell[] findCells(String tableName) {
+		DataFormatter formatter = new DataFormatter();
+		String pos = "begin";
+		XSSFCell[] cells = new XSSFCell[2];
+ 
+		for (Row row : ExcelWSheet) {
+			for (Cell cell : row) {
+				if (tableName.equals(formatter.formatCellValue(cell))) {
+					if (pos.equalsIgnoreCase("begin")) {
+						cells[0] = (XSSFCell) cell;
+						pos = "end";
+					} else {
+						cells[1] = (XSSFCell) cell;
+					}
+				}
+			}
+		}
+		return cells;
+	}
+ 
 }

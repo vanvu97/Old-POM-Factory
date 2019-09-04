@@ -1,23 +1,27 @@
 package vTest;
 
-import vPages.UCLoginPage;
-import vUtilyty.BaseTest;
-import vUtilyty.Links;
-
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import vPages.UCLoginPage;
+import vUtilyty.BaseTest;
+import vUtilyty.ExportFile;
 
 public class UCLoginTest extends BaseTest{
 	UCLoginPage loginUC;
 	
-	@Test
-	public void login() {
+	@Test(dataProvider="loginData")
+	public void login(String userName, String password) {
 		loginUC = new UCLoginPage(driver);
-		
-		driver.get(Links.URL_UC);
-		loginUC.LoginUC("admin", "123456");
-		
+		loginUC.LoginUC(userName, password);
 	}
-	
+	@DataProvider(name = "loginData")
+	public Object[][] dataProvider() throws Exception {
+		String filePath = System.getProperty("user.dir")+"\\src\\vUtilyty\\";
+		
+	     Object[][] testObjArray = ExportFile.getTableArray(filePath + "ExportExcel.xlsx","LoginData", 0);
+
+	     return (testObjArray);
+	}
 	
 }
