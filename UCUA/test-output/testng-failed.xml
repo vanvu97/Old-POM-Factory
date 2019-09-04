@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="vTest.buildTest">
+      <class name="vTest.CustomerMngTest">
         <methods>
+          <include name="CreateAccount"/>
           <include name="tearDown"/>
-          <include name="createProcess"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- vTest.buildTest -->
+      </class> <!-- vTest.CustomerMngTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

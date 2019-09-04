@@ -2,31 +2,31 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14147" started-at="2019-08-14T08:24:33Z" finished-at="2019-08-14T08:24:47Z">
+  <suite name="Default suite" duration-ms="22004" started-at="2019-09-04T07:31:05Z" finished-at="2019-09-04T07:31:27Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14147" started-at="2019-08-14T08:24:33Z" finished-at="2019-08-14T08:24:47Z">
-      <class name="vTest.buildTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.buildTest@1753acfe]" name="setUp" is-config="true" duration-ms="4424" started-at="2019-08-14T15:24:33Z" finished-at="2019-08-14T15:24:38Z">
+    <test name="Default test" duration-ms="22004" started-at="2019-09-04T07:31:05Z" finished-at="2019-09-04T07:31:27Z">
+      <class name="vTest.CustomerMngTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@1aa99005]" name="setUp" is-config="true" duration-ms="6940" started-at="2019-09-04T14:31:05Z" finished-at="2019-09-04T14:31:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="createProcess()[pri:0, instance:vTest.buildTest@1753acfe]" name="createProcess" duration-ms="9715" started-at="2019-08-14T15:24:38Z" finished-at="2019-08-14T15:24:47Z">
+        <test-method status="PASS" signature="CreateAccount()[pri:0, instance:vTest.CustomerMngTest@1aa99005]" name="CreateAccount" duration-ms="15031" started-at="2019-09-04T14:31:12Z" finished-at="2019-09-04T14:31:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createProcess -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.buildTest@1753acfe]" name="tearDown" is-config="true" duration-ms="1" started-at="2019-08-14T15:24:47Z" finished-at="2019-08-14T15:24:47Z">
+        </test-method> <!-- CreateAccount -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@1aa99005]" name="tearDown" is-config="true" duration-ms="1" started-at="2019-09-04T14:31:27Z" finished-at="2019-09-04T14:31:27Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=createProcess status=SUCCESS method=buildTest.createProcess()[pri:0, instance:vTest.buildTest@1753acfe] output={null}]]]>
+                <![CDATA[[TestResult name=CreateAccount status=SUCCESS method=CustomerMngTest.CreateAccount()[pri:0, instance:vTest.CustomerMngTest@1aa99005] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- vTest.buildTest -->
+      </class> <!-- vTest.CustomerMngTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
