@@ -39,3 +39,38 @@ Hover
 	Actions builder = new Actions(driver);
 
 	builder.moveToElement(element).build().perform();
+
+Hanle table
+List<WebElement> tableRows = customerTable.findElements(By.tagName("tr"));
+		int rowCount = tableRows.size();
+		for (int row = 0; row < rowCount; row++) {
+			List<WebElement> columnsRow = customerTable.findElements(By.tagName("td"));
+			String rowtext = tableRows.get(row).getText();
+//			System.out.println(rowtext);
+			String firstAccountName = rowtext.substring(0, rowtext.indexOf(" "));
+			System.out.println(firstAccountName);
+			 if(firstAccountName.trim() == "QPQHRc") {
+				 System.out.println(firstAccountName.trim() + " == Match with == " + accountName);
+				 break;
+			 }else {
+				 System.out.println(firstAccountName.trim() + " == No Match with == " + accountName);
+			 }
+			 
+//			 --------------------------------------------------
+			 
+			int columnsCount = columnsRow.size();
+////			System.out.println("Numb of cells in Row " + row + " are " + columnsCount);
+			for (int column = 0; column < columnsCount; column++) {
+				 String celtext = columnsRow.get(column).getText();
+//				 System.out.println(celtext);
+////	    	        System.out.println("Cell Value of row number " + row + " and column number " + column + " Is " + celtext);
+				 if(celtext=="QPQHRc") {
+					 System.out.println(celtext.trim() + " == Match with == " + accountName);
+					 break;
+				 }else {
+					 System.out.println(celtext.trim() + " == No Match with == " + accountName);
+				 }
+				 System.out.println("=======================================");
+			}
+			System.out.println("=======================================");
+		}
