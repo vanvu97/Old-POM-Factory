@@ -25,6 +25,7 @@ public class CustomerMngTest extends BaseTest {
 //		MngPgs.AddCustomer();
 //		MngPgs.PrintInfo();
 		MngPgs.setPassword();
+		MngPgs.deleteAccount();
 	}
 	@DataProvider(name = "loginData")
 	public Object[][] dataProvider() throws Exception {

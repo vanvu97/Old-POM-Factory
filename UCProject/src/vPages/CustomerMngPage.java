@@ -65,6 +65,8 @@ public class CustomerMngPage {
 	//Get table
 	@FindBy (css = ".table")
 	WebElement customerTable;
+	@FindBy (css = ".table > tbody:nth-child(2)")
+	WebElement customerTable2;
 	@FindBy (css = "tr.ng-scope:nth-child(n) > td")
 	WebElement checkCells;
 	//Error Noti
@@ -72,6 +74,13 @@ public class CustomerMngPage {
 	WebElement errorDupEmail;
 	@FindBy (css = ".has-error > div:nth-child(2) > p:nth-child(3)")
 	WebElement wrongFormatEmail;
+	//Delete accoutn
+	@FindBy (css = "tr.ng-scope:nth-child(1) > th:nth-child(1) > div:nth-child(1) > a:nth-child(1)")
+	WebElement hoverSettingBtn;
+	@FindBy (css = ".open > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)")
+	WebElement btnDeleteAccount;
+	@FindBy (css = ".swal2-confirm")
+	WebElement btnYesDelete;
 	
 	//Create account Name
 	String randomAccountName = RandomStringUtils.randomNumeric(5);
@@ -185,30 +194,59 @@ public class CustomerMngPage {
 		System.out.println("=======================================");
 	}
 	public void setPassword() throws FileNotFoundException, InterruptedException { 
-		
-		
-		
+
 		try {
 	        Thread.sleep(1500);
 	    } catch (InterruptedException e) {
 	        e.printStackTrace();
 	    }   
 		
-		List<WebElement> tableRows = customerTable.findElements(By.tagName("tr"));
+		List<WebElement> tableRows = customerTable2.findElements(By.tagName("tr"));
+		
 		int rowCount = tableRows.size();
+		
+		System.out.println(rowCount);
+		
 		for (int row = 0; row < rowCount; row++) {
-			List<WebElement> columnsRow = customerTable.findElements(By.tagName("td"));
-			String rowtext = tableRows.get(row).getText();
-//			System.out.println(rowtext);
-			String firstAccountName = rowtext.substring(0, rowtext.indexOf(" ")).trim();
 			
+			List<WebElement> columnsRow = customerTable2.findElements(By.tagName("td"));
+			
+			String getCells = tableRows.get(row).getText().trim();
+			
+			String firstAccountName = getCells.substring(0, getCells.indexOf(" "));
+
 			 if(firstAccountName == "AccountTest91690") {
+				 
 				 System.out.println(firstAccountName + " == PASSED ==");
+				 
 				 break;
+				 
 			 }else {
+				 
 				 System.out.println(firstAccountName + " == FAILED ==");
 			 }
 		}
+	}
+	public void deleteAccount() {
+		
+			Actions hoverSetting = new Actions(driver);
+			
+			hoverSetting.moveToElement(hoverSettingBtn).build().perform();
+			
+			hoverSettingBtn.click();
+			
+			btnDeleteAccount.click();
+			
+			btnYesDelete.click();
+			
+			try {
+				
+		        Thread.sleep(1500);
+		        
+		    } catch (InterruptedException e) {
+		        
+		    	e.printStackTrace();
+		    }  
 	}
 }
 
