@@ -16,14 +16,14 @@ public class CustomerMngTest extends BaseTest {
 	CustomerMngPage MngPgs;
 	
 	@Test(dataProvider="loginData")
-  public void CreateAccount(String userName, String password) throws InterruptedException, FileNotFoundException {
+  public void CreateAccount(String userName, String password,String sEmail) throws InterruptedException, FileNotFoundException {
 		loginUC = new UCLoginPage(driver);
 		MngPgs = new CustomerMngPage(driver);
 		
 		loginUC.LoginUC(userName, password);
 		MngPgs.reachToCustomerSection();
-//		MngPgs.AddCustomer();
-//		MngPgs.PrintInfo();
+		MngPgs.AddCustomer(sEmail);
+		MngPgs.PrintInfo();
 		MngPgs.setPassword();
 	}
 	@DataProvider(name = "loginData")

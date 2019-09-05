@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.eclipse.jetty.util.log.Log;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -12,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CustomerMngPage {
@@ -38,7 +40,7 @@ public class CustomerMngPage {
 	WebElement radioEnable;
 	@FindBy (css = "#collapse_fieldProfile > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")
 	WebElement inpCode;
-	@FindBy (css = "input.ng-invalid:nth-child(1)")
+	@FindBy (css = "input.ng-invalid-required")
 	WebElement inpFullName;
 	@FindBy (css = "div.form-group:nth-child(3) > div:nth-child(2) > input:nth-child(1)")
 	WebElement inpAddress;
@@ -58,12 +60,17 @@ public class CustomerMngPage {
 	//Get table
 	@FindBy (css = ".table")
 	WebElement customerTable;
+	//Error Noti
+	@FindBy (css = ".lobibox-notify")
+	WebElement errorDupEmail;
+	@FindBy (css = ".has-error > div:nth-child(2) > p:nth-child(3)")
+	WebElement wrongFormatEmail;
 	
 	//Create account Name
 	String randomAccountName = RandomStringUtils.randomNumeric(5);
 	String accountName = "AccountTest" + randomAccountName;
 	//Create a Random Email & Send String
-	String createRandomEmail = RandomStringUtils.randomAlphabetic(6);
+	String createRandomEmail = RandomStringUtils.randomAlphabetic(10);
 	String randomEmail = createRandomEmail + "@gmail.com";
 	//Create random Code & Send String
 	String createRandomCode = RandomStringUtils.randomNumeric(6);
@@ -112,12 +119,12 @@ public class CustomerMngPage {
 	    }   
 		clickOnCustomerMng.click();
 	}
-	public void AddCustomer() {
+	public void AddCustomer(String sEmail) {
 		addCustomer.click();
 		//Create account Name
 		inpAccountName.sendKeys(accountName);
 		//Create a Random Email & Send String
-		inpEmail.sendKeys(randomEmail);
+		inpEmail.sendKeys(sEmail);
 		//Choose account Type
 		accType.click();
 		types.click();
@@ -145,6 +152,17 @@ public class CustomerMngPage {
 		inpPhoneNo.sendKeys(PhoneNo);
 		//Save
 		btnSave.click();
+		try {
+	        Thread.sleep(1500);
+	    } catch (InterruptedException e) {
+	        e.printStackTrace();
+	    }   
+		//Assert
+		if(errorDupEmail.isDisplayed()) {
+			System.out.println("Email is exist. Please use another email");
+		}else if(wrongFormatEmail.isDisplayed()) {
+			System.out.println("Wrong email format.");
+		}
 	}
 	
 	public void PrintInfo() {
@@ -162,7 +180,7 @@ public class CustomerMngPage {
 	public void setPassword() throws FileNotFoundException, InterruptedException { 
 		
 		List<WebElement> tableRows = customerTable.findElements(By.tagName("tr"));
-		//Count numb rows in table
+		
 		int rowCount = tableRows.size();
 		for (int row = 0; row < rowCount; row++) {
 			List<WebElement> columnsRow = customerTable.findElements(By.tagName("td"));
@@ -171,16 +189,17 @@ public class CustomerMngPage {
 			for (int column = 0; column < columnsCount; column++) {
 				 String celtext = columnsRow.get(column).getText();
 //	    	        System.out.println("Cell Value of row number " + row + " and column number " + column + " Is " + celtext);
-				 if(celtext=="000") {
-					 System.out.println("+++++++++++");
+				 if(celtext==accountName) {
+					 System.out.println(celtext.trim() + " == Match with == " + accountName);
 				 }else {
-					 System.out.println("-----------");
+					 System.out.println(celtext.trim() + " == No Match with == " + accountName);
 				 }
-				 System.out.println(celtext);
+				 System.out.println("=======================================");
 			}
 			System.out.println("=======================================");
 		}
 
 		
 	}
+//	
 }
