@@ -1,11 +1,11 @@
 package vPages;
 
 import java.io.FileNotFoundException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.xpath.operations.Or;
-import org.eclipse.jetty.util.log.Log;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,7 +14,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CustomerMngPage {
@@ -55,13 +54,6 @@ public class CustomerMngPage {
 	WebElement inpPhoneNo;
 	@FindBy (css = "button.btn")
 	WebElement btnSave;
-	//Click Next button
-	@FindBy (css = ".pagination > li:nth-child(6) > a:nth-child(1)")
-	static WebElement btnNext;
-	@FindBy (css = ".pagination > li:nth-child(4) > a:nth-child(1)")
-	static WebElement btnNext2;
-	@FindBy (css = ".pagination > li:nth-child(5) > a")
-	static WebElement btnNext3;
 	//Get table
 	@FindBy (css = ".table")
 	WebElement customerTable;
@@ -75,16 +67,22 @@ public class CustomerMngPage {
 	@FindBy (css = ".has-error > div:nth-child(2) > p:nth-child(3)")
 	WebElement wrongFormatEmail;
 	//Delete accoutn
-	@FindBy (css = "tr.ng-scope:nth-child(1) > th:nth-child(1) > div:nth-child(1) > a:nth-child(1)")
-	WebElement hoverSettingBtn;
 	@FindBy (css = ".open > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)")
 	WebElement btnDeleteAccount;
 	@FindBy (css = ".swal2-confirm")
 	WebElement btnYesDelete;
+	@FindBy (css = "tr.ng-scope:nth-child(n) > th")
+	WebElement hintSetting;
+	
+	public static Date date = new Date();
+	
+	public static SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyyhhmmss");
+
+	public static String formattedDate = sdf.format(date);
 	
 	//Create account Name
 	String randomAccountName = RandomStringUtils.randomNumeric(5);
-	String accountName = "AccountTest" + randomAccountName;
+	String accountName = "Test" + formattedDate;
 	//Create a Random Email & Send String
 	String createRandomEmail = RandomStringUtils.randomAlphabetic(10);
 	String randomEmail = createRandomEmail + "@gmail.com";
@@ -108,8 +106,6 @@ public class CustomerMngPage {
 	//Create random Phone No.
 	String createPhoneNo = RandomStringUtils.randomNumeric(7);
 	String PhoneNo = "090" + createPhoneNo;
-
-
 
 	
 	WebDriver driver;
@@ -179,6 +175,7 @@ public class CustomerMngPage {
 		}else if(wrongFormatEmail.isDisplayed()) {
 			System.out.println("Wrong email format.");
 		}
+		
 	}
 	
 	public void PrintInfo() {
@@ -194,59 +191,100 @@ public class CustomerMngPage {
 		System.out.println("=======================================");
 	}
 	public void setPassword() throws FileNotFoundException, InterruptedException { 
-
+		
+		for (int i = 2; i <10 ; i++) {
+			
+			WebElement btnNextExperrr = driver.findElement(By.xpath("/html/body/div[2]/customer-list/div/div[3]/div/ul/li[" + (i+1) + "]/a"));
+		
+			if(btnNextExperrr.isEnabled()) {
+				
+				btnNextExperrr.click();
+				
+			}
+			
+		}	
+		
 		try {
+			
 	        Thread.sleep(1500);
+	        
 	    } catch (InterruptedException e) {
-	        e.printStackTrace();
-	    }   
+	        
+	    	e.printStackTrace();
+	    }  
 		
 		List<WebElement> tableRows = customerTable2.findElements(By.tagName("tr"));
 		
 		int rowCount = tableRows.size();
 		
-		System.out.println(rowCount);
+		System.out.println("There is : " + rowCount + " row(s)");
 		
 		for (int row = 0; row < rowCount; row++) {
 			
-			List<WebElement> columnsRow = customerTable2.findElements(By.tagName("td"));
-			
 			String getCells = tableRows.get(row).getText().trim();
 			
-			String firstAccountName = getCells.substring(0, getCells.indexOf(" "));
+			String firstAccountName = getCells.substring(0, getCells.indexOf(" "));  
 
-			 if(firstAccountName == "AccountTest91690") {
-				 
-				 System.out.println(firstAccountName + " == PASSED ==");
-				 
-				 break;
-				 
-			 }else {
-				 
-				 System.out.println(firstAccountName + " == FAILED ==");
-			 }
-		}
-	}
+				if(firstAccountName.contains(accountName)){
+					
+					System.out.println(firstAccountName + " == PASSED ==");	
+					 
+					WebElement hoverHintSetting = driver.findElement(By.xpath("//*[contains(text(), '" + accountName + "')]"));
+					
+					Actions builds = new Actions(driver);
+					
+					builds.moveToElement(hoverHintSetting).click(hoverHintSetting).build().perform();
+					
+					
+					 
+				 }else{
+					 
+					 System.out.println(firstAccountName + " == FAILED ==");
+					 
+					 }
+					 
+				 }
+				
+			}
+	
 	public void deleteAccount() {
 		
+		try {
+			
+	        Thread.sleep(1500);
+	        
+	    } catch (InterruptedException e) {
+	        
+	    	e.printStackTrace();
+	    }  
+		
+		List<WebElement> tableRows = customerTable2.findElements(By.tagName("th"));
+		
+		int rowCount = tableRows.size();
+		
+		for(int i = 0; i < rowCount; i++) {
+			
+			WebElement hoverSettingBtn = driver.findElement(By.cssSelector("tr.ng-scope:nth-child("+ (i+1) +") > th:nth-child(1) > div:nth-child(1) > a:nth-child(1) > img:nth-child(1)"));
+			
 			Actions hoverSetting = new Actions(driver);
+
+			hoverSetting.moveToElement(hoverSettingBtn).click().build().perform();
 			
-			hoverSetting.moveToElement(hoverSettingBtn).build().perform();
-			
-			hoverSettingBtn.click();
-			
-			btnDeleteAccount.click();
-			
-			btnYesDelete.click();
-			
-			try {
+			if(hoverSettingBtn.isDisplayed()) {
 				
-		        Thread.sleep(1500);
-		        
-		    } catch (InterruptedException e) {
-		        
-		    	e.printStackTrace();
-		    }  
+				btnDeleteAccount.click();
+				
+				btnYesDelete.click();
+				
+			}else {
+				
+				System.out.println("Nothing to delete!");
+	
+			}
+			
+		}
+
 	}
+	
 }
 

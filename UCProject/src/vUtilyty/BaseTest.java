@@ -34,20 +34,26 @@ public class BaseTest {
 //		WebDriver driver = new ChromeDriver(options);
 //		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
-		//driver.get(URL_login_DIWeb);
 	}
 	
 	@AfterMethod
-	public void tearDown(ITestResult testResult) throws IOException {	  		
-        if (testResult.getStatus() == ITestResult.FAILURE) { 
-        	String directory = Links.filePath;
-        	File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        	FileUtils.copyFile(screenshot, new File(directory));
+	public void tearDown(ITestResult testResult) throws IOException {	  
+		
+        
+		if (testResult.getStatus() == ITestResult.FAILURE) { 
+        
+			String directory = Links.PATH_TO_IMG;
         	
+			File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         	
+			FileUtils.copyFile(screenshot, new File(directory));
         	
-        	System.out.print("Screenshot is captured and stored in your " + directory);
-        }
-//        driver.quit();
-    }
+			System.out.print("Screenshot is captured and stored in your " + directory);
+        
+		}
+
+//		driver.quit();
+    
+	}
+
 }

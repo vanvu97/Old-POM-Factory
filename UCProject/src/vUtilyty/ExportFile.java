@@ -37,7 +37,7 @@ public static Object[][] getTableArray(String FilePath, String SheetName, int iT
 	   int startCol = 1;
 	   int ci=0,cj=0;
 	   int totalRows = 1;
-	   int totalCols = 3;
+	   int totalCols = 2;
 	   tabArray=new String[totalRows][totalCols];
 		   for (int j=startCol;j<=totalCols;j++, cj++)
 		   {
