@@ -62,18 +62,18 @@ public class CustomerMngPage {
 	@FindBy (css = ".table > tbody:nth-child(2)")
 	WebElement customerTable2;
 	
-	//Error Noti
+	//Error Notification
 	@FindBy (css = ".lobibox-notify")
 	WebElement errorDupEmail;
 	@FindBy (css = ".has-error > div:nth-child(2) > p:nth-child(3)")
 	WebElement wrongFormatEmail;
 	
-	//Delete accoutn
+	//Delete account
 	@FindBy (css = ".open > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)")
 	WebElement btnDeleteAccount;
 	@FindBy (css = ".swal2-confirm")
 	WebElement btnYesDelete;
-	@FindBy (css = ".dropdown-menu > li:nth-child(1) > a:nth-child(1)")
+	@FindBy (css = ".open > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1)")
 	WebElement btnSetPassword;
 	
 	//input New Password
@@ -266,6 +266,15 @@ public class CustomerMngPage {
 						
 					}
 					
+					try {
+						
+				        Thread.sleep(1500);
+				        
+				    } catch (InterruptedException e) {
+				        
+				    	e.printStackTrace();
+				    }  
+					
 					JavascriptExecutor js = (JavascriptExecutor)driver;
 					
 					js.executeScript("arguments[0].click();", btnSetPassword);
@@ -274,7 +283,7 @@ public class CustomerMngPage {
 					
 					confirmNewPassword.sendKeys(passWord);
 					
-//					btnSavePassword.click();
+					btnSavePassword.click();
 					
 				 }else{
 					 
