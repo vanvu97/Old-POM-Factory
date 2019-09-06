@@ -7,6 +7,11 @@ Element is not clickable at point (x, y). Other element would receive the click
 		Actions actions = new Actions(driver);
 	  	actions.moveToElement(searchTaskControlButton).click().build().perform();
 
+Element could not be scrolled into view
+						JavascriptExecutor js = (JavascriptExecutor)driver;
+						
+						js.executeScript("arguments[0].click();", element);
+
 Swith Frame
 		driver.switchTo().frame("frameUserSelection");
 		driver.findElement(By.id("fCbpUserSelection_ASPxPanel1_fPnlEmpIdentification_fTbxEmpUserId_I")).sendKeys(sUserID);

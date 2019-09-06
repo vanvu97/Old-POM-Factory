@@ -25,6 +25,7 @@ public class CustomerMngPage {
 	WebElement clickOnCustomerMng;
 	@FindBy (css = ".font-black")
 	WebElement addCustomer;
+	
 	//Create a Account
 	@FindBy (css = "#collapse_fieldAccount > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")
 	WebElement inpAccountName;
@@ -54,25 +55,34 @@ public class CustomerMngPage {
 	WebElement inpPhoneNo;
 	@FindBy (css = "button.btn")
 	WebElement btnSave;
+	
 	//Get table
 	@FindBy (css = ".table")
 	WebElement customerTable;
 	@FindBy (css = ".table > tbody:nth-child(2)")
 	WebElement customerTable2;
-	@FindBy (css = "tr.ng-scope:nth-child(n) > td")
-	WebElement checkCells;
+	
 	//Error Noti
 	@FindBy (css = ".lobibox-notify")
 	WebElement errorDupEmail;
 	@FindBy (css = ".has-error > div:nth-child(2) > p:nth-child(3)")
 	WebElement wrongFormatEmail;
+	
 	//Delete accoutn
 	@FindBy (css = ".open > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)")
 	WebElement btnDeleteAccount;
 	@FindBy (css = ".swal2-confirm")
 	WebElement btnYesDelete;
-	@FindBy (css = "tr.ng-scope:nth-child(n) > th")
-	WebElement hintSetting;
+	@FindBy (css = ".dropdown-menu > li:nth-child(1) > a:nth-child(1)")
+	WebElement btnSetPassword;
+	
+	//input New Password
+	@FindBy (css = "input.ng-valid-pattern")
+	WebElement newPassword;
+	@FindBy (css = "input.ng-isolate-scope")
+	WebElement confirmNewPassword;
+	@FindBy (css = "button.btn")
+	WebElement btnSavePassword;
 	
 	public static Date date = new Date();
 	
@@ -83,17 +93,27 @@ public class CustomerMngPage {
 	//Create account Name
 	String randomAccountName = RandomStringUtils.randomNumeric(5);
 	String accountName = "Test" + formattedDate;
+	
 	//Create a Random Email & Send String
 	String createRandomEmail = RandomStringUtils.randomAlphabetic(10);
 	String randomEmail = createRandomEmail + "@gmail.com";
+	
 	//Create random Code & Send String
 	String createRandomCode = RandomStringUtils.randomNumeric(6);
+	
 	//Create full-name & Send String
 	String createRandomName = RandomStringUtils.randomAlphabetic(6);
+	
 	//Create Address & Send String
 	String createAddressNumb = RandomStringUtils.randomNumeric(3);
 	String createAddressName = RandomStringUtils.randomAlphabetic(9);
 	String address = createAddressNumb + " - " + createAddressName;
+	
+	//Random Password
+	String numbPass = RandomStringUtils.randomNumeric(3);
+	String alphabestPass = RandomStringUtils.randomAlphabetic(9);
+	String passWord = alphabestPass + numbPass;
+	
 	//Company
 	String[] Company = { "Google", "Facebook", "DI-Central", "Yahoo", "Honda", 
 					"Yamaha"};
@@ -188,21 +208,22 @@ public class CustomerMngPage {
 		System.out.println("Country : " + Country[1]);
 		System.out.println("Country Code : " + CountryCode[1]);
 		System.out.println("PhoneNo : " + PhoneNo);
+		System.out.println("Password : " + passWord);
 		System.out.println("=======================================");
 	}
 	public void setPassword() throws FileNotFoundException, InterruptedException { 
 		
-		for (int i = 2; i <10 ; i++) {
-			
-			WebElement btnNextExperrr = driver.findElement(By.xpath("/html/body/div[2]/customer-list/div/div[3]/div/ul/li[" + (i+1) + "]/a"));
-		
-			if(btnNextExperrr.isEnabled()) {
-				
-				btnNextExperrr.click();
-				
-			}
-			
-		}	
+//		for (int i = 2; i <10 ; i++) {
+//			
+//			WebElement btnNextExperrr = driver.findElement(By.xpath("/html/body/div[2]/customer-list/div/div[3]/div/ul/li[" + (i+1) + "]/a"));
+//		
+//			if(btnNextExperrr.isEnabled()) {
+//				
+//				btnNextExperrr.click();
+//				
+//			}
+//			
+//		}	
 		
 		try {
 			
@@ -235,8 +256,26 @@ public class CustomerMngPage {
 					
 					builds.moveToElement(hoverHintSetting).click(hoverHintSetting).build().perform();
 					
+					for (int i = 1; i < rowCount ; i++) {
+						
+						WebElement btnHINT =  driver.findElement(By.cssSelector("tr.ng-scope:nth-child("+ (i+1) +") > th:nth-child(1) > div:nth-child(1) > a:nth-child(1) > img:nth-child(1)"));
+						
+						JavascriptExecutor js = (JavascriptExecutor)driver;
+						
+						js.executeScript("arguments[0].click();", btnHINT);
+						
+					}
 					
-					 
+					JavascriptExecutor js = (JavascriptExecutor)driver;
+					
+					js.executeScript("arguments[0].click();", btnSetPassword);
+					
+					newPassword.sendKeys(passWord);
+					
+					confirmNewPassword.sendKeys(passWord);
+					
+//					btnSavePassword.click();
+					
 				 }else{
 					 
 					 System.out.println(firstAccountName + " == FAILED ==");
@@ -262,7 +301,7 @@ public class CustomerMngPage {
 		
 		int rowCount = tableRows.size();
 		
-		for(int i = 0; i < rowCount; i++) {
+		for(int i = 1; i < rowCount; i++) {
 			
 			WebElement hoverSettingBtn = driver.findElement(By.cssSelector("tr.ng-scope:nth-child("+ (i+1) +") > th:nth-child(1) > div:nth-child(1) > a:nth-child(1) > img:nth-child(1)"));
 			

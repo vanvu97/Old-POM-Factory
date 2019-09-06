@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="53160" started-at="2019-09-06T09:51:31Z" finished-at="2019-09-06T09:52:24Z">
+  <suite name="Default suite" duration-ms="23034" started-at="2019-09-06T10:58:52Z" finished-at="2019-09-06T10:59:16Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="53160" started-at="2019-09-06T09:51:31Z" finished-at="2019-09-06T09:52:24Z">
+    <test name="Default test" duration-ms="23034" started-at="2019-09-06T10:58:52Z" finished-at="2019-09-06T10:59:16Z">
       <class name="vTest.CustomerMngTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@4992613f]" name="setUp" is-config="true" duration-ms="5108" started-at="2019-09-06T16:51:32Z" finished-at="2019-09-06T16:51:37Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@4992613f]" name="setUp" is-config="true" duration-ms="4779" started-at="2019-09-06T17:58:54Z" finished-at="2019-09-06T17:58:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="CreateAccount(java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@4992613f]" name="CreateAccount" duration-ms="46346" started-at="2019-09-06T16:51:37Z" data-provider="loginData" finished-at="2019-09-06T16:52:24Z">
+        <test-method status="PASS" signature="CreateAccount(java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@4992613f]" name="CreateAccount" duration-ms="17041" started-at="2019-09-06T17:58:58Z" data-provider="loginData" finished-at="2019-09-06T17:59:16Z">
           <params>
             <param index="0">
               <value>
@@ -24,77 +24,14 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Unable to locate element: /html/body/div[2]/customer-list/div/div[3]/div/ul/li[6]/a
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 70.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190902120346, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 17724, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 1aa52976-3b75-4550-872b-063ec5ae823d
-*** Element info: {Using=xpath, value=/html/body/div[2]/customer-list/div/div[3]/div/ul/li[6]/a}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: /html/body/div[2]/customer-list/div/div[3]/div/ul/li[6]/a
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 70.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190902120346, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 17724, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 1aa52976-3b75-4550-872b-063ec5ae823d
-*** Element info: {Using=xpath, value=/html/body/div[2]/customer-list/div/div[3]/div/ul/li[6]/a}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at vPages.CustomerMngPage.setPassword(CustomerMngPage.java:197)
-	at vTest.CustomerMngTest.CreateAccount(CustomerMngTest.java:27)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateAccount -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@4992613f]" name="tearDown" is-config="true" duration-ms="84" started-at="2019-09-06T16:52:24Z" finished-at="2019-09-06T16:52:24Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@4992613f]" name="tearDown" is-config="true" duration-ms="2" started-at="2019-09-06T17:59:16Z" finished-at="2019-09-06T17:59:16Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CreateAccount status=FAILURE method=CustomerMngTest.CreateAccount(java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@4992613f] output={null}]]]>
+                <![CDATA[[TestResult name=CreateAccount status=SUCCESS method=CustomerMngTest.CreateAccount(java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@4992613f] output={null}]]]>
               </value>
             </param>
           </params>
