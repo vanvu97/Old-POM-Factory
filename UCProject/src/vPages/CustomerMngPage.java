@@ -133,24 +133,38 @@ public class CustomerMngPage {
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	public CustomerMngPage(WebDriver driver) {
+		
 		this.driver = driver;
+		
 		wait = new WebDriverWait(driver, 20);
+		
 		PageFactory.initElements(driver, this);
 	}
 	
 	public void reachToCustomerSection() throws InterruptedException {
+		
 		String titleUA = driver.getTitle();
+		
 		Assert.assertEquals("Universal Center | DiCentral", titleUA);
+		
 		//Hover on MonitorButton
 		Actions hover = new Actions(driver);
+		
 		hover.moveToElement(btnMonitor).build().perform();
+		
 		try {
-	        Thread.sleep(5000);
-	    } catch (InterruptedException e) {
-	        e.printStackTrace();
+	    
+			Thread.sleep(5000);
+	    
+		} catch (InterruptedException e) {
+	    
+			e.printStackTrace();
 	    }   
+		
 		clickOnCustomerMng.click();
+	
 	}
+	
 	public void AddCustomer() {
 		addCustomer.click();
 		//Create account Name
@@ -211,34 +225,46 @@ public class CustomerMngPage {
 		System.out.println("Password : " + passWord);
 		System.out.println("=======================================");
 	}
-	public void setPassword() throws FileNotFoundException, InterruptedException { 
+	
+	
+	
+public void setPassword() throws FileNotFoundException, InterruptedException {
 		
-//		for (int i = 2; i <10 ; i++) {
-//			
-//			WebElement btnNextExperrr = driver.findElement(By.xpath("/html/body/div[2]/customer-list/div/div[3]/div/ul/li[" + (i+1) + "]/a"));
-//		
-//			if(btnNextExperrr.isEnabled()) {
+//		boolean hasNextPage=true;
+//
+//	    while(hasNextPage){
+//	    	
+//	        WebElement enabled_next_page_btn = driver.findElement(By.cssSelector("[ng-click='nextPage()']"));
+//	        
+//	        List<WebElement> disabled_next_page_btn=driver.findElements(By.cssSelector(".disabled > a"));
+//
+//	        if(enabled_next_page_btn.isEnabled()){
+//	        	
+//	        	JavascriptExecutor js2 = (JavascriptExecutor)driver;
 //				
-//				btnNextExperrr.click();
-//				
-//			}
-//			
-//		}	
+//				js2.executeScript("arguments[0].click();", enabled_next_page_btn);
+//
+//	            hasNextPage=true;
+//	            
+//	        }else if(disabled_next_page_btn.size()>0){
+//	        	
+//	            System.out.println("No more Pages Available");
+//	            
+//	            break;
+//	            
+//	        }
+//	        
+//	    }
+	
+		WebElement enabled_next_page_btn = driver.findElement(By.cssSelector("[ng-click='nextPage()']"));
 		
-		try {
-			
-	        Thread.sleep(1500);
-	        
-	    } catch (InterruptedException e) {
-	        
-	    	e.printStackTrace();
-	    }  
-		
-		List<WebElement> tableRows = customerTable2.findElements(By.tagName("tr"));
+		JavascriptExecutor js2 = (JavascriptExecutor)driver;
+	
+		js2.executeScript("arguments[0].click();", enabled_next_page_btn);
+	    
+	    List<WebElement> tableRows = customerTable2.findElements(By.tagName("tr"));
 		
 		int rowCount = tableRows.size();
-		
-		System.out.println("There is : " + rowCount + " row(s)");
 		
 		for (int row = 0; row < rowCount; row++) {
 			
@@ -247,7 +273,7 @@ public class CustomerMngPage {
 			String firstAccountName = getCells.substring(0, getCells.indexOf(" "));  
 
 				if(firstAccountName.contains(accountName)){
-					
+				
 					System.out.println(firstAccountName + " == PASSED ==");	
 					 
 					WebElement hoverHintSetting = driver.findElement(By.xpath("//*[contains(text(), '" + accountName + "')]"));
@@ -266,15 +292,6 @@ public class CustomerMngPage {
 						
 					}
 					
-					try {
-						
-				        Thread.sleep(1500);
-				        
-				    } catch (InterruptedException e) {
-				        
-				    	e.printStackTrace();
-				    }  
-					
 					JavascriptExecutor js = (JavascriptExecutor)driver;
 					
 					js.executeScript("arguments[0].click();", btnSetPassword);
@@ -285,6 +302,8 @@ public class CustomerMngPage {
 					
 					btnSavePassword.click();
 					
+					System.out.println("Set password successfuly");
+					
 				 }else{
 					 
 					 System.out.println(firstAccountName + " == FAILED ==");
@@ -292,19 +311,11 @@ public class CustomerMngPage {
 					 }
 					 
 				 }
-				
+	
 			}
 	
+
 	public void deleteAccount() {
-		
-		try {
-			
-	        Thread.sleep(1500);
-	        
-	    } catch (InterruptedException e) {
-	        
-	    	e.printStackTrace();
-	    }  
 		
 		List<WebElement> tableRows = customerTable2.findElements(By.tagName("th"));
 		
@@ -331,6 +342,7 @@ public class CustomerMngPage {
 			}
 			
 		}
+		
 
 	}
 	
