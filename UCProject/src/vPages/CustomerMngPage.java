@@ -224,6 +224,8 @@ public class CustomerMngPage {
 		System.out.println("PhoneNo : " + PhoneNo);
 		System.out.println("Password : " + passWord);
 		System.out.println("=======================================");
+		
+		
 	}
 	
 	
@@ -256,6 +258,78 @@ public void setPassword() throws FileNotFoundException, InterruptedException {
 //	        
 //	    }
 	
+		WebElement enabled_next_page_btn = driver.findElement(By.cssSelector("[ng-click='nextPage()']"));
+		
+		JavascriptExecutor js2 = (JavascriptExecutor)driver;
+	
+		js2.executeScript("arguments[0].click();", enabled_next_page_btn);
+		
+		try {
+			
+	        Thread.sleep(1500);
+	        
+	    } catch (InterruptedException e) {
+	    	
+	        e.printStackTrace();
+	        
+	    }   
+	    
+	    List<WebElement> tableRows = customerTable2.findElements(By.tagName("tr"));
+		
+		int rowCount = tableRows.size();
+		
+		for (int row = 0; row < rowCount; row++) {
+			
+			String getCells = tableRows.get(row).getText().trim();
+			
+			String firstAccountName = getCells.substring(0, getCells.indexOf(" "));  
+
+				if(firstAccountName.contains(accountName)){
+				
+					System.out.println(firstAccountName + " == PASSED ==");	
+					 
+					WebElement hoverHintSetting = driver.findElement(By.xpath("//*[contains(text(), '" + accountName + "')]"));
+					
+					Actions builds = new Actions(driver);
+					
+					builds.moveToElement(hoverHintSetting).click(hoverHintSetting).build().perform();
+					
+					for (int i = 1; i < rowCount ; i++) {
+						
+						WebElement btnHINT =  driver.findElement(By.cssSelector("tr.ng-scope:nth-child("+ (i+1) +") > th:nth-child(1) > div:nth-child(1) > a:nth-child(1) > img:nth-child(1)"));
+						
+						JavascriptExecutor js = (JavascriptExecutor)driver;
+						
+						js.executeScript("arguments[0].click();", btnHINT);
+						
+					}
+					
+					JavascriptExecutor js = (JavascriptExecutor)driver;
+					
+					js.executeScript("arguments[0].click();", btnSetPassword);
+					
+					newPassword.sendKeys(passWord);
+					
+					confirmNewPassword.sendKeys(passWord);
+					
+					btnSavePassword.click();
+					
+					System.out.println("Password : " + passWord);
+					
+					System.out.println("Set password successfuly");
+					
+				 }else{
+					 
+					 System.out.println(firstAccountName + " == FAILED ==");
+					 
+					 }
+					 
+				 }
+	
+			}
+
+	public void editAccount (String editAccount) {
+		
 		WebElement enabled_next_page_btn = driver.findElement(By.cssSelector("[ng-click='nextPage()']"));
 		
 		JavascriptExecutor js2 = (JavascriptExecutor)driver;
@@ -311,8 +385,8 @@ public void setPassword() throws FileNotFoundException, InterruptedException {
 					 }
 					 
 				 }
-	
-			}
+		
+	}
 	
 
 	public void deleteAccount() {

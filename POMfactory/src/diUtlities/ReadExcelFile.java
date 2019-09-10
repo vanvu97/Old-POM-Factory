@@ -1,80 +1,50 @@
 package diUtlities;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadExcelFile {
 
-	private static XSSFWorkbook ExcelWBook;
 	private static XSSFSheet ExcelWSheet;
-
-	public static void setExcelFile(String path, String sheetName) throws Exception {
+	private static XSSFWorkbook ExcelWBook;
+	private static XSSFCell Cell;
+		
+	public static XSSFSheet setExcelFile(String Path, String SheetName) throws Exception {
 		try {
-			// Open the Excel file
-			FileInputStream ExcelFile = new FileInputStream(path);
-
-			// Access the excel data sheet
+			FileInputStream ExcelFile = new FileInputStream(Path);
 			ExcelWBook = new XSSFWorkbook(ExcelFile);
-			ExcelWSheet = ExcelWBook.getSheet(sheetName);
+			ExcelWSheet = ExcelWBook.getSheet(SheetName);
 		} catch (Exception e) {
 			throw (e);
 		}
+		return ExcelWSheet;
 	}
-
-	public static String[][] getTestData(String tableName) {
-		String[][] testData = null; 
-
+	public static String getCellData(int RowNum, int ColNum, XSSFSheet excelWSheet) throws Exception {
 		try {
-			// Handle numbers and strings
-			DataFormatter formatter = new DataFormatter();
-			XSSFCell[] boundaryCells = findCells(tableName);
-			XSSFCell startCell = boundaryCells[0];
-
-			XSSFCell endCell = boundaryCells[1];
-
-			int startRow = startCell.getRowIndex() + 1;
-			int endRow = endCell.getRowIndex() - 1;
-			int startCol = startCell.getColumnIndex() + 1;
-			int endCol = endCell.getColumnIndex() - 1;
-
-			testData = new String[endRow - startRow + 1][endCol - startCol + 1];
-
-			for (int i = startRow; i < endRow + 1; i++) {
-				for (int j = startCol; j < endCol + 1; j++) {
-					Cell cell = ExcelWSheet.getRow(i).getCell(j);
-					testData[i - startRow][j - startCol] = formatter.formatCellValue(cell);
-				}
-			}
+			Cell = excelWSheet.getRow(RowNum).getCell(ColNum);
+			String CellData = Cell.getStringCellValue();
+			return CellData;
 		} catch (Exception e) {
-			e.printStackTrace();
+			return "";
 		}
-		return testData;
 	}
-
-	public static XSSFCell[] findCells(String tableName) {
-		DataFormatter formatter = new DataFormatter();
-		String pos = "begin";
-		XSSFCell[] cells = new XSSFCell[2];
-
-		for (Row row : ExcelWSheet) {
-			for (Cell cell : row) {
-				if (tableName.equals(formatter.formatCellValue(cell))) {
-					if (pos.equalsIgnoreCase("begin")) {
-						cells[0] = (XSSFCell) cell;
-						pos = "end";
-					} else {
-						cells[1] = (XSSFCell) cell;
-					}
-				}
-			}
-		}
-		return cells;
+	public static void writeDataToExcel(int rowcount, int columncount, String filepath, String Sheetname, String value) {
+		try {
+			FileInputStream input = new FileInputStream(filepath);
+			XSSFWorkbook wb = new XSSFWorkbook(input);
+			XSSFSheet sh = wb.getSheet(Sheetname);
+			XSSFRow row = sh.getRow(rowcount);
+			FileOutputStream webdata = new FileOutputStream(filepath);
+			row.createCell(columncount).setCellValue(value);
+			wb.write(webdata);
+		} catch (Exception e) {			
+		}	    
 	}
+	
 
 }

@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import vPages.UCLoginPage;
 import vUtilyty.BaseTest;
-import vUtilyty.ExportFile;
+import vUtilyty.ReadFile;
 
 public class UCLoginTest extends BaseTest{
 	UCLoginPage loginUC;
@@ -19,7 +19,7 @@ public class UCLoginTest extends BaseTest{
 	public Object[][] dataProvider() throws Exception {
 		String filePath = System.getProperty("user.dir")+"\\src\\data\\";
 		
-	     Object[][] testObjArray = ExportFile.getTableArray(filePath + "ExportExcel.xlsx","LoginData", 0);
+	     Object[][] testObjArray = ReadFile.getTableArray(filePath + "ExportExcel.xlsx","LoginData", 0);
 
 	     return (testObjArray);
 	}

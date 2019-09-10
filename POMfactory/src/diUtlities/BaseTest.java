@@ -44,7 +44,7 @@ public class BaseTest {
 	@AfterMethod
 	public void tearDown(ITestResult testResult) throws IOException {	  		
         if (testResult.getStatus() == ITestResult.FAILURE) { 
-        	String directory = Links.PATHTO_IMG;
+        	String directory = Links.PATH_TO_IMG;
         	File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         	FileUtils.copyFile(screenshot, new File(directory));
         	

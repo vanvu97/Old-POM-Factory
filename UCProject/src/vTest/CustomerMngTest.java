@@ -8,7 +8,8 @@ import org.testng.annotations.Test;
 import vPages.CustomerMngPage;
 import vPages.UCLoginPage;
 import vUtilyty.BaseTest;
-import vUtilyty.ExportFile;
+import vUtilyty.ReadFile;
+import vUtilyty.WriteFile;
 
 public class CustomerMngTest extends BaseTest {
   
@@ -17,6 +18,7 @@ public class CustomerMngTest extends BaseTest {
 	
 	@Test(dataProvider="loginData"/*, invocationCount = 3*/)
   public void CreateAccount(String userName, String password) throws InterruptedException, FileNotFoundException {
+		
 		loginUC = new UCLoginPage(driver);
 		MngPgs = new CustomerMngPage(driver);
 		
@@ -24,16 +26,21 @@ public class CustomerMngTest extends BaseTest {
 		MngPgs.reachToCustomerSection();
 		MngPgs.AddCustomer();
 		MngPgs.PrintInfo();
-		MngPgs.setPassword();
+		MngPgs.setPassword(); 
+//		MngPgs.editAccount(password);
 //		MngPgs.deleteAccount();
 	}
 	@DataProvider(name = "loginData")
 	public Object[][] dataProvider() throws Exception {
+		
 		String filePath = System.getProperty("user.dir")+"\\src\\data\\";
 		
-	     Object[][] testObjArray = ExportFile.getTableArray(filePath + "ExportExcel.xlsx","LoginData", 0);
+	     Object[][] testObjArray = ReadFile.getTableArray(filePath + "ExportExcel.xlsx","LoginData", 1);
 
 	     return (testObjArray);
+		
+		
+		
 	}
 }
 

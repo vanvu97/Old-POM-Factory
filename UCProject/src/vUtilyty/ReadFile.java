@@ -9,7 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ExportFile {
+public class ReadFile {
 	private static XSSFSheet ExcelWSheet;
 	private static XSSFWorkbook ExcelWBook;
 	private static XSSFCell Cell;
@@ -26,8 +26,7 @@ public static void setExcelFile(String Path,String SheetName) throws Exception {
 				throw (e);
 			}
 	}
-public static Object[][] getTableArray(String FilePath, String SheetName, int iTestCaseRow)    throws Exception
-{   
+public static Object[][] getTableArray(String FilePath, String SheetName, int iTestCaseRow)    throws Exception{   
    String[][] tabArray = null;
    try{
 	   FileInputStream ExcelFile = new FileInputStream(FilePath);
@@ -36,7 +35,7 @@ public static Object[][] getTableArray(String FilePath, String SheetName, int iT
 	   ExcelWSheet = ExcelWBook.getSheet(SheetName);
 	   int startCol = 1;
 	   int ci=0,cj=0;
-	   int totalRows = 1;
+	   int totalRows = 2; 
 	   int totalCols = 2;
 	   tabArray=new String[totalRows][totalCols];
 		   for (int j=startCol;j<=totalCols;j++, cj++)
@@ -82,9 +81,9 @@ public static String getTestCaseName(String sTestCase)throws Exception{
 public static int getRowContains(String sTestCaseName, int colNum) throws Exception{
 	int i;
 	try {
-		int rowCount = ExportFile.getRowUsed();
+		int rowCount = ReadFile.getRowUsed();
 		for ( i=0 ; i<rowCount; i++){
-			if  (ExportFile.getCellData(i,colNum).equalsIgnoreCase(sTestCaseName)){
+			if  (ReadFile.getCellData(i,colNum).equalsIgnoreCase(sTestCaseName)){
 				break;
 			}
 		}

@@ -1,10 +1,17 @@
 package vUtilyty;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -50,6 +57,104 @@ public class BaseTest {
         	
 			System.out.print("Screenshot is captured and stored in your " + directory);
         
+		}
+		
+		if (testResult.getStatus() == ITestResult.FAILURE) { 
+			
+//			String directory = Links.PATH_TO_EXCEL;
+//			 
+//			 FileInputStream fis = new FileInputStream(directory);
+//			 
+//			 Workbook workbook = new XSSFWorkbook(fis);
+//			 
+//			 Sheet sheet = workbook.getSheetAt(0);
+//			 
+//			 Row row = sheet.getRow(0);
+//			 
+//			 Cell cell = row.createCell(13);
+//			 
+//			 cell.setCellValue("FAILED");
+//			 
+//			 FileOutputStream fos = new FileOutputStream(directory);
+//			 
+//			 workbook.write(fos);
+//			 
+//			 fos.close();
+			
+			String directory = Links.PATH_TO_EXCEL;
+			 
+			 FileInputStream fis = new FileInputStream(directory);
+			 
+			 Workbook workbook = new XSSFWorkbook(fis);
+			 
+			 Sheet sheet = workbook.getSheetAt(0);
+			 
+			 int lastRow = sheet.getLastRowNum();
+			 
+			 for(int i=1; i<=lastRow; i++){
+			 
+			 Row row = sheet.getRow(i);
+			 
+			 Cell cell = row.createCell(13);
+			 
+			 cell.setCellValue("FAILED");
+			 
+			 }
+			 
+			 FileOutputStream fos = new FileOutputStream(directory);
+			 
+			 workbook.write(fos);
+			 
+			 fos.close();
+			
+		}else {
+			
+//			String directory = Links.PATH_TO_EXCEL;
+//			 
+//			 FileInputStream fis = new FileInputStream(directory);
+//			 
+//			 Workbook workbook = new XSSFWorkbook(fis);
+//			 
+//			 Sheet sheet = workbook.getSheetAt(0);
+//			 
+//			 Row row = sheet.getRow(0);
+//			 
+//			 Cell cell = row.createCell(7);
+//			 
+//			 cell.setCellValue("PASSED");
+//			 
+//			 FileOutputStream fos = new FileOutputStream(directory);
+//			 
+//			 workbook.write(fos);
+//			 
+//			 fos.close();
+			
+			String directory = Links.PATH_TO_EXCEL;
+			 
+			 FileInputStream fis = new FileInputStream(directory);
+			 
+			 Workbook workbook = new XSSFWorkbook(fis);
+			 
+			 Sheet sheet = workbook.getSheetAt(0);
+			 
+			 int lastRow = sheet.getLastRowNum();
+			 
+			 for(int i=1; i<=lastRow; i++){
+			 
+			 Row row = sheet.getRow(i);
+			 
+			 Cell cell = row.createCell(13);
+			 
+			 cell.setCellValue("PASSED");
+			 
+			 }
+			 
+			 FileOutputStream fos = new FileOutputStream(directory);
+			 
+			 workbook.write(fos);
+			 
+			 fos.close();
+			
 		}
 
 //		driver.quit();
