@@ -49,7 +49,7 @@ public class CustomerMngPage {
 	WebElement impCompany;
 	@FindBy (css = "div.form-group:nth-child(5) > div:nth-child(2) > input:nth-child(1)")
 	WebElement inpCountry;
-	@FindBy (css = "div.form-group:nth-child(6) > div:nth-child(2) > input:nth-child(1)")
+	@FindBy (css = ".ng-touched")
 	WebElement inpCountryCode;
 	@FindBy (css = "div.form-group:nth-child(7) > div:nth-child(2) > input:nth-child(1)")
 	WebElement inpPhoneNo;
@@ -89,43 +89,11 @@ public class CustomerMngPage {
 	public static SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyyhhmmss");
 
 	public static String formattedDate = sdf.format(date);
-	
-	//Create account Name
-	String randomAccountName = RandomStringUtils.randomNumeric(5);
-	String accountName = "Test" + formattedDate;
-	
-	//Create a Random Email & Send String
-	String createRandomEmail = RandomStringUtils.randomAlphabetic(10);
-	String randomEmail = createRandomEmail + "@gmail.com";
-	
-	//Create random Code & Send String
-	String createRandomCode = RandomStringUtils.randomNumeric(6);
-	
-	//Create full-name & Send String
-	String createRandomName = RandomStringUtils.randomAlphabetic(6);
-	
-	//Create Address & Send String
-	String createAddressNumb = RandomStringUtils.randomNumeric(3);
-	String createAddressName = RandomStringUtils.randomAlphabetic(9);
-	String address = createAddressNumb + " - " + createAddressName;
-	
+
 	//Random Password
 	String numbPass = RandomStringUtils.randomNumeric(3);
 	String alphabestPass = RandomStringUtils.randomAlphabetic(9);
 	String passWord = alphabestPass + numbPass;
-	
-	//Company
-	String[] Company = { "Google", "Facebook", "DI-Central", "Yahoo", "Honda", 
-					"Yamaha"};
-	//Create Country & Send String
-	String[] Country = { "VietNam", "United States", "Japan", "Hong Kong", "India", 
-			"Yamaha"};
-	//Create Country Code
-	String[] CountryCode = { "84", "1", "81", "852", "	91", 
-			"Yamaha"};
-	//Create random Phone No.
-	String createPhoneNo = RandomStringUtils.randomNumeric(7);
-	String PhoneNo = "090" + createPhoneNo;
 
 	
 	WebDriver driver;
@@ -165,12 +133,13 @@ public class CustomerMngPage {
 	
 	}
 	
-	public void AddCustomer() {
+	public void AddCustomer(String sAccountName, String sEmail, String sCode, String sFullName, String sAddress, String Company, String sCountry
+			, String CountryCode, String PhoneNo) {
 		addCustomer.click();
 		//Create account Name
-		inpAccountName.sendKeys(accountName);
+		inpAccountName.sendKeys(sAccountName);
 		//Create a Random Email & Send String
-		inpEmail.sendKeys(randomEmail);
+		inpEmail.sendKeys(sEmail);
 		//Choose account Type
 		accType.click();
 		types.click();
@@ -183,17 +152,17 @@ public class CustomerMngPage {
 //			radioEnable.click();
 //		}
 		//Create random Code & Send String
-		inpCode.sendKeys(createRandomCode);
+		inpCode.sendKeys(sCode);
 		//Create full-name & Send String
-		inpFullName.sendKeys(createRandomName);
+		inpFullName.sendKeys(sFullName);
 		//Create Address & Send String
-		inpAddress.sendKeys(address);
+		inpAddress.sendKeys(sAddress);
 		//Company
-		impCompany.sendKeys(Company[2]);
+		impCompany.sendKeys(Company);
 		//Create Country & Send String
-		inpCountry.sendKeys(Country[1]);
+		inpCountry.sendKeys(sCountry);
 		//Create Country Code
-		inpCountryCode.sendKeys(CountryCode[1]);
+		inpCountryCode.sendKeys(CountryCode);
 		//Create random Phone No.
 		inpPhoneNo.sendKeys(PhoneNo);
 		//Save
@@ -212,15 +181,17 @@ public class CustomerMngPage {
 		
 	}
 	
-	public void PrintInfo() {
+	public void PrintInfo(String sAccountName, String sEmail, String sCode, String sFullName, String sAddress, String Company, String sCountry
+			, String CountryCode, String PhoneNo) {
 		//Summary Information
-		System.out.println("Account Name : " + accountName);
-		System.out.println("Email : " + randomEmail);
-		System.out.println("Code : " + createRandomCode);
-		System.out.println("Name : " + createRandomName);
-		System.out.println("Address : " + address);
-		System.out.println("Country : " + Country[1]);
-		System.out.println("Country Code : " + CountryCode[1]);
+		System.out.println("Account Name : " + sAccountName);
+		System.out.println("Email : " + sEmail);
+		System.out.println("Code : " + sCode);
+		System.out.println("Name : " + sFullName);
+		System.out.println("Address : " + sAddress);
+		System.out.println("Country : " + sCountry);
+		System.out.println("Company : " + Company);
+		System.out.println("Country Code : " + CountryCode);
 		System.out.println("PhoneNo : " + PhoneNo);
 		System.out.println("Password : " + passWord);
 		System.out.println("=======================================");
@@ -230,7 +201,7 @@ public class CustomerMngPage {
 	
 	
 	
-public void setPassword() throws FileNotFoundException, InterruptedException {
+public void setPassword(String sAccountName) throws FileNotFoundException, InterruptedException {
 		
 //		boolean hasNextPage=true;
 //
@@ -284,11 +255,11 @@ public void setPassword() throws FileNotFoundException, InterruptedException {
 			
 			String firstAccountName = getCells.substring(0, getCells.indexOf(" "));  
 
-				if(firstAccountName.contains(accountName)){
+				if(firstAccountName.contains(sAccountName)){
 				
 					System.out.println(firstAccountName + " == PASSED ==");	
 					 
-					WebElement hoverHintSetting = driver.findElement(By.xpath("//*[contains(text(), '" + accountName + "')]"));
+					WebElement hoverHintSetting = driver.findElement(By.xpath("//*[contains(text(), '" + sAccountName + "')]"));
 					
 					Actions builds = new Actions(driver);
 					
@@ -297,6 +268,17 @@ public void setPassword() throws FileNotFoundException, InterruptedException {
 					for (int i = 1; i < rowCount ; i++) {
 						
 						WebElement btnHINT =  driver.findElement(By.cssSelector("tr.ng-scope:nth-child("+ (i+1) +") > th:nth-child(1) > div:nth-child(1) > a:nth-child(1) > img:nth-child(1)"));
+						
+						try {
+							
+					        
+							Thread.sleep(1500);
+					    } 
+						
+						catch (InterruptedException e) {
+					    
+							e.printStackTrace();
+					    }   
 						
 						JavascriptExecutor js = (JavascriptExecutor)driver;
 						
@@ -328,7 +310,7 @@ public void setPassword() throws FileNotFoundException, InterruptedException {
 	
 			}
 
-	public void editAccount (String editAccount) {
+	public void editAccount (String editAccount, String sAccountName) {
 		
 		WebElement enabled_next_page_btn = driver.findElement(By.cssSelector("[ng-click='nextPage()']"));
 		
@@ -346,11 +328,11 @@ public void setPassword() throws FileNotFoundException, InterruptedException {
 			
 			String firstAccountName = getCells.substring(0, getCells.indexOf(" "));  
 
-				if(firstAccountName.contains(accountName)){
+				if(firstAccountName.contains(sAccountName)){
 				
 					System.out.println(firstAccountName + " == PASSED ==");	
 					 
-					WebElement hoverHintSetting = driver.findElement(By.xpath("//*[contains(text(), '" + accountName + "')]"));
+					WebElement hoverHintSetting = driver.findElement(By.xpath("//*[contains(text(), '" + sAccountName + "')]"));
 					
 					Actions builds = new Actions(driver);
 					

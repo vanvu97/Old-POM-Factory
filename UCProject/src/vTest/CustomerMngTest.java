@@ -9,7 +9,6 @@ import vPages.CustomerMngPage;
 import vPages.UCLoginPage;
 import vUtilyty.BaseTest;
 import vUtilyty.ReadFile;
-import vUtilyty.WriteFile;
 
 public class CustomerMngTest extends BaseTest {
   
@@ -17,17 +16,18 @@ public class CustomerMngTest extends BaseTest {
 	CustomerMngPage MngPgs;
 	
 	@Test(dataProvider="loginData"/*, invocationCount = 3*/)
-  public void CreateAccount(String userName, String password) throws InterruptedException, FileNotFoundException {
+  public void CreateAccount(String userName, String password, String sAccountName, String sEmail, String sCode, String sFullName
+		  , String sAddress, String Company, String sCountry, String CountryCode, String PhoneNo) throws InterruptedException, FileNotFoundException {
 		
 		loginUC = new UCLoginPage(driver);
 		MngPgs = new CustomerMngPage(driver);
 		
 		loginUC.LoginUC(userName, password);
 		MngPgs.reachToCustomerSection();
-		MngPgs.AddCustomer();
-		MngPgs.PrintInfo();
-		MngPgs.setPassword(); 
-//		MngPgs.editAccount(password);
+		MngPgs.AddCustomer(sAccountName, sEmail, sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
+		MngPgs.PrintInfo(sAccountName, sEmail, sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
+		MngPgs.setPassword(sAccountName); 
+//		MngPgs.editAccount(password, sAccountName);
 //		MngPgs.deleteAccount();
 	}
 	@DataProvider(name = "loginData")

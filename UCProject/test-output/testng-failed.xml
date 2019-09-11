@@ -5,7 +5,7 @@
     <classes>
       <class name="vTest.CustomerMngTest">
         <methods>
-          <include name="CreateAccount" invocation-numbers="1"/>
+          <include name="CreateAccount" invocation-numbers="0 1 5 6"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>

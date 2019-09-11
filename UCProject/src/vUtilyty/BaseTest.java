@@ -61,15 +61,15 @@ public class BaseTest {
 		
 		if (testResult.getStatus() == ITestResult.FAILURE) { 
 			
-//			String directory = Links.PATH_TO_EXCEL;
-//			 
+			String directory = Links.PATH_TO_EXCEL;
+			 
 //			 FileInputStream fis = new FileInputStream(directory);
 //			 
 //			 Workbook workbook = new XSSFWorkbook(fis);
 //			 
 //			 Sheet sheet = workbook.getSheetAt(0);
 //			 
-//			 Row row = sheet.getRow(0);
+//			 Row row = sheet.getRow(1);
 //			 
 //			 Cell cell = row.createCell(13);
 //			 
@@ -81,7 +81,6 @@ public class BaseTest {
 //			 
 //			 fos.close();
 			
-			String directory = Links.PATH_TO_EXCEL;
 			 
 			 FileInputStream fis = new FileInputStream(directory);
 			 
@@ -109,17 +108,17 @@ public class BaseTest {
 			
 		}else {
 			
-//			String directory = Links.PATH_TO_EXCEL;
-//			 
+			String directory = Links.PATH_TO_EXCEL;
+			 
 //			 FileInputStream fis = new FileInputStream(directory);
 //			 
 //			 Workbook workbook = new XSSFWorkbook(fis);
 //			 
 //			 Sheet sheet = workbook.getSheetAt(0);
 //			 
-//			 Row row = sheet.getRow(0);
+//			 Row row = sheet.getRow(1);
 //			 
-//			 Cell cell = row.createCell(7);
+//			 Cell cell = row.createCell(13);
 //			 
 //			 cell.setCellValue("PASSED");
 //			 
@@ -129,7 +128,6 @@ public class BaseTest {
 //			 
 //			 fos.close();
 			
-			String directory = Links.PATH_TO_EXCEL;
 			 
 			 FileInputStream fis = new FileInputStream(directory);
 			 

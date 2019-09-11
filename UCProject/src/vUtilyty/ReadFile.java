@@ -13,13 +13,10 @@ public class ReadFile {
 	private static XSSFSheet ExcelWSheet;
 	private static XSSFWorkbook ExcelWBook;
 	private static XSSFCell Cell;
-	private static XSSFRow Row;
-//This method is to set the File path and to open the Excel file, Pass Excel Path and Sheetname as Arguments to this method
+	
 public static void setExcelFile(String Path,String SheetName) throws Exception {
 	   try {
-			// Open the Excel file
 			FileInputStream ExcelFile = new FileInputStream(Path);
-			// Access the required test data sheet
 			ExcelWBook = new XSSFWorkbook(ExcelFile);
 			ExcelWSheet = ExcelWBook.getSheet(SheetName);
 			} catch (Exception e){
@@ -33,16 +30,17 @@ public static Object[][] getTableArray(String FilePath, String SheetName, int iT
 	   // Access the required test data sheet
 	   ExcelWBook = new XSSFWorkbook(ExcelFile);
 	   ExcelWSheet = ExcelWBook.getSheet(SheetName);
-	   int startCol = 1;
-	   int ci=0,cj=0;
-	   int totalRows = 2; 
-	   int totalCols = 2;
+	   int startRow = 1;
+       int startCol = 1;
+       int totalRows = ExcelWSheet.getLastRowNum();
+       int totalCols = 11;
 	   tabArray=new String[totalRows][totalCols];
-		   for (int j=startCol;j<=totalCols;j++, cj++)
-		   {
-			   tabArray[ci][cj]=getCellData(iTestCaseRow,j);
-			   System.out.println(tabArray[ci][cj]);
-		   }
+	   for (int i=startRow; i<=totalRows;i++) {                  
+           for (int j=startCol; j<=totalCols;j++){
+               tabArray[i-1][j-1]=getCellData(i,j);
+               System.out.println(tabArray[i-1][j-1]);  
+           }
+       }
 	}
 	catch (FileNotFoundException e)
 	{
@@ -76,7 +74,7 @@ public static String getTestCaseName(String sTestCase)throws Exception{
 		return value;
 			}catch (Exception e){
 		throw (e);
-				}
+			}
 	}
 public static int getRowContains(String sTestCaseName, int colNum) throws Exception{
 	int i;
