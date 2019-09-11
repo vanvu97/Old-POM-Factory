@@ -62,11 +62,15 @@ public class CustomerMngPage {
 	@FindBy (css = ".table > tbody:nth-child(2)")
 	WebElement customerTable2;
 	
-	//Error Notification
+	//Notification
 	@FindBy (css = ".lobibox-notify")
 	WebElement errorDupEmail;
 	@FindBy (css = ".has-error > div:nth-child(2) > p:nth-child(3)")
 	WebElement wrongFormatEmail;
+	@FindBy (css = ".lobibox-notify-wrapper")
+	WebElement codeIsExist;
+	@FindBy (css = ".lobibox-notify")
+	WebElement createSuccessNoti;
 	
 	//Delete account
 	@FindBy (css = ".open > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)")
@@ -83,6 +87,20 @@ public class CustomerMngPage {
 	WebElement confirmNewPassword;
 	@FindBy (css = "button.btn")
 	WebElement btnSavePassword;
+	
+	//login Account Test
+	@FindBy (css = "#topmenu > div > ul > li.navbar-acc.parent > a")
+	WebElement profileIcon;
+	@FindBy (css = "#topmenu > div > ul > li.navbar-acc.parent > ul > li.menu-level-1.last > a")
+	WebElement btnSignOut;
+	
+	//Login Page
+	@FindBy (id = "Username")
+	WebElement vUsername;
+	@FindBy (id = "Password")
+	WebElement vPassword;
+	@FindBy (css = ".buttonGreen")
+	WebElement btnLogin;
 	
 	public static Date date = new Date();
 	
@@ -169,46 +187,43 @@ public class CustomerMngPage {
 		try {
 			
 	        
-			Thread.sleep(1500);
+			Thread.sleep(1000);
 	
 		} catch (InterruptedException e) {
 	    
 			e.printStackTrace();
 	    }   
 		
-		if(errorDupEmail.isDisplayed()) {
+		if(createSuccessNoti.getText().contains("The new account has created")) {
+		
+			System.out.println("Create account Successful");
+			System.out.println("Createe Account : " + sAccountName);
+			
+		}else if(errorDupEmail.getText().contains("Email has existed in system")) {
 		
 			System.out.println("Email is exist. Please use another email");
+			
+			inpEmail.clear();
+			
+			inpEmail.sendKeys(sEmail + "vv" + "@gmail.com");
 	
-		}else if(wrongFormatEmail.isDisplayed()) {
+		}else if(wrongFormatEmail.getText().contains("Wrong format")) {
 			
 			System.out.println("Wrong email format.");
 		
+		}else if (codeIsExist.getText().contains("Code has existed in system")) {
+			
+			System.out.println("Code has existed in system.");
+			
+			inpCode.clear();
+			
+			inpCode.sendKeys(sCode + "99");
+			
 		}
 		
 	}
 	
-//	public void PrintInfo(String sAccountName, String sEmail, String sCode, String sFullName, String sAddress, String Company, String sCountry
-//			, String CountryCode, String PhoneNo) {
-//		//Summary Information
-//		System.out.println("Account Name : " + sAccountName);
-//		System.out.println("Email : " + sEmail);
-//		System.out.println("Code : " + sCode);
-//		System.out.println("Name : " + sFullName);
-//		System.out.println("Address : " + sAddress);
-//		System.out.println("Country : " + sCountry);
-//		System.out.println("Company : " + Company);
-//		System.out.println("Country Code : " + CountryCode);
-//		System.out.println("PhoneNo : " + PhoneNo);
-//		System.out.println("Password : " + passWord);
-//		System.out.println("=======================================");
-//		
-//		
-//	}
-	
-	
-	
-public void setPassword(String sAccountName) throws FileNotFoundException, InterruptedException {
+public void setPassword(String sAccountName, String sPassword) throws FileNotFoundException, InterruptedException {
 	
 		WebElement enabled_next_page_btn = driver.findElement(By.cssSelector("[ng-click='nextPage()']"));
 		
@@ -246,14 +261,14 @@ public void setPassword(String sAccountName) throws FileNotFoundException, Inter
 					
 					builds.moveToElement(hoverHintSetting).click(hoverHintSetting).build().perform();
 					
-					for (int i = 1; i < rowCount ; i++) {
+					for (int i = 0; i < rowCount ; i++) {
 						
 						WebElement btnHINT =  driver.findElement(By.cssSelector("tr.ng-scope:nth-child("+ (i+1) +") > th:nth-child(1) > div:nth-child(1) > a:nth-child(1) > img:nth-child(1)"));
 						
 						try {
 							
 					        
-							Thread.sleep(1500);
+							Thread.sleep(1000);
 					    } 
 						
 						catch (InterruptedException e) {
@@ -271,13 +286,13 @@ public void setPassword(String sAccountName) throws FileNotFoundException, Inter
 					
 					js.executeScript("arguments[0].click();", btnSetPassword);
 					
-					newPassword.sendKeys(passWord);
+					newPassword.sendKeys(sPassword);
 					
-					confirmNewPassword.sendKeys(passWord);
+					confirmNewPassword.sendKeys(sPassword);
 					
 					btnSavePassword.click();
 					
-					System.out.println("Password : " + passWord);
+					System.out.println("Password : " + sPassword);
 					
 					System.out.println("Set password successfuly");
 					
@@ -291,7 +306,7 @@ public void setPassword(String sAccountName) throws FileNotFoundException, Inter
 	
 			}
 
-	public void editAccount (String editAccount) {
+	public void editAccount (String editAccount, String sAccountname) {
 		
 		WebElement enabled_next_page_btn = driver.findElement(By.cssSelector("[ng-click='nextPage()']"));
 		
@@ -309,11 +324,11 @@ public void setPassword(String sAccountName) throws FileNotFoundException, Inter
 			
 			String firstAccountName = getCells.substring(0, getCells.indexOf(" "));  
 
-				if(firstAccountName.contains(accountName)){
+				if(firstAccountName.contains(sAccountname)){
 				
 					System.out.println(firstAccountName + " == PASSED ==");	
 					 
-					WebElement hoverHintSetting = driver.findElement(By.xpath("//*[contains(text(), '" + accountName + "')]"));
+					WebElement hoverHintSetting = driver.findElement(By.xpath("//*[contains(text(), '" + sAccountname + "')]"));
 					
 					Actions builds = new Actions(driver);
 					
@@ -349,8 +364,31 @@ public void setPassword(String sAccountName) throws FileNotFoundException, Inter
 					 
 				 }
 		
+		}
+	public void loginAccoutTest(String sAccountName, String sPassword) {
+		
+		profileIcon.click();
+		
+		btnSignOut.click();
+		
+		try {
+			
+	        
+			Thread.sleep(1000);
+	    } 
+		
+		catch (InterruptedException e) {
+	    
+			e.printStackTrace();
+	    }   
+		
+		vUsername.sendKeys(sAccountName);
+		
+		vPassword.sendKeys(sPassword);
+		
+		btnLogin.click();
+		
 	}
-	
 
 	public void deleteAccount() {
 		

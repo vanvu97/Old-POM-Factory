@@ -20,15 +20,23 @@ public class CustomerMngTest extends BaseTest {
 		  , String sAddress, String Company, String sCountry, String CountryCode, String PhoneNo) throws InterruptedException, FileNotFoundException {
 		
 		loginUC = new UCLoginPage(driver);
+		
 		MngPgs = new CustomerMngPage(driver);
 		
+		
 		loginUC.LoginUC(userName, password);
+		
 		MngPgs.reachToCustomerSection();
-//		MngPgs.AddCustomer(sAccountName, sEmail, sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
-//		MngPgs.PrintInfo(sAccountName, sEmail, sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
-//		MngPgs.setPassword(sAccountName); 
-//		MngPgs.editAccount(password, sAccountName);
-		MngPgs.deleteAccount();
+		
+		MngPgs.AddCustomer(sAccountName, sEmail, sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
+	
+//		MngPgs.setPassword(sAccountName, sPassword); 
+		
+//		MngPgs.editAccount(password, sAccountName); 
+		
+//		MngPgs.loginAccoutTest(sAccountName, sPassword);
+		
+//		MngPgs.deleteAccount();
 	}
 	@DataProvider(name = "loginData")
 	public Object[][] dataProvider() throws Exception {

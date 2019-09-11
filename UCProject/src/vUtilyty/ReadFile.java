@@ -33,7 +33,7 @@ public static Object[][] getTableArray(String FilePath, String SheetName, int iT
 	   int startRow = 1;
        int startCol = 1;
        int totalRows = ExcelWSheet.getLastRowNum();
-       int totalCols = 11;
+       int totalCols = 11; 
 	   tabArray=new String[totalRows][totalCols];
 	   for (int i=startRow; i<=totalRows;i++) {                  
            for (int j=startCol; j<=totalCols;j++){
