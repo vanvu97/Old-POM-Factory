@@ -49,7 +49,7 @@ public class CustomerMngPage {
 	WebElement impCompany;
 	@FindBy (css = "div.form-group:nth-child(5) > div:nth-child(2) > input:nth-child(1)")
 	WebElement inpCountry;
-	@FindBy (css = ".ng-touched")
+	@FindBy (css = "div.form-group:nth-child(6) > div:nth-child(2) > input:nth-child(1)")
 	WebElement inpCountryCode;
 	@FindBy (css = "div.form-group:nth-child(7) > div:nth-child(2) > input:nth-child(1)")
 	WebElement inpPhoneNo;
@@ -89,7 +89,11 @@ public class CustomerMngPage {
 	public static SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyyhhmmss");
 
 	public static String formattedDate = sdf.format(date);
-
+	
+	//Create account Name
+	String randomAccountName = RandomStringUtils.randomNumeric(5);
+	String accountName = "Test" + formattedDate;
+	
 	//Random Password
 	String numbPass = RandomStringUtils.randomNumeric(3);
 	String alphabestPass = RandomStringUtils.randomAlphabetic(9);
@@ -135,99 +139,76 @@ public class CustomerMngPage {
 	
 	public void AddCustomer(String sAccountName, String sEmail, String sCode, String sFullName, String sAddress, String Company, String sCountry
 			, String CountryCode, String PhoneNo) {
+		
 		addCustomer.click();
-		//Create account Name
+		
 		inpAccountName.sendKeys(sAccountName);
-		//Create a Random Email & Send String
-		inpEmail.sendKeys(sEmail);
-		//Choose account Type
+		
+		inpEmail.sendKeys(sEmail + "@gmail.com");
+		
 		accType.click();
+		
 		types.click();
-//		if(radioSynch.isSelected()) {
-//			System.out.println("Synchronize is Selected");
-//		}else if(radioEnable.isSelected()) {
-//			System.out.println("Enable is Selected");
-//		}else if(!radioEnable.isSelected()) {
-//			System.out.println("Enable is Checking");
-//			radioEnable.click();
-//		}
-		//Create random Code & Send String
+		
 		inpCode.sendKeys(sCode);
-		//Create full-name & Send String
+		
 		inpFullName.sendKeys(sFullName);
-		//Create Address & Send String
+		
 		inpAddress.sendKeys(sAddress);
-		//Company
+		
 		impCompany.sendKeys(Company);
-		//Create Country & Send String
+		
 		inpCountry.sendKeys(sCountry);
-		//Create Country Code
+		
 		inpCountryCode.sendKeys(CountryCode);
-		//Create random Phone No.
+		
 		inpPhoneNo.sendKeys(PhoneNo);
-		//Save
+		
 		btnSave.click();
+		
 		try {
-	        Thread.sleep(1500);
-	    } catch (InterruptedException e) {
-	        e.printStackTrace();
+			
+	        
+			Thread.sleep(1500);
+	
+		} catch (InterruptedException e) {
+	    
+			e.printStackTrace();
 	    }   
-		//Assert
+		
 		if(errorDupEmail.isDisplayed()) {
+		
 			System.out.println("Email is exist. Please use another email");
+	
 		}else if(wrongFormatEmail.isDisplayed()) {
+			
 			System.out.println("Wrong email format.");
+		
 		}
 		
 	}
 	
-	public void PrintInfo(String sAccountName, String sEmail, String sCode, String sFullName, String sAddress, String Company, String sCountry
-			, String CountryCode, String PhoneNo) {
-		//Summary Information
-		System.out.println("Account Name : " + sAccountName);
-		System.out.println("Email : " + sEmail);
-		System.out.println("Code : " + sCode);
-		System.out.println("Name : " + sFullName);
-		System.out.println("Address : " + sAddress);
-		System.out.println("Country : " + sCountry);
-		System.out.println("Company : " + Company);
-		System.out.println("Country Code : " + CountryCode);
-		System.out.println("PhoneNo : " + PhoneNo);
-		System.out.println("Password : " + passWord);
-		System.out.println("=======================================");
-		
-		
-	}
+//	public void PrintInfo(String sAccountName, String sEmail, String sCode, String sFullName, String sAddress, String Company, String sCountry
+//			, String CountryCode, String PhoneNo) {
+//		//Summary Information
+//		System.out.println("Account Name : " + sAccountName);
+//		System.out.println("Email : " + sEmail);
+//		System.out.println("Code : " + sCode);
+//		System.out.println("Name : " + sFullName);
+//		System.out.println("Address : " + sAddress);
+//		System.out.println("Country : " + sCountry);
+//		System.out.println("Company : " + Company);
+//		System.out.println("Country Code : " + CountryCode);
+//		System.out.println("PhoneNo : " + PhoneNo);
+//		System.out.println("Password : " + passWord);
+//		System.out.println("=======================================");
+//		
+//		
+//	}
 	
 	
 	
 public void setPassword(String sAccountName) throws FileNotFoundException, InterruptedException {
-		
-//		boolean hasNextPage=true;
-//
-//	    while(hasNextPage){
-//	    	
-//	        WebElement enabled_next_page_btn = driver.findElement(By.cssSelector("[ng-click='nextPage()']"));
-//	        
-//	        List<WebElement> disabled_next_page_btn=driver.findElements(By.cssSelector(".disabled > a"));
-//
-//	        if(enabled_next_page_btn.isEnabled()){
-//	        	
-//	        	JavascriptExecutor js2 = (JavascriptExecutor)driver;
-//				
-//				js2.executeScript("arguments[0].click();", enabled_next_page_btn);
-//
-//	            hasNextPage=true;
-//	            
-//	        }else if(disabled_next_page_btn.size()>0){
-//	        	
-//	            System.out.println("No more Pages Available");
-//	            
-//	            break;
-//	            
-//	        }
-//	        
-//	    }
 	
 		WebElement enabled_next_page_btn = driver.findElement(By.cssSelector("[ng-click='nextPage()']"));
 		
@@ -310,7 +291,7 @@ public void setPassword(String sAccountName) throws FileNotFoundException, Inter
 	
 			}
 
-	public void editAccount (String editAccount, String sAccountName) {
+	public void editAccount (String editAccount) {
 		
 		WebElement enabled_next_page_btn = driver.findElement(By.cssSelector("[ng-click='nextPage()']"));
 		
@@ -328,11 +309,11 @@ public void setPassword(String sAccountName) throws FileNotFoundException, Inter
 			
 			String firstAccountName = getCells.substring(0, getCells.indexOf(" "));  
 
-				if(firstAccountName.contains(sAccountName)){
+				if(firstAccountName.contains(accountName)){
 				
 					System.out.println(firstAccountName + " == PASSED ==");	
 					 
-					WebElement hoverHintSetting = driver.findElement(By.xpath("//*[contains(text(), '" + sAccountName + "')]"));
+					WebElement hoverHintSetting = driver.findElement(By.xpath("//*[contains(text(), '" + accountName + "')]"));
 					
 					Actions builds = new Actions(driver);
 					
@@ -398,7 +379,6 @@ public void setPassword(String sAccountName) throws FileNotFoundException, Inter
 			}
 			
 		}
-		
 
 	}
 	

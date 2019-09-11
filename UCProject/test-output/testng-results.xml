@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="4" total="7" passed="3">
+<testng-results skipped="6" failed="1" total="7" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="144583" started-at="2019-09-11T02:13:40Z" finished-at="2019-09-11T02:16:05Z">
+  <suite name="Default suite" duration-ms="36432" started-at="2019-09-11T03:03:02Z" finished-at="2019-09-11T03:03:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="144583" started-at="2019-09-11T02:13:40Z" finished-at="2019-09-11T02:16:05Z">
+    <test name="Default test" duration-ms="36432" started-at="2019-09-11T03:03:02Z" finished-at="2019-09-11T03:03:38Z">
       <class name="vTest.CustomerMngTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="setUp" is-config="true" duration-ms="4679" started-at="2019-09-11T09:13:42Z" finished-at="2019-09-11T09:13:46Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="setUp" is-config="true" duration-ms="5348" started-at="2019-09-11T10:03:03Z" finished-at="2019-09-11T10:03:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="CreateAccount" duration-ms="25743" started-at="2019-09-11T09:13:46Z" data-provider="loginData" finished-at="2019-09-11T09:14:12Z">
+        <test-method status="FAIL" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="CreateAccount" duration-ms="26289" started-at="2019-09-11T10:03:08Z" data-provider="loginData" finished-at="2019-09-11T10:03:35Z">
           <params>
             <param index="0">
               <value>
@@ -25,22 +25,22 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[TestExport1]]>
+                <![CDATA[TestExport001]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[TestExport1@gmail.com]]>
+                <![CDATA[TestExport001]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Test1]]>
+                <![CDATA[0111]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Export1]]>
+                <![CDATA[Export001]]>
               </value>
             </param>
             <param index="6">
@@ -60,35 +60,33 @@
             </param>
             <param index="9">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0032]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[]]>
+                <![CDATA[090505050505]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.InvalidSelectorException">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[Given css selector expression "tr" is invalid: TypeError: can't access dead object
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+              <![CDATA[Failed to convert data to an object
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 70.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190905174512, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 8968, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: b5ec3a59-62c9-4484-a843-a9c6d4062cbd
-*** Element info: {Using=tag name, value=tr}]]>
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 70.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190905174512, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 14748, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c02ce643-d971-4ebc-b7ad-bbee5026cd3d
+*** Element info: {Using=css selector, value=tr.ng-scope:nth-child(5) > th:nth-child(1) > div:nth-child(1) > a:nth-child(1) > img:nth-child(1)}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.InvalidSelectorException: Given css selector expression "tr" is invalid: TypeError: can't access dead object
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+              <![CDATA[org.openqa.selenium.WebDriverException: Failed to convert data to an object
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 70.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190905174512, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 8968, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: b5ec3a59-62c9-4484-a843-a9c6d4062cbd
-*** Element info: {Using=tag name, value=tr}
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 70.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190905174512, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 14748, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c02ce643-d971-4ebc-b7ad-bbee5026cd3d
+*** Element info: {Using=css selector, value=tr.ng-scope:nth-child(5) > th:nth-child(1) > div:nth-child(1) > a:nth-child(1) > img:nth-child(1)}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -99,19 +97,12 @@ Session ID: b5ec3a59-62c9-4484-a843-a9c6d4062cbd
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:204)
-	at org.openqa.selenium.remote.RemoteWebElement.findElementsByTagName(RemoteWebElement.java:281)
-	at org.openqa.selenium.By$ByTagName.findElements(By.java:312)
-	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:177)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy10.findElements(Unknown Source)
-	at vPages.CustomerMngPage.setPassword(CustomerMngPage.java:277)
-	at vTest.CustomerMngTest.CreateAccount(CustomerMngTest.java:29)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at vPages.CustomerMngPage.deleteAccount(CustomerMngPage.java:389)
+	at vTest.CustomerMngTest.CreateAccount(CustomerMngTest.java:31)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -138,26 +129,84 @@ Session ID: b5ec3a59-62c9-4484-a843-a9c6d4062cbd
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateAccount -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="tearDown" is-config="true" duration-ms="418" started-at="2019-09-11T09:14:12Z" finished-at="2019-09-11T09:14:12Z">
+        <test-method status="FAIL" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-09-11T10:03:35Z" finished-at="2019-09-11T10:03:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CreateAccount status=FAILURE method=CustomerMngTest.CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@363f0ba0] output={null}]]]>
+                <![CDATA[[TestResult name=CreateAccount status=FAILURE method=CustomerMngTest.CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3] output={null}]]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Failed to decode response from marionette
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 70.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190905174512, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 14748, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c02ce643-d971-4ebc-b7ad-bbee5026cd3d]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 70.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190905174512, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 14748, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c02ce643-d971-4ebc-b7ad-bbee5026cd3d
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+	at vUtilyty.BaseTest.tearDown(BaseTest.java:54)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:786)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="setUp" is-config="true" duration-ms="4261" started-at="2019-09-11T09:14:12Z" finished-at="2019-09-11T09:14:17Z">
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="setUp" is-config="true" duration-ms="0" started-at="2019-09-11T10:03:38Z" finished-at="2019-09-11T10:03:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="CreateAccount" duration-ms="11158" started-at="2019-09-11T09:14:17Z" data-provider="loginData" finished-at="2019-09-11T09:14:28Z">
+        <test-method status="SKIP" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="CreateAccount" duration-ms="1" started-at="2019-09-11T10:03:38Z" data-provider="loginData" finished-at="2019-09-11T10:03:38Z">
           <params>
             <param index="0">
               <value>
@@ -171,22 +220,22 @@ Session ID: b5ec3a59-62c9-4484-a843-a9c6d4062cbd
             </param>
             <param index="2">
               <value>
-                <![CDATA[TestExport2]]>
+                <![CDATA[TestExport002]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[TestExport2@gmail.com]]>
+                <![CDATA[TestExport002]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Test2]]>
+                <![CDATA[0112]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Export2]]>
+                <![CDATA[Export002]]>
               </value>
             </param>
             <param index="6">
@@ -206,97 +255,27 @@ Session ID: b5ec3a59-62c9-4484-a843-a9c6d4062cbd
             </param>
             <param index="9">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0033]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[]]>
+                <![CDATA[090505050505]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.ElementNotInteractableException">
-            <message>
-              <![CDATA[Element <li class="menu-level-1 first"> could not be scrolled into view
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 70.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190905174512, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 8620, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 0952475e-c91d-4961-acd1-bc01dc0c0a1e]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementNotInteractableException: Element <li class="menu-level-1 first"> could not be scrolled into view
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'DICVUVAN', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 70.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190905174512, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 8620, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 0952475e-c91d-4961-acd1-bc01dc0c0a1e
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy10.click(Unknown Source)
-	at vPages.CustomerMngPage.reachToCustomerSection(CustomerMngPage.java:164)
-	at vTest.CustomerMngTest.CreateAccount(CustomerMngTest.java:26)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateAccount -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="tearDown" is-config="true" duration-ms="271" started-at="2019-09-11T09:14:28Z" finished-at="2019-09-11T09:14:28Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CreateAccount status=FAILURE method=CustomerMngTest.CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@363f0ba0] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-09-11T10:03:38Z" finished-at="2019-09-11T10:03:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="setUp" is-config="true" duration-ms="4763" started-at="2019-09-11T09:14:28Z" finished-at="2019-09-11T09:14:33Z">
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="setUp" is-config="true" duration-ms="0" started-at="2019-09-11T10:03:38Z" finished-at="2019-09-11T10:03:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="CreateAccount" duration-ms="33713" started-at="2019-09-11T09:14:33Z" data-provider="loginData" finished-at="2019-09-11T09:15:07Z">
+        <test-method status="SKIP" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="CreateAccount" duration-ms="0" started-at="2019-09-11T10:03:38Z" data-provider="loginData" finished-at="2019-09-11T10:03:38Z">
           <params>
             <param index="0">
               <value>
@@ -310,22 +289,22 @@ Session ID: 0952475e-c91d-4961-acd1-bc01dc0c0a1e
             </param>
             <param index="2">
               <value>
-                <![CDATA[TestExport3]]>
+                <![CDATA[TestExport003]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[TestExport3@gmail.com]]>
+                <![CDATA[TestExport003]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Test3]]>
+                <![CDATA[0113]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Export3]]>
+                <![CDATA[Export003]]>
               </value>
             </param>
             <param index="6">
@@ -345,34 +324,27 @@ Session ID: 0952475e-c91d-4961-acd1-bc01dc0c0a1e
             </param>
             <param index="9">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0034]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[]]>
+                <![CDATA[090505050505]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateAccount -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="tearDown" is-config="true" duration-ms="170" started-at="2019-09-11T09:15:07Z" finished-at="2019-09-11T09:15:07Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CreateAccount status=SUCCESS method=CustomerMngTest.CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@363f0ba0] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-09-11T10:03:38Z" finished-at="2019-09-11T10:03:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="setUp" is-config="true" duration-ms="3749" started-at="2019-09-11T09:15:07Z" finished-at="2019-09-11T09:15:11Z">
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="setUp" is-config="true" duration-ms="0" started-at="2019-09-11T10:03:38Z" finished-at="2019-09-11T10:03:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="CreateAccount" duration-ms="16666" started-at="2019-09-11T09:15:11Z" data-provider="loginData" finished-at="2019-09-11T09:15:27Z">
+        <test-method status="SKIP" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="CreateAccount" duration-ms="1" started-at="2019-09-11T10:03:38Z" data-provider="loginData" finished-at="2019-09-11T10:03:38Z">
           <params>
             <param index="0">
               <value>
@@ -386,22 +358,22 @@ Session ID: 0952475e-c91d-4961-acd1-bc01dc0c0a1e
             </param>
             <param index="2">
               <value>
-                <![CDATA[TestExport4]]>
+                <![CDATA[TestExport004]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[TestExport4@gmail.com]]>
+                <![CDATA[TestExport004]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Test4]]>
+                <![CDATA[0114]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Export4]]>
+                <![CDATA[Export004]]>
               </value>
             </param>
             <param index="6">
@@ -421,34 +393,27 @@ Session ID: 0952475e-c91d-4961-acd1-bc01dc0c0a1e
             </param>
             <param index="9">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0035]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[]]>
+                <![CDATA[090505050505]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateAccount -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="tearDown" is-config="true" duration-ms="87" started-at="2019-09-11T09:15:27Z" finished-at="2019-09-11T09:15:27Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CreateAccount status=SUCCESS method=CustomerMngTest.CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@363f0ba0] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-09-11T10:03:38Z" finished-at="2019-09-11T10:03:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="setUp" is-config="true" duration-ms="4231" started-at="2019-09-11T09:15:27Z" finished-at="2019-09-11T09:15:32Z">
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="setUp" is-config="true" duration-ms="0" started-at="2019-09-11T10:03:38Z" finished-at="2019-09-11T10:03:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="CreateAccount" duration-ms="19232" started-at="2019-09-11T09:15:32Z" data-provider="loginData" finished-at="2019-09-11T09:15:51Z">
+        <test-method status="SKIP" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="CreateAccount" duration-ms="0" started-at="2019-09-11T10:03:38Z" data-provider="loginData" finished-at="2019-09-11T10:03:38Z">
           <params>
             <param index="0">
               <value>
@@ -462,22 +427,22 @@ Session ID: 0952475e-c91d-4961-acd1-bc01dc0c0a1e
             </param>
             <param index="2">
               <value>
-                <![CDATA[TestExport5]]>
+                <![CDATA[TestExport005]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[TestExport5@gmail.com]]>
+                <![CDATA[TestExport005]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Test5]]>
+                <![CDATA[0115]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Export5]]>
+                <![CDATA[Export005]]>
               </value>
             </param>
             <param index="6">
@@ -497,252 +462,157 @@ Session ID: 0952475e-c91d-4961-acd1-bc01dc0c0a1e
             </param>
             <param index="9">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0036]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[]]>
+                <![CDATA[090505050505]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateAccount -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="tearDown" is-config="true" duration-ms="67" started-at="2019-09-11T09:15:51Z" finished-at="2019-09-11T09:15:51Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CreateAccount status=SUCCESS method=CustomerMngTest.CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@363f0ba0] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-09-11T10:03:38Z" finished-at="2019-09-11T10:03:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="setUp" is-config="true" duration-ms="4735" started-at="2019-09-11T09:15:51Z" finished-at="2019-09-11T09:15:56Z">
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="setUp" is-config="true" duration-ms="0" started-at="2019-09-11T10:03:38Z" finished-at="2019-09-11T10:03:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="CreateAccount" duration-ms="1705" started-at="2019-09-11T09:15:56Z" data-provider="loginData" finished-at="2019-09-11T09:15:57Z">
+        <test-method status="SKIP" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="CreateAccount" duration-ms="1" started-at="2019-09-11T10:03:38Z" data-provider="loginData" finished-at="2019-09-11T10:03:38Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[]]>
+                <![CDATA[admin]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[]]>
+                <![CDATA[123456]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[]]>
+                <![CDATA[TestExport006]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[]]>
+                <![CDATA[TestExport006]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0116]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[]]>
+                <![CDATA[Export006]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[]]>
+                <![CDATA[D.Na6]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[]]>
+                <![CDATA[Dicentral6]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[]]>
+                <![CDATA[VN6]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0037]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[]]>
+                <![CDATA[090505050505]]>
               </value>
             </param>
           </params>
-          <exception class="org.junit.ComparisonFailure">
-            <message>
-              <![CDATA[expected:<[Universal Center | DiCentral]> but was:<[Login]>]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.junit.ComparisonFailure: expected:<[Universal Center | DiCentral]> but was:<[Login]>
-	at org.junit.Assert.assertEquals(Assert.java:115)
-	at org.junit.Assert.assertEquals(Assert.java:144)
-	at vPages.CustomerMngPage.reachToCustomerSection(CustomerMngPage.java:148)
-	at vTest.CustomerMngTest.CreateAccount(CustomerMngTest.java:26)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.junit.ComparisonFailure -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateAccount -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="tearDown" is-config="true" duration-ms="141" started-at="2019-09-11T09:15:57Z" finished-at="2019-09-11T09:15:57Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CreateAccount status=FAILURE method=CustomerMngTest.CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@363f0ba0] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-09-11T10:03:38Z" finished-at="2019-09-11T10:03:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="setUp" is-config="true" duration-ms="5841" started-at="2019-09-11T09:15:57Z" finished-at="2019-09-11T09:16:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="CreateAccount" duration-ms="1391" started-at="2019-09-11T09:16:03Z" data-provider="loginData" finished-at="2019-09-11T09:16:05Z">
+        <test-method status="SKIP" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="CreateAccount" duration-ms="1" started-at="2019-09-11T10:03:38Z" data-provider="loginData" finished-at="2019-09-11T10:03:38Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[]]>
+                <![CDATA[admin]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[]]>
+                <![CDATA[123456]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[]]>
+                <![CDATA[TestExport007]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[]]>
+                <![CDATA[TestExport007]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0117]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[]]>
+                <![CDATA[Export007]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[]]>
+                <![CDATA[D.Na7]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[]]>
+                <![CDATA[Dicentral7]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[]]>
+                <![CDATA[VN7]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0038]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[]]>
+                <![CDATA[090505050505]]>
               </value>
             </param>
           </params>
-          <exception class="org.junit.ComparisonFailure">
-            <message>
-              <![CDATA[expected:<[Universal Center | DiCentral]> but was:<[Login]>]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.junit.ComparisonFailure: expected:<[Universal Center | DiCentral]> but was:<[Login]>
-	at org.junit.Assert.assertEquals(Assert.java:115)
-	at org.junit.Assert.assertEquals(Assert.java:144)
-	at vPages.CustomerMngPage.reachToCustomerSection(CustomerMngPage.java:148)
-	at vTest.CustomerMngTest.CreateAccount(CustomerMngTest.java:26)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.junit.ComparisonFailure -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateAccount -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@363f0ba0]" name="tearDown" is-config="true" duration-ms="178" started-at="2019-09-11T09:16:05Z" finished-at="2019-09-11T09:16:05Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CreateAccount status=FAILURE method=CustomerMngTest.CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@363f0ba0] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="setUp" is-config="true" duration-ms="0" started-at="2019-09-11T10:03:38Z" finished-at="2019-09-11T10:03:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-09-11T10:03:38Z" finished-at="2019-09-11T10:03:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

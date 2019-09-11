@@ -24,11 +24,11 @@ public class CustomerMngTest extends BaseTest {
 		
 		loginUC.LoginUC(userName, password);
 		MngPgs.reachToCustomerSection();
-		MngPgs.AddCustomer(sAccountName, sEmail, sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
-		MngPgs.PrintInfo(sAccountName, sEmail, sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
-		MngPgs.setPassword(sAccountName); 
+//		MngPgs.AddCustomer(sAccountName, sEmail, sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
+//		MngPgs.PrintInfo(sAccountName, sEmail, sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
+//		MngPgs.setPassword(sAccountName); 
 //		MngPgs.editAccount(password, sAccountName);
-//		MngPgs.deleteAccount();
+		MngPgs.deleteAccount();
 	}
 	@DataProvider(name = "loginData")
 	public Object[][] dataProvider() throws Exception {
