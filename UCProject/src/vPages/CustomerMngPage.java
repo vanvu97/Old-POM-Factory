@@ -59,6 +59,8 @@ public class CustomerMngPage {
 	WebElement inpPhoneNo;
 	@FindBy (css = "button.btn")
 	WebElement btnSave;
+	@FindBy (css = ".page-header > h1:nth-child(1)")
+	WebElement titleCreateAccount;
 	
 	//Get table
 	@FindBy (css = ".table")
@@ -172,9 +174,13 @@ public class CustomerMngPage {
 		
 		if(sAccountType.contains("Standard")) {
 			
+			System.out.println("Account Type : Standard");
+			
 			standardType.click();
 			
 		}else {
+			
+			System.out.println("Account Type : Trial");
 			
 			trialType.click();
 			
@@ -219,22 +225,14 @@ public class CustomerMngPage {
 	    }   
 		
 		if(createSuccessNoti.getText().contains("The new account has created")) {
-			
-			String types = standardType.getText();
 		
 			System.out.println("Create account Successful");
 			
-			System.out.println("Createe Account : " + sAccountName);
 			
-			System.out.println("Account Type : " + types);
 			
 		}else if(errorDupEmail.getText().contains("Email has existed in system")) {
 		
 			System.out.println("Email is exist. Please use another email");
-			
-			inpEmail.clear();
-			
-			inpEmail.sendKeys(sEmail + "vv" + "@gmail.com");
 	
 		}else if(wrongFormatEmail.getText().contains("Wrong format")) {
 			
@@ -242,13 +240,13 @@ public class CustomerMngPage {
 		
 		}else if (codeIsExist.getText().contains("Code has existed in system")) {
 			
-			System.out.println("Code has existed in system.");
-			
-			inpCode.clear();
-			
-			inpCode.sendKeys(sCode + "99");
+			System.out.println("Code has existed in system. Please use another email");
 			
 		}
+		
+		String getTitleCreateAccount = titleCreateAccount.getText();
+		
+		Assert.assertNotEquals("Create Account", getTitleCreateAccount);
 		
 	}
 	
@@ -450,4 +448,3 @@ public void setPassword(String sAccountName, String sPassword) throws FileNotFou
 	}
 	
 }
-

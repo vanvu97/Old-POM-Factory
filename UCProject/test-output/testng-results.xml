@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27893" started-at="2019-09-12T02:31:34Z" finished-at="2019-09-12T02:32:01Z">
+  <suite name="Default suite" duration-ms="19622" started-at="2019-09-12T03:30:52Z" finished-at="2019-09-12T03:31:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27893" started-at="2019-09-12T02:31:34Z" finished-at="2019-09-12T02:32:01Z">
+    <test name="Default test" duration-ms="19622" started-at="2019-09-12T03:30:52Z" finished-at="2019-09-12T03:31:12Z">
       <class name="vTest.CustomerMngTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="setUp" is-config="true" duration-ms="4735" started-at="2019-09-12T09:31:35Z" finished-at="2019-09-12T09:31:40Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@4fe3c938]" name="setUp" is-config="true" duration-ms="4349" started-at="2019-09-12T10:30:53Z" finished-at="2019-09-12T10:30:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="CreateAccount" duration-ms="17066" started-at="2019-09-12T09:31:40Z" data-provider="loginData" finished-at="2019-09-12T09:31:57Z">
+        <test-method status="PASS" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@4fe3c938]" name="CreateAccount" duration-ms="14464" started-at="2019-09-12T10:30:57Z" data-provider="loginData" finished-at="2019-09-12T10:31:12Z">
           <params>
             <param index="0">
               <value>
@@ -25,32 +25,32 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[NewTest0005]]>
+                <![CDATA[NewTest0006]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[NewTest0005]]>
+                <![CDATA[NewTest0006]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Trial]]>
+                <![CDATA[Standard]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[NO]]>
+                <![CDATA[YES]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[00005]]>
+                <![CDATA[00006]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[sTest0005]]>
+                <![CDATA[sTest0006]]>
               </value>
             </param>
             <param index="8">
@@ -82,11 +82,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateAccount -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3]" name="tearDown" is-config="true" duration-ms="4797" started-at="2019-09-12T09:31:57Z" finished-at="2019-09-12T09:32:01Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@4fe3c938]" name="tearDown" is-config="true" duration-ms="155" started-at="2019-09-12T10:31:12Z" finished-at="2019-09-12T10:31:12Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CreateAccount status=SUCCESS method=CustomerMngTest.CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@35dd9ed3] output={null}]]]>
+                <![CDATA[[TestResult name=CreateAccount status=SUCCESS method=CustomerMngTest.CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@4fe3c938] output={null}]]]>
               </value>
             </param>
           </params>
