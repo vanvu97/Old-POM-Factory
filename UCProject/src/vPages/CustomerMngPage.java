@@ -78,13 +78,15 @@ public class CustomerMngPage {
 	@FindBy (css = ".lobibox-notify")
 	WebElement createSuccessNoti;
 	
-	//Delete account
+	//Button
 	@FindBy (css = ".open > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)")
 	WebElement btnDeleteAccount;
 	@FindBy (css = ".swal2-confirm")
 	WebElement btnYesDelete;
 	@FindBy (css = ".open > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1)")
 	WebElement btnSetPassword;
+	@FindBy (css = ".open > ul:nth-child(2) > li:nth-child(2) > a:nth-child(1)")
+	WebElement btnEdit;
 	
 	//input New Password
 	@FindBy (css = "input.ng-valid-pattern")
@@ -246,7 +248,7 @@ public class CustomerMngPage {
 		
 		String getTitleCreateAccount = titleCreateAccount.getText();
 		
-		Assert.assertNotEquals("Create Account", getTitleCreateAccount);
+		Assert.assertNotEquals(getTitleCreateAccount, "Create Account");
 		
 	}
 	
@@ -373,15 +375,13 @@ public void setPassword(String sAccountName, String sPassword) throws FileNotFou
 					
 					JavascriptExecutor js = (JavascriptExecutor)driver;
 					
-					js.executeScript("arguments[0].click();", btnSetPassword);
+					js.executeScript("arguments[0].click();", btnEdit);
 					
-					newPassword.sendKeys(passWord);
-					
-					confirmNewPassword.sendKeys(passWord);
+					System.out.println("Reached to Edit Account section");
 					
 					btnSavePassword.click();
-					
-					System.out.println("Set password successfuly");
+
+					System.out.println("Edit Saved!!!");
 					
 				 }else{
 					 

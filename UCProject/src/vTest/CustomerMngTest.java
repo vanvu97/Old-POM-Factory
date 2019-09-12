@@ -28,11 +28,11 @@ public class CustomerMngTest extends BaseTest {
 		
 		MngPgs.reachToCustomerSection();
 		
-		MngPgs.AddCustomer(sAccountName, sEmail, sAccountType, sEnable, sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
+//		MngPgs.AddCustomer(sAccountName, sEmail, sAccountType, sEnable, sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
 	
 //		MngPgs.setPassword(sAccountName, sPassword); 
 		
-//		MngPgs.editAccount(password, sAccountName); 
+		MngPgs.editAccount(password, sAccountName); 
 		
 //		MngPgs.loginAccoutTest(sAccountName, sPassword);
 		

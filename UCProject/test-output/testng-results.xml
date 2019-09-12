@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="19622" started-at="2019-09-12T03:30:52Z" finished-at="2019-09-12T03:31:12Z">
+  <suite name="Default suite" duration-ms="21419" started-at="2019-09-12T03:51:37Z" finished-at="2019-09-12T03:51:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="19622" started-at="2019-09-12T03:30:52Z" finished-at="2019-09-12T03:31:12Z">
+    <test name="Default test" duration-ms="21419" started-at="2019-09-12T03:51:37Z" finished-at="2019-09-12T03:51:59Z">
       <class name="vTest.CustomerMngTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@4fe3c938]" name="setUp" is-config="true" duration-ms="4349" started-at="2019-09-12T10:30:53Z" finished-at="2019-09-12T10:30:57Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.CustomerMngTest@4fe3c938]" name="setUp" is-config="true" duration-ms="5362" started-at="2019-09-12T10:51:38Z" finished-at="2019-09-12T10:51:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@4fe3c938]" name="CreateAccount" duration-ms="14464" started-at="2019-09-12T10:30:57Z" data-provider="loginData" finished-at="2019-09-12T10:31:12Z">
+        <test-method status="PASS" signature="CreateAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.CustomerMngTest@4fe3c938]" name="CreateAccount" duration-ms="15205" started-at="2019-09-12T10:51:43Z" data-provider="loginData" finished-at="2019-09-12T10:51:58Z">
           <params>
             <param index="0">
               <value>
@@ -82,7 +82,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateAccount -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@4fe3c938]" name="tearDown" is-config="true" duration-ms="155" started-at="2019-09-12T10:31:12Z" finished-at="2019-09-12T10:31:12Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.CustomerMngTest@4fe3c938]" name="tearDown" is-config="true" duration-ms="217" started-at="2019-09-12T10:51:58Z" finished-at="2019-09-12T10:51:59Z">
           <params>
             <param index="0">
               <value>
