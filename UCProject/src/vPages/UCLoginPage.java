@@ -23,15 +23,23 @@ public class UCLoginPage {
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	public UCLoginPage(WebDriver driver) {
+		
 		this.driver = driver;
+		
 		wait = new WebDriverWait(driver, 20);
+		
 		PageFactory.initElements(driver, this);
+		
 	}
 	
 	public void LoginUC(String vUser, String vPass) {
+		
 		driver.get(Links.URL_UC);
+		
 		vUsername.sendKeys(vUser);
+		
 		vPassword.sendKeys(vPass);
+		
 		btnLogin.click();
 	}
 	

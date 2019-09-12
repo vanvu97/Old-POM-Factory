@@ -71,7 +71,7 @@ public class BaseTest {
 //			 
 //			 Row row = sheet.getRow(1);
 //			 
-//			 Cell cell = row.createCell(13);
+//			 Cell cell = row.createCell(15);
 //			 
 //			 cell.setCellValue("FAILED");
 //			 
@@ -94,7 +94,7 @@ public class BaseTest {
 			 
 			 Row row = sheet.getRow(i);
 			 
-			 Cell cell = row.createCell(13);
+			 Cell cell = row.createCell(15);
 			 
 			 cell.setCellValue("FAILED");
 			 
@@ -118,7 +118,7 @@ public class BaseTest {
 //			 
 //			 Row row = sheet.getRow(1);
 //			 
-//			 Cell cell = row.createCell(13);
+//			 Cell cell = row.createCell(15);
 //			 
 //			 cell.setCellValue("PASSED");
 //			 
@@ -141,7 +141,7 @@ public class BaseTest {
 			 
 			 Row row = sheet.getRow(i);
 			 
-			 Cell cell = row.createCell(13);
+			 Cell cell = row.createCell(15);
 			 
 			 cell.setCellValue("PASSED");
 			 

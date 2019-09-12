@@ -33,8 +33,12 @@ public class CustomerMngPage {
 	WebElement inpEmail;
 	@FindBy (css = "select.ng-pristine")
 	WebElement accType;
-	@FindBy (css = "select.ng-pristine > option:nth-child(2)")
-	WebElement types;
+	@FindBy (css = "select.form-control > option:nth-child(1)")
+	WebElement trialType;
+	@FindBy (css = "select.form-control > option:nth-child(2)")
+	WebElement standardType;
+	@FindBy (css = ".style-cb > span:nth-child(2)")
+	WebElement btnEnable;
 	@FindBy (css = "div.mrg10T:nth-child(3) > label:nth-child(1) > span:nth-child(2)")
 	WebElement radioSynch;
 	@FindBy (css = "div.mrg10T:nth-child(4) > label:nth-child(1) > span:nth-child(2)")
@@ -155,7 +159,7 @@ public class CustomerMngPage {
 	
 	}
 	
-	public void AddCustomer(String sAccountName, String sEmail, String sCode, String sFullName, String sAddress, String Company, String sCountry
+	public void AddCustomer(String sAccountName, String sEmail, String sAccountType, String sEnable, String sCode, String sFullName, String sAddress, String Company, String sCountry
 			, String CountryCode, String PhoneNo) {
 		
 		addCustomer.click();
@@ -166,7 +170,27 @@ public class CustomerMngPage {
 		
 		accType.click();
 		
-		types.click();
+		if(sAccountType.contains("Standard")) {
+			
+			standardType.click();
+			
+		}else {
+			
+			trialType.click();
+			
+		}
+		
+		if(sEnable.contains("Y")) {
+			
+			System.out.println("Is Enable : Yes");
+			
+			btnEnable.click();
+			
+		}else {
+			
+			System.out.println("Is Enable : No");
+			
+		}
 		
 		inpCode.sendKeys(sCode);
 		
@@ -195,9 +219,14 @@ public class CustomerMngPage {
 	    }   
 		
 		if(createSuccessNoti.getText().contains("The new account has created")) {
+			
+			String types = standardType.getText();
 		
 			System.out.println("Create account Successful");
+			
 			System.out.println("Createe Account : " + sAccountName);
+			
+			System.out.println("Account Type : " + types);
 			
 		}else if(errorDupEmail.getText().contains("Email has existed in system")) {
 		
