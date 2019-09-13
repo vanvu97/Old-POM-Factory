@@ -60,7 +60,7 @@ public class CustomerMngPage {
 	@FindBy (css = "button.btn")
 	WebElement btnSave;
 	@FindBy (css = ".page-header > h1:nth-child(1)")
-	WebElement titleCreateAccount;
+	WebElement getTitle;
 	
 	//Get table
 	@FindBy (css = ".table")
@@ -141,10 +141,6 @@ public class CustomerMngPage {
 	
 	public void reachToCustomerSection() throws InterruptedException {
 		
-		String titleUA = driver.getTitle();
-		
-		Assert.assertEquals("Universal Center | DiCentral", titleUA);
-		
 		//Hover on MonitorButton
 		Actions hover = new Actions(driver);
 		
@@ -160,11 +156,16 @@ public class CustomerMngPage {
 	    }   
 		
 		clickOnCustomerMng.click();
+		
+		String titleCustomerPage = getTitle.getText();
+		
+		Assert.assertEquals("Customer Management", titleCustomerPage);
 	
 	}
 	
 	public void AddCustomer(String sAccountName, String sEmail, String sAccountType, String sEnable, String sCode, String sFullName, String sAddress, String Company, String sCountry
 			, String CountryCode, String PhoneNo) {
+		
 		
 		addCustomer.click();
 		
@@ -246,7 +247,7 @@ public class CustomerMngPage {
 			
 		}
 		
-		String getTitleCreateAccount = titleCreateAccount.getText();
+		String getTitleCreateAccount = getTitle.getText();
 		
 		Assert.assertNotEquals(getTitleCreateAccount, "Create Account");
 		
@@ -407,6 +408,7 @@ public void setPassword(String sAccountName, String sPassword) throws FileNotFou
 		catch (InterruptedException e) {
 	    
 			e.printStackTrace();
+			
 	    }   
 		
 		vUsername.sendKeys(sAccountName);

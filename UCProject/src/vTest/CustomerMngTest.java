@@ -23,7 +23,6 @@ public class CustomerMngTest extends BaseTest {
 		
 		MngPgs = new CustomerMngPage(driver);
 		
-		
 		loginUC.LoginUC(userName, password);
 		
 		MngPgs.reachToCustomerSection();
@@ -32,7 +31,7 @@ public class CustomerMngTest extends BaseTest {
 	
 //		MngPgs.setPassword(sAccountName, sPassword); 
 		
-		MngPgs.editAccount(password, sAccountName); 
+//		MngPgs.editAccount(password, sAccountName); 
 		
 //		MngPgs.loginAccoutTest(sAccountName, sPassword);
 		

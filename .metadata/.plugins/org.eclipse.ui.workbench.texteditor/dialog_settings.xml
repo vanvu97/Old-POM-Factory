@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=".has-error &gt; div:nth-child(2) &gt; p:nth-child(3)"/>
+		<item key="selection" value=".page-header &gt; h1:nth-child(1)"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value=".page-header &gt; h1:nth-child(1)"/>
 			<item value=".has-error &gt; div:nth-child(2) &gt; p:nth-child(3)"/>
 			<item value="#headerRepeater &gt; tbody:nth-child(2) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; div:nth-child(1) &gt; input:nth-child(1)"/>
 			<item value="text"/>

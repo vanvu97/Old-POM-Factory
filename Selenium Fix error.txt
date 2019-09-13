@@ -3,14 +3,11 @@ Element is not clickable at point (x, y). Other element would receive the click
 		WebElement ele = driver.findElement(By.cssSelector("#fBtnLogin"));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", ele);
+
+Condition: JavascriptExecutor js = (JavascriptExecutor) driver;
 			------------------------------------
 		Actions actions = new Actions(driver);
 	  	actions.moveToElement(searchTaskControlButton).click().build().perform();
-
-Element could not be scrolled into view
-						JavascriptExecutor js = (JavascriptExecutor)driver;
-						
-						js.executeScript("arguments[0].click();", element);
 
 Swith Frame
 		driver.switchTo().frame("frameUserSelection");
