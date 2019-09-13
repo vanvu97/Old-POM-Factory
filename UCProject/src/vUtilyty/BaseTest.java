@@ -61,7 +61,7 @@ public class BaseTest {
 		
 		if (testResult.getStatus() == ITestResult.FAILURE) { 
 			
-			String directory = Links.PATH_TO_EXCEL;
+			String directory = Links.PATH_TO_EXCEL_Customer;
 			 
 //			 FileInputStream fis = new FileInputStream(directory);
 //			 
@@ -108,7 +108,7 @@ public class BaseTest {
 			
 		}else {
 			
-			String directory = Links.PATH_TO_EXCEL;
+			String directory = Links.PATH_TO_EXCEL_Customer;
 			 
 //			 FileInputStream fis = new FileInputStream(directory);
 //			 

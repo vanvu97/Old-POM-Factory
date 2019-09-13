@@ -44,7 +44,7 @@ public class CustomerMngTest extends BaseTest {
 		
 		String filePath = System.getProperty("user.dir")+"\\src\\data\\";
 		
-	     Object[][] testObjArray = ReadFile.getTableArray(filePath + "ExportExcel.xlsx","LoginData", 1);
+	     Object[][] testObjArray = ReadFile.getTableArray(filePath + "CustomerExcel.xlsx","LoginData", 1);
 
 	     return (testObjArray);
 		

@@ -1,18 +1,20 @@
 package vTest;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import vPages.ActivatedProcessPage;
 import vPages.UCLoginPage;
 import vUtilyty.BaseTest;
+import vUtilyty.ReadFile;
 
 public class ActivatedProcessTest extends BaseTest{
 	
 	UCLoginPage loginUC;
 	ActivatedProcessPage activatePgs;
 	
-  @Test
-  public void createShedule() {
+	@Test(dataProvider="loginData"/*, invocationCount = 3*/)
+  public void createShedule(String setTime, String recurTime) {
 	  
 	  loginUC = new UCLoginPage(driver);
 	  
@@ -20,10 +22,25 @@ public class ActivatedProcessTest extends BaseTest{
 	  
 	  loginUC.LoginUC("admin", "123456");
 	  
-	  activatePgs.reachToDocumentTrackingSection();
+	  activatePgs.doucumenentTrackingPgs();
 	  
-	  activatePgs.createSchedule("SOAP");
+	  activatePgs.scheduleSection("zDaily1");
+	  
+//	  activatePgs.runOnetime("06:00  PM");
+	  
+	  activatePgs.runDaily(setTime, recurTime);
 	  
   }
+  
+  @DataProvider(name = "loginData")
+  public Object[][] dataProvider() throws Exception {
+		
+		String filePath = System.getProperty("user.dir")+"\\src\\data\\";
+		
+		Object[][] testObjArray = ReadFile.getTableArray(filePath + "CustomerExcel.xlsx","LoginData", 1);
+
+		return (testObjArray);
+		
+	}
   
 }

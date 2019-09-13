@@ -32,7 +32,10 @@ Handle new opened browser windows
 	// Continue with original browser (first window)
 
 lay chuoi ky tu cuoi cung den khoang trong tiep theo
+
 	String Sales_Order_ID = getTextMessages.substring(getTextMessages.lastIndexOf(" ")+1);
+-Ngược lại 
+	String firstAccountName = getCells.substring(0, getCells.indexOf(" "));  
 
 Scroll up, down to element 
 	((JavascriptExecutor) driver).executeScript ("arguments[0].scrollIntoView();", colator);
@@ -76,3 +79,7 @@ List<WebElement> tableRows = customerTable.findElements(By.tagName("tr"));
 			}
 			System.out.println("=======================================");
 		}
+
+Find 1st sibling depend on 2nd sibling
+
+WebElement hoverListProcess = driver.findElement(By.xpath("//*[contains(text(), '" + sProcessName + "')]/preceding-sibling::a[1]"));
