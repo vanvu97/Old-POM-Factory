@@ -26,7 +26,7 @@ public class ActivatedProcessTest extends BaseTest{
 	  
 	  activatePgs.scheduleSection("zDaily1");
 	  
-//	  activatePgs.runOnetime("06:00  PM");
+	  activatePgs.runOnetime(setTime);
 	  
 	  activatePgs.runDaily(setTime, recurTime);
 	  
@@ -37,7 +37,7 @@ public class ActivatedProcessTest extends BaseTest{
 		
 		String filePath = System.getProperty("user.dir")+"\\src\\data\\";
 		
-		Object[][] testObjArray = ReadFile.getTableArray(filePath + "CustomerExcel.xlsx","LoginData", 1);
+		Object[][] testObjArray = ReadFile.getTableArray(filePath + "ScheduleExcel.xlsx","LoginData", 1);
 
 		return (testObjArray);
 		

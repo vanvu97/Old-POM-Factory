@@ -190,8 +190,8 @@ public class ActivatedProcessPage {
 	  	timeStar.clear();
 	  	
 	  	timeStar.sendKeys(setTime);
-	  	
-	  	recurEvery.clear();
+	  		
+  		recurEvery.clear();
 	  	
 	  	recurEvery.sendKeys(recurTime);
 	  	
