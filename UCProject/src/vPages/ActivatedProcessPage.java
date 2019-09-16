@@ -53,9 +53,32 @@ public class ActivatedProcessPage {
 	WebElement btnSave;
 	@FindBy (css = "#settingSchedule > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > label:nth-child(2)")
 	WebElement runDaily;
+	@FindBy (css = "#settingSchedule > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > label:nth-child(2)")
+	WebElement runWeekly;
+	@FindBy (css = "div.di__table-cell:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > label:nth-child(2)")
+	WebElement runMonthly;
 	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > input:nth-child(1)")
 	WebElement recurEvery;
+	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > button:nth-child(1)")
+	WebElement listDays;
+	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(2) > label:nth-child(1) > input:nth-child(1)")
+	WebElement sMonday;
+	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > label:nth-child(1) > input:nth-child(1)")
+	WebElement sTuesday;
+	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(4) > label:nth-child(1) > input:nth-child(1)")
+	WebElement sWednesday;
+	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(5) > label:nth-child(1) > input:nth-child(1)")
+	WebElement sThursday;
+	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(6) > label:nth-child(1) > input:nth-child(1)")
+	WebElement sFriday;
+	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(7) > label:nth-child(1) > input:nth-child(1)")
+	WebElement sSaturday;
+	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(8) > label:nth-child(1) > input:nth-child(1)")
+	WebElement sSunday;
 	
+	//Error Message
+	@FindBy (css = ".lobibox-notify-body")
+	WebElement error10Mins;
 	
 	WebDriver driver;
 	WebDriverWait wait;
@@ -101,7 +124,7 @@ public class ActivatedProcessPage {
 			e.printStackTrace();
 	    } 
 	
-//		List<WebElement> uiLines = listUl.findElements(By.tagName("a"));
+//		List<WebElement> uiLines = listUl.findElements(By.tagName("li"));
 //		
 //		int uiLineCount = uiLines.size();
 //		
@@ -109,34 +132,7 @@ public class ActivatedProcessPage {
 //			
 //			String getProcessName = uiLines.get(row).getText().trim();
 //	
-//				if (getProcessName.contains(sProcessName)){
-//					 
-//					WebElement hoverListProcess = driver.findElement(By.xpath("//*[contains(text(), '" + sProcessName + "')]/preceding-sibling::a[1]"));
-//					
-//					System.out.println(hoverListProcess);
-//					
-//					try {
-//					    
-//						Thread.sleep(3500);
-//				    
-//					} catch (InterruptedException e) {
-//				    
-//						e.printStackTrace();
-//				    } 
-//					
-//					hoverListProcess.click();
-//					
-//					WebElement cursorPointer = driver.findElement(By.xpath("//*[contains(text(), 'Create a schedule')]"));
-//					
-//					if(cursorPointer.isDisplayed() && cursorPointer.isEnabled()) {
-//						
-//						WebDriverWait wait = new WebDriverWait(driver, 30);
-//						
-//						wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(text(), 'Create a schedule')]"))).click();
-//						
-//					}
-//				
-//				} 
+//				System.out.println(getProcessName);
 //			
 //			}
 		
@@ -155,48 +151,153 @@ public class ActivatedProcessPage {
 
 	}
 	
-	public void runOnetime(String setTime) {
+	public void runOnetime(String setTime, String recurTime, String runKinds, String sOption) {
 		
-		fromDate.click();
+		switch(runKinds) {
 		
-		System.out.println(formattedDate);
-		
-		Actions actions = new Actions(driver);
-		
-	  	actions.moveToElement(btnToday).click().build().perform();
-	  	
-	  	timeStar.clear();
-	  	
-	  	timeStar.sendKeys(setTime);
-		
-//	  	btnSave.click();
-		
-	}
+		  case "Onetime":
+			  
+			  fromDate.click();
+				
+			  System.out.println(formattedDate);
+				
+			  Actions actions = new Actions(driver);
+				
+			  actions.moveToElement(btnToday).click().build().perform();
+			  	
+			  timeStar.clear();
+			  	
+			  timeStar.sendKeys(setTime);
+				
+			  btnSave.click();
+			  
+			  String getText10Mins = error10Mins.getText();
+			  
+			  Assert.assertNotEquals(getText10Mins, "Scheduler could not run immediately. Time to run scheduler need to be greater than current time 10 minutes.");
+				  	
+			  break;	
+		    
+		  case "Daily":
+			  
+			  runDaily.click();
+				
+			  fromDate.click();
+				
+			  System.out.println(formattedDate);
+				
+			  Actions actions2 = new Actions(driver);
+				
+			  actions2.moveToElement(btnToday).click().build().perform();
 	
-	public void runDaily(String setTime, String recurTime) {
+			  timeStar.click();
+			  	
+			  timeStar.clear();
+			  	
+			  timeStar.sendKeys(setTime);
+			  		
+			  recurEvery.clear();
+			  	
+			  recurEvery.sendKeys(recurTime);
+			  	
+			  btnSave.click();
+			  
+			  String getText10Mins2 = error10Mins.getText();
+			  
+			  Assert.assertNotEquals(getText10Mins2, "Scheduler could not run immediately. Time to run scheduler need to be greater than current time 10 minutes.");
+			  
+			  break;
+			  	
+		  case "Weekly":
+			  
+			  runWeekly.click();
+			  
+			  if(sOption.contains("246cn")) {
+		  			
+		  			JavascriptExecutor executor = (JavascriptExecutor)driver;
+		  			executor.executeScript("arguments[0].click();", listDays);
+		  			
+		  			sMonday.click();
+		  			
+		  			sWednesday.click();
+		  			
+		  			sFriday.click();
+		  			
+		  			sSunday.click();
+		  			
+		  			btnSave.click();
+	  			
+			  	}else if(sOption.contains("357")) {
+	  				
+	  				JavascriptExecutor executor2 = (JavascriptExecutor)driver;
+		  			executor2.executeScript("arguments[0].click();", listDays);
+		  			
+		  			sTuesday.click();
+		  			
+		  			sThursday.click();
+		  			
+		  			sSaturday.click();
+		  			
+			  	}else if(sOption.contains("all")) {
+	  				
+	  				JavascriptExecutor executor3 = (JavascriptExecutor)driver;
+		  			executor3.executeScript("arguments[0].click();", listDays);
+	  				
+	  				sMonday.click();
+		  			
+		  			sTuesday.click();
+		  			
+		  			sWednesday.click();
+		  			
+		  			sThursday.click();
+		  			
+		  			sFriday.click();
+		  			
+		  			sSaturday.click();
+		  			
+		  			sSunday.click();
+		  			
+			  }
+			  
+			  fromDate.click();
+				
+			  System.out.println(formattedDate);
+				
+			  Actions actions3 = new Actions(driver);
+			
+			  actions3.moveToElement(btnToday).click().build().perform();
+			  
+			  timeStar.click();
+			  	
+			  timeStar.clear();
+			  	
+			  timeStar.sendKeys(setTime);
+				
+			  btnSave.click();
+			  
+			  String getText10Mins3 = error10Mins.getText();
+			  
+			  Assert.assertNotEquals(getText10Mins3, "Scheduler could not run immediately. Time to run scheduler need to be greater than current time 10 minutes.");
+			  
+			  break;
+			  
+		  case "Monthly":
+		    
+			  runMonthly.click();
+			  
+			  System.out.println("Deeploying....");
+			  
+			  String getText10Mins4 = error10Mins.getText();
+			  
+			  Assert.assertNotEquals(getText10Mins4, "Scheduler could not run immediately. Time to run scheduler need to be greater than current time 10 minutes.");
+			  
+			  break;
+			  
+		  default:
+			  
+			  System.out.println("Looking for the Process's Name...");
+			  
+		}
 		
-		runDaily.click();
-		
-		fromDate.click();
-		
-		System.out.println(formattedDate);
-		
-		Actions actions = new Actions(driver);
-		
-	  	actions.moveToElement(btnToday).click().build().perform();
-
-	  	timeStar.click();
-	  	
-	  	timeStar.clear();
-	  	
-	  	timeStar.sendKeys(setTime);
-	  		
-  		recurEvery.clear();
-	  	
-	  	recurEvery.sendKeys(recurTime);
-	  	
-//	  	btnSave.click();
-
 	}
 	
 }

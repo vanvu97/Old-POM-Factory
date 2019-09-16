@@ -9,7 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ReadFile {
+public class ScheduleExcelFile {
 	private static XSSFSheet ExcelWSheet;
 	private static XSSFWorkbook ExcelWBook;
 	private static XSSFCell Cell;
@@ -33,7 +33,7 @@ public static Object[][] getTableArray(String FilePath, String SheetName, int iT
 	   int startRow = 1;
        int startCol = 1;
        int totalRows = ExcelWSheet.getLastRowNum();
-       int totalCols = 13; 
+       int totalCols = 7;
 	   tabArray=new String[totalRows][totalCols];
 	   for (int i=startRow; i<=totalRows;i++) {                  
            for (int j=startCol; j<=totalCols;j++){
@@ -79,9 +79,9 @@ public static String getTestCaseName(String sTestCase)throws Exception{
 public static int getRowContains(String sTestCaseName, int colNum) throws Exception{
 	int i;
 	try {
-		int rowCount = ReadFile.getRowUsed();
+		int rowCount = ScheduleExcelFile.getRowUsed();
 		for ( i=0 ; i<rowCount; i++){
-			if  (ReadFile.getCellData(i,colNum).equalsIgnoreCase(sTestCaseName)){
+			if  (ScheduleExcelFile.getCellData(i,colNum).equalsIgnoreCase(sTestCaseName)){
 				break;
 			}
 		}

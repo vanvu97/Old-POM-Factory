@@ -1,6 +1,5 @@
 package vPages;
 
-import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -61,6 +60,12 @@ public class CustomerMngPage {
 	WebElement btnSave;
 	@FindBy (css = ".page-header > h1:nth-child(1)")
 	WebElement getTitle;
+	@FindBy (css = "div.mrg10T:nth-child(4) > label:nth-child(1) > input:nth-child(1)")
+	WebElement setPassword;
+	@FindBy (css = "div.ng-scope:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > input:nth-child(1)")
+	WebElement newPassword;
+	@FindBy (css = "input.ng-isolate-scope")
+	WebElement retypeNewPassWord;
 	
 	//Get table
 	@FindBy (css = ".table")
@@ -87,14 +92,6 @@ public class CustomerMngPage {
 	WebElement btnSetPassword;
 	@FindBy (css = ".open > ul:nth-child(2) > li:nth-child(2) > a:nth-child(1)")
 	WebElement btnEdit;
-	
-	//input New Password
-	@FindBy (css = "input.ng-valid-pattern")
-	WebElement newPassword;
-	@FindBy (css = "input.ng-isolate-scope")
-	WebElement confirmNewPassword;
-	@FindBy (css = "button.btn")
-	WebElement btnSavePassword;
 	
 	//login Account Test
 	@FindBy (css = "#topmenu > div > ul > li.navbar-acc.parent > a")
@@ -163,8 +160,8 @@ public class CustomerMngPage {
 	
 	}
 	
-	public void AddCustomer(String sAccountName, String sEmail, String sAccountType, String sEnable, String sCode, String sFullName, String sAddress, String Company, String sCountry
-			, String CountryCode, String PhoneNo) {
+	public void AddCustomer(String sAccountName, String sEmail, String sAccountType, String sEnable,String sNewPassword,String sRetypePassword, String sCode, 
+			String sFullName, String sAddress, String Company, String sCountry, String CountryCode, String PhoneNo) {
 		
 		
 		addCustomer.click();
@@ -198,6 +195,31 @@ public class CustomerMngPage {
 		}else {
 			
 			System.out.println("Is Enable : No");
+			
+		}
+		
+		if(setPassword.isEnabled()) {
+
+			System.out.println("Sending Password...");
+			
+			System.out.println("Password : " + sNewPassword);
+			
+			newPassword.sendKeys(sNewPassword);
+			
+			retypeNewPassWord.sendKeys(sRetypePassword);
+			
+			
+		}else {
+			
+			setPassword.click();
+			
+			System.out.println("Sending Password...");
+			
+			System.out.println("Password : " + sNewPassword);
+			
+			newPassword.sendKeys(sNewPassword);
+			
+			retypeNewPassWord.sendKeys(sRetypePassword);
 			
 		}
 		
@@ -252,89 +274,6 @@ public class CustomerMngPage {
 		Assert.assertNotEquals(getTitleCreateAccount, "Create Account");
 		
 	}
-	
-public void setPassword(String sAccountName, String sPassword) throws FileNotFoundException, InterruptedException {
-	
-		WebElement enabled_next_page_btn = driver.findElement(By.cssSelector("[ng-click='nextPage()']"));
-		
-		JavascriptExecutor js2 = (JavascriptExecutor)driver;
-	
-		js2.executeScript("arguments[0].click();", enabled_next_page_btn);
-		
-		try {
-			
-	        Thread.sleep(1500);
-	        
-	    } catch (InterruptedException e) {
-	    	
-	        e.printStackTrace();
-	        
-	    }   
-	    
-	    List<WebElement> tableRows = customerTable2.findElements(By.tagName("tr"));
-		
-		int rowCount = tableRows.size();
-		
-		for (int row = 0; row < rowCount; row++) {
-			
-			String getCells = tableRows.get(row).getText().trim();
-			
-			String firstAccountName = getCells.substring(0, getCells.indexOf(" "));  
-
-				if(firstAccountName.contains(sAccountName)){
-				
-					System.out.println(firstAccountName + " == PASSED ==");	
-					 
-					WebElement hoverHintSetting = driver.findElement(By.xpath("//*[contains(text(), '" + sAccountName + "')]"));
-					
-					Actions builds = new Actions(driver);
-					
-					builds.moveToElement(hoverHintSetting).click(hoverHintSetting).build().perform();
-					
-					for (int i = 0; i < rowCount ; i++) {
-						
-						WebElement btnHINT =  driver.findElement(By.cssSelector("tr.ng-scope:nth-child("+ (i+1) +") > th:nth-child(1) > div:nth-child(1) > a:nth-child(1) > img:nth-child(1)"));
-						
-						try {
-							
-					        
-							Thread.sleep(1000);
-					    } 
-						
-						catch (InterruptedException e) {
-					    
-							e.printStackTrace();
-					    }   
-						
-						JavascriptExecutor js = (JavascriptExecutor)driver;
-						
-						js.executeScript("arguments[0].click();", btnHINT);
-						
-					}
-					
-					JavascriptExecutor js = (JavascriptExecutor)driver;
-					
-					js.executeScript("arguments[0].click();", btnSetPassword);
-					
-					newPassword.sendKeys(sPassword);
-					
-					confirmNewPassword.sendKeys(sPassword);
-					
-					btnSavePassword.click();
-					
-					System.out.println("Password : " + sPassword);
-					
-					System.out.println("Set password successfuly");
-					
-				 }else{
-					 
-					 System.out.println(firstAccountName + " == FAILED ==");
-					 
-					 }
-					 
-				 }
-	
-			}
 
 	public void editAccount (String editAccount, String sAccountname) {
 		
@@ -379,8 +318,6 @@ public void setPassword(String sAccountName, String sPassword) throws FileNotFou
 					js.executeScript("arguments[0].click();", btnEdit);
 					
 					System.out.println("Reached to Edit Account section");
-					
-					btnSavePassword.click();
 
 					System.out.println("Edit Saved!!!");
 					
@@ -393,7 +330,7 @@ public void setPassword(String sAccountName, String sPassword) throws FileNotFou
 				 }
 		
 		}
-	public void loginAccoutTest(String sAccountName, String sPassword) {
+	public void loginAccoutTest(String sAccountName, String sNewPassword) {
 		
 		profileIcon.click();
 		
@@ -413,7 +350,7 @@ public void setPassword(String sAccountName, String sPassword) throws FileNotFou
 		
 		vUsername.sendKeys(sAccountName);
 		
-		vPassword.sendKeys(sPassword);
+		vPassword.sendKeys(sNewPassword);
 		
 		btnLogin.click();
 		
