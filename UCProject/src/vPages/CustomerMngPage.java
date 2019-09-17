@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -24,6 +23,8 @@ public class CustomerMngPage {
 	WebElement clickOnCustomerMng;
 	@FindBy (css = ".glyphicon-plus-sign")
 	WebElement addCustomer;
+	@FindBy (css = "li.menu-level-0:nth-child(8) > ul:nth-child(2)")
+	WebElement subMenu;
 	
 	//Create a Account
 	@FindBy (css = "#collapse_fieldAccount > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")
@@ -100,12 +101,10 @@ public class CustomerMngPage {
 	WebElement btnSetPassword;
 	
 	//login Account Test
-	@FindBy (css = "#topmenu > div > ul > li.navbar-acc.parent > a")
-	WebElement profileIcon;
-	@FindBy (css = "#topmenu > div > ul > li.navbar-acc.parent > ul > li.menu-level-1.last > a")
-	WebElement btnSignOut;
 	@FindBy (css = ".acc-btn")
-	WebElement questProfileIcon;
+	WebElement profileIcon;
+	@FindBy (css = "li.last:nth-child(2) > a:nth-child(1)")
+	WebElement btnSignOut;
 	
 	//Login Page
 	@FindBy (id = "Username")
@@ -120,16 +119,6 @@ public class CustomerMngPage {
 	public static SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyyhhmmss");
 
 	public static String formattedDate = sdf.format(date);
-	
-	//Create account Name
-	String randomAccountName = RandomStringUtils.randomNumeric(5);
-	String accountName = "Test" + formattedDate;
-	
-	//Random Password
-	String numbPass = RandomStringUtils.randomNumeric(3);
-	String alphabestPass = RandomStringUtils.randomAlphabetic(9);
-	String passWord = alphabestPass + numbPass;
-
 	
 	WebDriver driver;
 	WebDriverWait wait;
@@ -146,7 +135,6 @@ public class CustomerMngPage {
 	
 	public void reachToCustomerSection() throws InterruptedException {
 		
-		//Hover on MonitorButton
 		Actions hover = new Actions(driver);
 		
 		hover.moveToElement(btnMonitor).build().perform();
@@ -311,12 +299,14 @@ public class CustomerMngPage {
 	
 	public void loginAccoutTest(String sAccountName, String sNewPassword) {
 		
-		profileIcon.click();
+		Actions actions = new Actions(driver);
+		
+	  	actions.moveToElement(profileIcon).click().build().perform();
 		
 		try {
 			
 	        
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 	    } 
 		
 		catch (InterruptedException e) {
@@ -345,11 +335,27 @@ public class CustomerMngPage {
 			
 	    }   
 		
-		String getProfileQuest = questProfileIcon.getText().trim();
+		String getProfileQuest = profileIcon.getText().trim();
 		
 		Assert.assertEquals(getProfileQuest, sAccountName);
 		
 		System.out.println("Login Guest Account Successful!");
+		
+		Actions actions2 = new Actions(driver);
+		
+	  	actions2.moveToElement(btnMonitor).click().build().perform();
+		
+		List<WebElement> guestMonitor = subMenu.findElements(By.tagName("li"));
+		
+		int getGuestMonitor = guestMonitor.size();		
+		
+		for(int i = 0; i < getGuestMonitor; i++) {
+			
+			String getListGuestMonitor = guestMonitor.get(i).getText();
+			
+			System.out.println(getListGuestMonitor);
+			
+		}
 		
 	}
 

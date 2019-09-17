@@ -21,8 +21,8 @@ import org.testng.annotations.Test;
 import vPages.ActivatedProcessPage;
 import vPages.UCLoginPage;
 import vUtilyty.BaseTest;
-import vUtilyty.ScheduleExcelFile;
 import vUtilyty.Links;
+import vUtilyty.ScheduleExcelFile;
 
 public class ActivatedProcessTest extends BaseTest{
 	
@@ -49,9 +49,7 @@ public class ActivatedProcessTest extends BaseTest{
   @DataProvider(name = "loginData")
   public Object[][] dataProvider() throws Exception {
 		
-		String filePath = System.getProperty("user.dir")+"\\src\\data\\";
-		
-		Object[][] testObjArray = ScheduleExcelFile.getTableArray(filePath + "ScheduleExcel.xlsx","LoginData", 1);
+		Object[][] testObjArray = ScheduleExcelFile.getTableArray(Links.PATH_TO_EXCEL_Schedule,"LoginData", 1);
 
 		return (testObjArray);
 		
@@ -59,7 +57,6 @@ public class ActivatedProcessTest extends BaseTest{
   
   @AfterMethod
 	public void tearDown(ITestResult testResult) throws IOException {	  
-		
       
 		if (testResult.getStatus() == ITestResult.FAILURE) { 
       
