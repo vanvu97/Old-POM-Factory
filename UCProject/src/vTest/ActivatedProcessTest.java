@@ -30,7 +30,7 @@ public class ActivatedProcessTest extends BaseTest{
 	ActivatedProcessPage activatePgs;
 	
 	@Test(dataProvider="loginData"/*, invocationCount = 3*/)
-  public void createShedule(String sUser, String sPassword, String sProcessName, String setTime, String recurTime, String runKinds, String sOption) {
+  public void createShedule(String sUser, String sPassword, String sProcessName, String setTime, String recurTime, String runKinds, String sOption, String sDescription) {
 	  
 	  loginUC = new UCLoginPage(driver);
 	  
@@ -42,7 +42,7 @@ public class ActivatedProcessTest extends BaseTest{
 	  
 	  activatePgs.scheduleSection(sProcessName);
 	  
-	  activatePgs.runOnetime(setTime, recurTime,runKinds , sOption);
+	  activatePgs.runOnetime(setTime, recurTime,runKinds , sOption, sDescription);
 	  
   }
   

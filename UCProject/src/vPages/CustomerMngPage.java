@@ -22,7 +22,7 @@ public class CustomerMngPage {
 	WebElement btnMonitor;
 	@FindBy (css = "li.menu-level-0:nth-child(8) > ul:nth-child(2) > li:nth-child(1)")
 	WebElement clickOnCustomerMng;
-	@FindBy (css = ".font-black")
+	@FindBy (css = ".glyphicon-plus-sign")
 	WebElement addCustomer;
 	
 	//Create a Account
@@ -66,6 +66,12 @@ public class CustomerMngPage {
 	WebElement newPassword;
 	@FindBy (css = "input.ng-isolate-scope")
 	WebElement retypeNewPassWord;
+	@FindBy (css = "#data-table-customerList_filter > label:nth-child(1) > input:nth-child(1)")
+	WebElement filterBox;
+	@FindBy (css = ".sorting_1")
+	WebElement chooseToEdit;
+	@FindBy (css = ".glyphicon-edit")
+	WebElement btnEdit;
 	
 	//Get table
 	@FindBy (css = ".table")
@@ -82,6 +88,8 @@ public class CustomerMngPage {
 	WebElement codeIsExist;
 	@FindBy (css = ".lobibox-notify")
 	WebElement createSuccessNoti;
+	@FindBy (css = "div.has-error:nth-child(1) > div:nth-child(2) > p:nth-child(2)")
+	WebElement errLimitPassword;
 	
 	//Button
 	@FindBy (css = ".open > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)")
@@ -90,14 +98,14 @@ public class CustomerMngPage {
 	WebElement btnYesDelete;
 	@FindBy (css = ".open > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1)")
 	WebElement btnSetPassword;
-	@FindBy (css = ".open > ul:nth-child(2) > li:nth-child(2) > a:nth-child(1)")
-	WebElement btnEdit;
 	
 	//login Account Test
 	@FindBy (css = "#topmenu > div > ul > li.navbar-acc.parent > a")
 	WebElement profileIcon;
 	@FindBy (css = "#topmenu > div > ul > li.navbar-acc.parent > ul > li.menu-level-1.last > a")
 	WebElement btnSignOut;
+	@FindBy (css = ".acc-btn")
+	WebElement questProfileIcon;
 	
 	//Login Page
 	@FindBy (id = "Username")
@@ -208,7 +216,6 @@ public class CustomerMngPage {
 			
 			retypeNewPassWord.sendKeys(sRetypePassword);
 			
-			
 		}else {
 			
 			setPassword.click();
@@ -222,6 +229,14 @@ public class CustomerMngPage {
 			retypeNewPassWord.sendKeys(sRetypePassword);
 			
 		}
+		
+//		if(!errLimitPassword.isDisplayed()) {
+//
+//			System.out.println(errLimitPassword.getText().trim());
+//			
+//			Assert.assertNotEquals(errLimitPassword.getText().trim(), "Your password has at least 8 characters, maximize 20 characters.");
+//			
+//		}
 		
 		inpCode.sendKeys(sCode);
 		
@@ -253,8 +268,6 @@ public class CustomerMngPage {
 		
 			System.out.println("Create account Successful");
 			
-			
-			
 		}else if(errorDupEmail.getText().contains("Email has existed in system")) {
 		
 			System.out.println("Email is exist. Please use another email");
@@ -277,64 +290,28 @@ public class CustomerMngPage {
 
 	public void editAccount (String editAccount, String sAccountname) {
 		
-		WebElement enabled_next_page_btn = driver.findElement(By.cssSelector("[ng-click='nextPage()']"));
+		filterBox.sendKeys(sAccountname);
 		
-		JavascriptExecutor js2 = (JavascriptExecutor)driver;
+		try {
+	        
+			Thread.sleep(1000);
+			
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			
+			executor.executeScript("arguments[0].click();", chooseToEdit);
+			
+			btnEdit.click();
 	
-		js2.executeScript("arguments[0].click();", enabled_next_page_btn);
+		} catch (InterruptedException e) {
 	    
-	    List<WebElement> tableRows = customerTable2.findElements(By.tagName("tr"));
-		
-		int rowCount = tableRows.size();
-		
-		for (int row = 0; row < rowCount; row++) {
-			
-			String getCells = tableRows.get(row).getText().trim();
-			
-			String firstAccountName = getCells.substring(0, getCells.indexOf(" "));  
-
-				if(firstAccountName.contains(sAccountname)){
-				
-					System.out.println(firstAccountName + " == PASSED ==");	
-					 
-					WebElement hoverHintSetting = driver.findElement(By.xpath("//*[contains(text(), '" + sAccountname + "')]"));
-					
-					Actions builds = new Actions(driver);
-					
-					builds.moveToElement(hoverHintSetting).click(hoverHintSetting).build().perform();
-					
-					for (int i = 1; i < rowCount ; i++) {
-						
-						WebElement btnHINT =  driver.findElement(By.cssSelector("tr.ng-scope:nth-child("+ (i+1) +") > th:nth-child(1) > div:nth-child(1) > a:nth-child(1) > img:nth-child(1)"));
-						
-						JavascriptExecutor js = (JavascriptExecutor)driver;
-						
-						js.executeScript("arguments[0].click();", btnHINT);
-						
-					}
-					
-					JavascriptExecutor js = (JavascriptExecutor)driver;
-					
-					js.executeScript("arguments[0].click();", btnEdit);
-					
-					System.out.println("Reached to Edit Account section");
-
-					System.out.println("Edit Saved!!!");
-					
-				 }else{
-					 
-					 System.out.println(firstAccountName + " == FAILED ==");
-					 
-					 }
-					 
-				 }
+			e.printStackTrace();
+	    }   
 		
 		}
+	
 	public void loginAccoutTest(String sAccountName, String sNewPassword) {
 		
 		profileIcon.click();
-		
-		btnSignOut.click();
 		
 		try {
 			
@@ -348,11 +325,31 @@ public class CustomerMngPage {
 			
 	    }   
 		
+		btnSignOut.click();
+		
 		vUsername.sendKeys(sAccountName);
 		
 		vPassword.sendKeys(sNewPassword);
 		
 		btnLogin.click();
+		
+		try {
+			
+	        
+			Thread.sleep(1000);
+	    } 
+		
+		catch (InterruptedException e) {
+	    
+			e.printStackTrace();
+			
+	    }   
+		
+		String getProfileQuest = questProfileIcon.getText().trim();
+		
+		Assert.assertEquals(getProfileQuest, sAccountName);
+		
+		System.out.println("Login Guest Account Successful!");
 		
 	}
 

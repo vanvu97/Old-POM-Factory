@@ -27,11 +27,9 @@ public class ActivatedProcessPage {
 	WebElement listUl;
 	@FindBy (css = "li.menu-level-0:nth-child(7) > a:nth-child(1) > span:nth-child(2)")
 	WebElement btnActivate;
-	
 	//Title
 	@FindBy (css = ".page-header > h1:nth-child(1)")
 	WebElement getTitle;
-	
 	//Open Schedule Table
 	@FindBy (css = "ul.noBrd-tree:nth-child(4) > li:nth-child(1) > ul:nth-child(4) > li:nth-child(1) > ul:nth-child(4) > li:nth-child(1) > a:nth-child(2)")
 	WebElement firstProcess;
@@ -75,7 +73,8 @@ public class ActivatedProcessPage {
 	WebElement sSaturday;
 	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(8) > label:nth-child(1) > input:nth-child(1)")
 	WebElement sSunday;
-	
+	@FindBy (css = "textarea.form-control")
+	WebElement Description;
 	//Error Message
 	@FindBy (css = ".lobibox-notify-body")
 	WebElement error10Mins;
@@ -143,19 +142,30 @@ public class ActivatedProcessPage {
 		listProcessName.click();
 		
 		driver.findElement(By.xpath(".//option[contains(text(), '"+ sProcessName  +"')]")).click();
-		
-		btnSetting.click();
 	
-		Assert.assertEquals(titlePanel.getText().trim(), "Create a schedule");
+//		Assert.assertEquals(titlePanel.getText().trim(), "Create a schedule");
 		
 
 	}
 	
-	public void runOnetime(String setTime, String recurTime, String runKinds, String sOption) {
+	public void runOnetime(String setTime, String recurTime, String runKinds, String sOption,String sDescription) {
 		
 		switch(runKinds) {
 		
 		  case "Onetime":
+			  
+			  try {
+				    
+					Thread.sleep(1000);
+			    
+				} catch (InterruptedException e) {
+			    
+					e.printStackTrace();
+			    } 
+			  
+			  Description.sendKeys(sDescription);
+			  
+			  btnSetting.click();
 			  
 			  fromDate.click();
 				
@@ -178,6 +188,19 @@ public class ActivatedProcessPage {
 			  break;	
 		    
 		  case "Daily":
+			  
+			  try {
+				    
+					Thread.sleep(1000);
+			    
+				} catch (InterruptedException e) {
+			    
+					e.printStackTrace();
+			    } 
+			  
+			  Description.sendKeys(sDescription);
+			  
+			  btnSetting.click();
 			  
 			  runDaily.click();
 				
@@ -208,6 +231,10 @@ public class ActivatedProcessPage {
 			  break;
 			  	
 		  case "Weekly":
+			  
+			  Description.sendKeys(sDescription);
+			  
+			  btnSetting.click();
 			  
 			  runWeekly.click();
 			  
