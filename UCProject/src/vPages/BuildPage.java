@@ -22,7 +22,7 @@ public class BuildPage {
 	WebElement setProcessName;
 	@FindBy (css = ".btn-hover-stroke-info")
 	WebElement btnCreate;
-	@FindBy (css = "div.window:nth-child(4) > a:nth-child(1) > div:nth-child(1)")
+	@FindBy (css = "div.window:nth-child(4)")
 	WebElement SOAP;
 	@FindBy (css = "div.jtk-endpoint:nth-child(3) > svg:nth-child(1) > circle:nth-child(1)")
 	WebElement radioFlashStart;
@@ -48,7 +48,7 @@ public class BuildPage {
 		
 		try {
 		    
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 	    
 		} catch (InterruptedException e) {
 	    
@@ -74,13 +74,26 @@ public class BuildPage {
 		} catch (InterruptedException e) {
 	    
 			e.printStackTrace();
+			
 	    }   
 		
 		Actions ats2 = new Actions(driver);
 		
-		ats2.dragAndDrop(SOAP, lines).build().perform();
+		ats2.dragAndDrop(radioFlashStart, radioFlashEnd).build().perform();
 		
-		
+		try {
+		    
+			Thread.sleep(2000);
+			
+			Actions ats = new Actions(driver);
+			
+			ats.dragAndDrop(SOAP, radioFlashEnd).build().perform();
+			
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+			
+	    }   
 		
 	}
 	

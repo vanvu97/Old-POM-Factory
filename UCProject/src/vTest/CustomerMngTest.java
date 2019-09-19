@@ -41,14 +41,14 @@ public class CustomerMngTest extends BaseTest {
 		
 		loginUC.LoginUC(userName, password);
 		
-//		MngPgs.reachToCustomerSection();
+		MngPgs.reachToCustomerSection();
 		
 //		MngPgs.AddCustomer(sAccountName, sEmail, sAccountType, sEnable ,sNewPassword ,sRetypePassword 
 //				,sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
 		
 //		MngPgs.editAccount(password, sAccountName); 
 		
-		MngPgs.loginAccoutTest(sAccountName, sNewPassword);
+//		MngPgs.loginAccoutTest(sAccountName, sNewPassword);
 		
 //		MngPgs.deleteAccount();
 		

@@ -73,6 +73,10 @@ public class CustomerMngPage {
 	WebElement chooseToEdit;
 	@FindBy (css = ".glyphicon-edit")
 	WebElement btnEdit;
+	@FindBy (css = "li.menu-level-0:nth-child(6) > a:nth-child(1) > span:nth-child(2)")
+	WebElement btnBuild;
+	@FindBy (css = ".dropdown-treemenu > ul:nth-child(4) > li:nth-child(1) > ul:nth-child(4)")
+	WebElement listBuildProcess;
 	
 	//Get table
 	@FindBy (css = ".table")
@@ -250,15 +254,16 @@ public class CustomerMngPage {
 		} catch (InterruptedException e) {
 	    
 			e.printStackTrace();
+			
 	    }   
 		
 		if(createSuccessNoti.getText().contains("The new account has created")) {
 		
-			System.out.println("Create account Successful");
+			System.out.println("Create Account : " + sAccountName + " Successful");
 			
 		}else if(errorDupEmail.getText().contains("Email has existed in system")) {
 		
-			System.out.println("Email is exist. Please use another email");
+			System.out.println("Email " + sEmail + "@gmail.com " +" is exist. Please use another email");
 	
 		}else if(wrongFormatEmail.getText().contains("Wrong format")) {
 			
@@ -293,6 +298,7 @@ public class CustomerMngPage {
 		} catch (InterruptedException e) {
 	    
 			e.printStackTrace();
+			
 	    }   
 		
 		}
@@ -307,6 +313,7 @@ public class CustomerMngPage {
 			
 	        
 			Thread.sleep(5000);
+			
 	    } 
 		
 		catch (InterruptedException e) {
@@ -353,9 +360,38 @@ public class CustomerMngPage {
 			
 			String getListGuestMonitor = guestMonitor.get(i).getText();
 			
-			System.out.println(getListGuestMonitor);
+			System.out.println("List Monitor of the user include : " + getListGuestMonitor);
 			
 		}
+		
+		try {
+	        
+			Thread.sleep(1000);
+			
+			Actions actions4 = new Actions(driver);
+			
+		  	actions4.moveToElement(btnBuild).click().build().perform();
+		  	
+		  	List<WebElement> getBuildList = listBuildProcess.findElements(By.tagName("li"));
+		  	
+		  	int listBuildProcessSize = getBuildList.size();
+		  	
+		  	for (int i = 0; i < listBuildProcessSize; i++) {
+		  		
+		  		String buildProcessName = getBuildList.get(i).getText().trim();
+		  		
+		  		System.out.println(buildProcessName);
+		  		
+		  	}
+		  	
+			
+	    } 
+		
+		catch (InterruptedException e) {
+	    
+			e.printStackTrace();
+			
+	    }   
 		
 	}
 
