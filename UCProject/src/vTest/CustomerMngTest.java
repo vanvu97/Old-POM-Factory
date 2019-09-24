@@ -43,8 +43,8 @@ public class CustomerMngTest extends BaseTest {
 		
 		MngPgs.reachToCustomerSection();
 		
-//		MngPgs.AddCustomer(sAccountName, sEmail, sAccountType, sEnable ,sNewPassword ,sRetypePassword 
-//				,sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
+		MngPgs.AddCustomer(sAccountName, sEmail, sAccountType, sEnable ,sNewPassword ,sRetypePassword 
+				,sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
 		
 //		MngPgs.editAccount(password, sAccountName); 
 		

@@ -263,7 +263,7 @@ public class CustomerMngPage {
 			
 		}else if(errorDupEmail.getText().contains("Email has existed in system")) {
 		
-			System.out.println("Email " + sEmail + "@gmail.com " +" is exist. Please use another email");
+			System.out.println("Email "+ sEmail + "@gmail.com" +" is existed. Please use another email");
 	
 		}else if(wrongFormatEmail.getText().contains("Wrong format")) {
 			
@@ -384,7 +384,6 @@ public class CustomerMngPage {
 		  		
 		  	}
 		  	
-			
 	    } 
 		
 		catch (InterruptedException e) {

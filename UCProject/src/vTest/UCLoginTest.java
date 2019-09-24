@@ -19,9 +19,10 @@ public class UCLoginTest extends BaseTest{
 	public Object[][] dataProvider() throws Exception {
 		String filePath = System.getProperty("user.dir")+"\\src\\data\\";
 		
-	     Object[][] testObjArray = CustomerExcelFile.getTableArray(filePath + "ExportExcel.xlsx","LoginData", 0);
+	     Object[][] testObjArray = CustomerExcelFile.getTableArray(filePath + "ExportExcel.xlsx","LoginData", 1);
 
 	     return (testObjArray);
+	     
 	}
 	
 }

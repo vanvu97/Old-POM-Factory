@@ -22,14 +22,16 @@ public class BuildPage {
 	WebElement setProcessName;
 	@FindBy (css = ".btn-hover-stroke-info")
 	WebElement btnCreate;
-	@FindBy (css = "div.window:nth-child(4)")
+	@FindBy (css = "div.window:nth-child(4) > a:nth-child(1) > div:nth-child(1)")
 	WebElement SOAP;
 	@FindBy (css = "div.jtk-endpoint:nth-child(3) > svg:nth-child(1) > circle:nth-child(1)")
 	WebElement radioFlashStart;
 	@FindBy (css = "div.jtk-endpoint:nth-child(4) > svg:nth-child(1) > circle:nth-child(1)")
 	WebElement radioFlashEnd;
-	@FindBy (css = ".jtk-connector > path:nth-child(2)")
-	WebElement lines;
+	@FindBy (css = ".jtk-demo-main")
+	WebElement sTable;
+	@FindBy (css = ".page-header > h1:nth-child(1)")
+	WebElement geaderTitle;
 	
 	WebDriver driver;
 	WebDriverWait wait;
@@ -53,9 +55,20 @@ public class BuildPage {
 		} catch (InterruptedException e) {
 	    
 			e.printStackTrace();
+			
 	    }   
 		
 		btnBuild.click();
+		
+//		if (geaderTitle.isDisplayed()) {
+//			
+//			btnBuild.click();
+//			
+//		}else {
+//			
+//			System.out.println("Done!");
+//			
+//		}
 		
 		addNewProcess.click();
 		
@@ -63,7 +76,7 @@ public class BuildPage {
 		
 		processType.click();
 		
-		setProcessName.sendKeys("Test123123");
+		setProcessName.sendKeys("$$$$$$$");
 		
 		btnCreate.click();
 		
@@ -77,17 +90,17 @@ public class BuildPage {
 			
 	    }   
 		
-		Actions ats2 = new Actions(driver);
-		
-		ats2.dragAndDrop(radioFlashStart, radioFlashEnd).build().perform();
+//		Actions ats2 = new Actions(driver);
+//		
+//		ats2.dragAndDrop(radioFlashStart, radioFlashEnd).perform();
 		
 		try {
 		    
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			
 			Actions ats = new Actions(driver);
 			
-			ats.dragAndDrop(SOAP, radioFlashEnd).build().perform();
+			ats.clickAndHold(SOAP).moveToElement(radioFlashEnd, 15 ,15).release(radioFlashEnd).build().perform();
 			
 		} catch (InterruptedException e) {
 			

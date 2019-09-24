@@ -2,6 +2,7 @@ package vPages;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -74,6 +75,23 @@ public class ActivatedProcessPage {
 	WebElement sSunday;
 	@FindBy (css = "textarea.form-control")
 	WebElement Description;
+	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > button:nth-child(1)")
+	WebElement listMonth;
+	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > ul:nth-child(1)")
+	WebElement getMonth;
+	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > label:nth-child(2)")
+	WebElement sDays;
+	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > label:nth-child(2)")
+	WebElement sOn;
+	@FindBy (css = "#settingSchedule > div:nth-child(3) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > button:nth-child(1)")
+	WebElement listMonthDay;
+	@FindBy (css = "div.di__table:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > button:nth-child(1)")
+	WebElement onWhen;
+	@FindBy (css = "div.di__table:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > button:nth-child(1)")
+	WebElement onDays;
+	@FindBy (css = "div.di__table:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > ul:nth-child(1)")
+	WebElement chooseDays;
+	
 	//Error Message
 	@FindBy (css = ".lobibox-notify-body")
 	WebElement error10Mins;
@@ -143,7 +161,10 @@ public class ActivatedProcessPage {
 		driver.findElement(By.xpath(".//option[contains(text(), '"+ sProcessName  +"')]")).click();
 	
 //		Assert.assertEquals(titlePanel.getText().trim(), "Create a schedule");
+		  
+		Description.sendKeys("XXX");
 		
+		btnSetting.click();
 
 	}
 	
@@ -161,10 +182,6 @@ public class ActivatedProcessPage {
 			    
 					e.printStackTrace();
 			    } 
-			  
-			  Description.sendKeys(sDescription);
-			  
-			  btnSetting.click();
 			  
 			  fromDate.click();
 				
@@ -195,11 +212,7 @@ public class ActivatedProcessPage {
 				} catch (InterruptedException e) {
 			    
 					e.printStackTrace();
-			    } 
-			  
-			  Description.sendKeys(sDescription);
-			  
-			  btnSetting.click();
+			    }
 			  
 			  runDaily.click();
 				
@@ -230,10 +243,6 @@ public class ActivatedProcessPage {
 			  break;
 			  	
 		  case "Weekly":
-			  
-			  Description.sendKeys(sDescription);
-			  
-			  btnSetting.click();
 			  
 			  runWeekly.click();
 			  
@@ -312,9 +321,55 @@ public class ActivatedProcessPage {
 			  
 			  System.out.println("Deeploying....");
 			  
-			  String getText10Mins4 = error10Mins.getText();
+			  listMonth.click();
 			  
-			  Assert.assertNotEquals(getText10Mins4, "Scheduler could not run immediately. Time to run scheduler need to be greater than current time 10 minutes.");
+			  List<WebElement> getEachMonth = getMonth.findElements(By.tagName("span"));
+			  
+			  int getMonthSize = getEachMonth.size();
+			  
+			  System.out.println(getMonthSize);
+			  
+			  for (int i = 0; i < getMonthSize; i++) {
+				  
+				  WebElement selectMonth = driver.findElement(By.xpath("//span[contains(text(), '" + sOption +"')]"));
+				  
+				  selectMonth.click();
+				  
+			  }
+			  
+			  if(sDays.isSelected()) {
+				  
+				  listMonthDay.click();
+				  
+			  }else {
+				  
+				  onWhen.click();
+				  
+				  onDays.click();
+				  
+				  List<WebElement> getListDays = chooseDays.findElements(By.tagName("li"));
+				  
+				  int countListDays = getListDays.size();
+				  
+				  System.out.println(countListDays);
+				  
+				  for (int i = 0; i < countListDays; i++) {
+					  
+					  WebElement chooseDays = driver.findElement(By.xpath("//*[contains(text(), 'Monday')]"));
+					  
+					  JavascriptExecutor executor = (JavascriptExecutor)driver;
+					  
+					  executor.executeScript("arguments[0].click();", chooseDays);
+					  
+				  }
+				  
+			  }
+			  
+			  
+			  
+//			  String getText10Mins4 = error10Mins.getText();
+//			  
+//			  Assert.assertNotEquals(getText10Mins4, "Scheduler could not run immediately. Time to run scheduler need to be greater than current time 10 minutes.");
 			  
 			  break;
 			  
