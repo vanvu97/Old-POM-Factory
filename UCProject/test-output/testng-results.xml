@@ -1,74 +1,507 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="19" passed="19">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="33901" started-at="2019-09-24T09:43:47Z" finished-at="2019-09-24T09:44:21Z">
+  <suite name="Default suite" duration-ms="496021" started-at="2019-09-25T09:14:57Z" finished-at="2019-09-25T09:23:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="33901" started-at="2019-09-24T09:43:47Z" finished-at="2019-09-24T09:44:21Z">
-      <class name="vTest.ActivatedProcessTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.ActivatedProcessTest@3506d826]" name="setUp" is-config="true" duration-ms="8581" started-at="2019-09-24T16:43:49Z" finished-at="2019-09-24T16:43:57Z">
+    <test name="Default test" duration-ms="496021" started-at="2019-09-25T09:14:57Z" finished-at="2019-09-25T09:23:13Z">
+      <class name="vTest.BuildTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="5799" started-at="2019-09-25T16:15:00Z" finished-at="2019-09-25T16:15:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="createShedule(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.ActivatedProcessTest@3506d826]" name="createShedule" duration-ms="23114" started-at="2019-09-24T16:43:57Z" data-provider="loginData" finished-at="2019-09-24T16:44:20Z">
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="14347" started-at="2019-09-25T16:15:06Z" data-provider="buildProcess" finished-at="2019-09-25T16:15:20Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[123456]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[zDaily1]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[10:05 AM]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Monthly]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Jan]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[Daily Recur 1 ]]>
+                <![CDATA[@1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createShedule -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.ActivatedProcessTest@3506d826]" name="tearDown" is-config="true" duration-ms="254" started-at="2019-09-24T16:44:20Z" finished-at="2019-09-24T16:44:21Z">
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="3598" started-at="2019-09-25T16:15:20Z" finished-at="2019-09-25T16:15:24Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=createShedule status=SUCCESS method=ActivatedProcessTest.createShedule(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:vTest.ActivatedProcessTest@3506d826] output={null}]]]>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- vTest.ActivatedProcessTest -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="4320" started-at="2019-09-25T16:15:24Z" finished-at="2019-09-25T16:15:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="14678" started-at="2019-09-25T16:15:28Z" data-provider="buildProcess" finished-at="2019-09-25T16:15:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="3013" started-at="2019-09-25T16:15:43Z" finished-at="2019-09-25T16:15:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="6500" started-at="2019-09-25T16:15:46Z" finished-at="2019-09-25T16:15:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="14954" started-at="2019-09-25T16:15:52Z" data-provider="buildProcess" finished-at="2019-09-25T16:16:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="3931" started-at="2019-09-25T16:16:07Z" finished-at="2019-09-25T16:16:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="4239" started-at="2019-09-25T16:16:11Z" finished-at="2019-09-25T16:16:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="14415" started-at="2019-09-25T16:16:15Z" data-provider="buildProcess" finished-at="2019-09-25T16:16:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="3550" started-at="2019-09-25T16:16:30Z" finished-at="2019-09-25T16:16:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="4728" started-at="2019-09-25T16:16:33Z" finished-at="2019-09-25T16:16:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="13630" started-at="2019-09-25T16:16:38Z" data-provider="buildProcess" finished-at="2019-09-25T16:16:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="4262" started-at="2019-09-25T16:16:52Z" finished-at="2019-09-25T16:16:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="4252" started-at="2019-09-25T16:16:56Z" finished-at="2019-09-25T16:17:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="14243" started-at="2019-09-25T16:17:00Z" data-provider="buildProcess" finished-at="2019-09-25T16:17:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="3066" started-at="2019-09-25T16:17:15Z" finished-at="2019-09-25T16:17:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="4747" started-at="2019-09-25T16:17:18Z" finished-at="2019-09-25T16:17:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="14796" started-at="2019-09-25T16:17:22Z" data-provider="buildProcess" finished-at="2019-09-25T16:17:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="3765" started-at="2019-09-25T16:17:37Z" finished-at="2019-09-25T16:17:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="4747" started-at="2019-09-25T16:17:41Z" finished-at="2019-09-25T16:17:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="13726" started-at="2019-09-25T16:17:46Z" data-provider="buildProcess" finished-at="2019-09-25T16:17:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="4587" started-at="2019-09-25T16:17:59Z" finished-at="2019-09-25T16:18:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="4920" started-at="2019-09-25T16:18:04Z" finished-at="2019-09-25T16:18:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="15011" started-at="2019-09-25T16:18:09Z" data-provider="buildProcess" finished-at="2019-09-25T16:18:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="3573" started-at="2019-09-25T16:18:24Z" finished-at="2019-09-25T16:18:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="4222" started-at="2019-09-25T16:18:27Z" finished-at="2019-09-25T16:18:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="14541" started-at="2019-09-25T16:18:32Z" data-provider="buildProcess" finished-at="2019-09-25T16:18:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="7536" started-at="2019-09-25T16:18:46Z" finished-at="2019-09-25T16:18:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="8427" started-at="2019-09-25T16:18:54Z" finished-at="2019-09-25T16:19:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="14875" started-at="2019-09-25T16:19:02Z" data-provider="buildProcess" finished-at="2019-09-25T16:19:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@11]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="6711" started-at="2019-09-25T16:19:17Z" finished-at="2019-09-25T16:19:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="15451" started-at="2019-09-25T16:19:24Z" finished-at="2019-09-25T16:19:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="20690" started-at="2019-09-25T16:19:39Z" data-provider="buildProcess" finished-at="2019-09-25T16:20:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@12]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="3264" started-at="2019-09-25T16:20:00Z" finished-at="2019-09-25T16:20:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="4983" started-at="2019-09-25T16:20:03Z" finished-at="2019-09-25T16:20:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="15176" started-at="2019-09-25T16:20:08Z" data-provider="buildProcess" finished-at="2019-09-25T16:20:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="11589" started-at="2019-09-25T16:20:23Z" finished-at="2019-09-25T16:20:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="12095" started-at="2019-09-25T16:20:35Z" finished-at="2019-09-25T16:20:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="18071" started-at="2019-09-25T16:20:47Z" data-provider="buildProcess" finished-at="2019-09-25T16:21:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@14]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="6224" started-at="2019-09-25T16:21:05Z" finished-at="2019-09-25T16:21:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="6928" started-at="2019-09-25T16:21:11Z" finished-at="2019-09-25T16:21:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="14222" started-at="2019-09-25T16:21:18Z" data-provider="buildProcess" finished-at="2019-09-25T16:21:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@15]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="3336" started-at="2019-09-25T16:21:32Z" finished-at="2019-09-25T16:21:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="4744" started-at="2019-09-25T16:21:36Z" finished-at="2019-09-25T16:21:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="14909" started-at="2019-09-25T16:21:41Z" data-provider="buildProcess" finished-at="2019-09-25T16:21:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@16]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="3473" started-at="2019-09-25T16:21:55Z" finished-at="2019-09-25T16:21:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="5331" started-at="2019-09-25T16:21:59Z" finished-at="2019-09-25T16:22:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="14551" started-at="2019-09-25T16:22:04Z" data-provider="buildProcess" finished-at="2019-09-25T16:22:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@17]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="3158" started-at="2019-09-25T16:22:19Z" finished-at="2019-09-25T16:22:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="5978" started-at="2019-09-25T16:22:22Z" finished-at="2019-09-25T16:22:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="16279" started-at="2019-09-25T16:22:28Z" data-provider="buildProcess" finished-at="2019-09-25T16:22:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@18]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="3146" started-at="2019-09-25T16:22:44Z" finished-at="2019-09-25T16:22:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.BuildTest@29629fbb]" name="setUp" is-config="true" duration-ms="4229" started-at="2019-09-25T16:22:47Z" finished-at="2019-09-25T16:22:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb]" name="main" duration-ms="13074" started-at="2019-09-25T16:22:52Z" data-provider="buildProcess" finished-at="2019-09-25T16:23:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[@19]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:vTest.BuildTest@29629fbb]" name="tearDown" is-config="true" duration-ms="8624" started-at="2019-09-25T16:23:05Z" finished-at="2019-09-25T16:23:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=BuildTest.main(java.lang.String)[pri:0, instance:vTest.BuildTest@29629fbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- vTest.BuildTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

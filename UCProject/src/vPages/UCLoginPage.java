@@ -34,7 +34,7 @@ public class UCLoginPage {
 	
 	public void LoginUC(String vUser, String vPass) {
 		
-		driver.get(Links.URL_UC);
+		driver.get(Links.URL_UC_QCCIP);
 		
 		vUsername.sendKeys(vUser);
 		

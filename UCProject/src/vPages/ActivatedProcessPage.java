@@ -45,7 +45,7 @@ public class ActivatedProcessPage {
 	WebElement fromDate;
 	@FindBy (css = "#timepicker-1")
 	WebElement timeStar;
-	@FindBy (xpath = "/html/body/div[4]/div[3]/table/tfoot/tr[1]/th")
+	@FindBy (xpath = "//*[@class='today']")
 	WebElement btnToday;
 	@FindBy (css = "button.btn-stroke")
 	WebElement btnSave;
@@ -183,13 +183,13 @@ public class ActivatedProcessPage {
 					e.printStackTrace();
 			    } 
 			  
-			  fromDate.click();
+			  fromDate.sendKeys("09/20/2019");
 				
 			  System.out.println(formattedDate);
 				
-			  Actions actions = new Actions(driver);
-				
-			  actions.moveToElement(btnToday).click().build().perform();
+			  JavascriptExecutor executor2 = (JavascriptExecutor)driver;
+		  		
+			  executor2.executeScript("arguments[0].click();", btnToday);
 			  	
 			  timeStar.clear();
 			  	
@@ -216,13 +216,13 @@ public class ActivatedProcessPage {
 			  
 			  runDaily.click();
 				
-			  fromDate.click();
+			  fromDate.sendKeys("09/20/2019");
 				
 			  System.out.println(formattedDate);
 				
-			  Actions actions2 = new Actions(driver);
-				
-			  actions2.moveToElement(btnToday).click().build().perform();
+			  JavascriptExecutor executor5 = (JavascriptExecutor)driver;
+		  		
+			  executor5.executeScript("arguments[0].click();", btnToday);
 	
 			  timeStar.click();
 			  	
@@ -263,8 +263,8 @@ public class ActivatedProcessPage {
 	  			
 			  	}else if(sOption.contains("357")) {
 	  				
-	  				JavascriptExecutor executor2 = (JavascriptExecutor)driver;
-		  			executor2.executeScript("arguments[0].click();", listDays);
+	  				JavascriptExecutor executor3 = (JavascriptExecutor)driver;
+		  			executor3.executeScript("arguments[0].click();", listDays);
 		  			
 		  			sTuesday.click();
 		  			
@@ -274,8 +274,8 @@ public class ActivatedProcessPage {
 		  			
 			  	}else if(sOption.contains("all")) {
 	  				
-	  				JavascriptExecutor executor3 = (JavascriptExecutor)driver;
-		  			executor3.executeScript("arguments[0].click();", listDays);
+	  				JavascriptExecutor executor4 = (JavascriptExecutor)driver;
+		  			executor4.executeScript("arguments[0].click();", listDays);
 	  				
 	  				sMonday.click();
 		  			
@@ -293,14 +293,23 @@ public class ActivatedProcessPage {
 		  			
 			  }
 			  
-			  fromDate.click();
+			  fromDate.sendKeys("09/20/2019");
 				
 			  System.out.println(formattedDate);
-				
-			  Actions actions3 = new Actions(driver);
-			
-			  actions3.moveToElement(btnToday).click().build().perform();
 			  
+			  try {
+				    
+					Thread.sleep(1000);
+			    
+				} catch (InterruptedException e) {
+			    
+					e.printStackTrace();
+			    }
+			  
+			  JavascriptExecutor executor6 = (JavascriptExecutor)driver;
+	  		
+			  executor6.executeScript("arguments[0].click();", btnToday);
+			
 			  timeStar.click();
 			  	
 			  timeStar.clear();
@@ -320,6 +329,20 @@ public class ActivatedProcessPage {
 			  runMonthly.click();
 			  
 			  System.out.println("Deeploying....");
+			  
+			  fromDate.sendKeys("09/20/2019");
+			  
+			  Actions actions4 = new Actions(driver);
+			  
+			  actions4.moveToElement(btnToday).build().perform();
+			  
+			  btnToday.click();
+			
+			  timeStar.click();
+			  	
+			  timeStar.clear();
+			  	
+			  timeStar.sendKeys(setTime);
 			  
 			  listMonth.click();
 			  

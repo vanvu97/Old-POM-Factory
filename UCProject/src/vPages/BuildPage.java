@@ -24,14 +24,20 @@ public class BuildPage {
 	WebElement btnCreate;
 	@FindBy (css = "div.window:nth-child(4) > a:nth-child(1) > div:nth-child(1)")
 	WebElement SOAP;
-	@FindBy (css = "div.jtk-endpoint:nth-child(3) > svg:nth-child(1) > circle:nth-child(1)")
-	WebElement radioFlashStart;
+	@FindBy (css = "div.jtk-endpoint:nth-child(7) > svg:nth-child(1) > circle:nth-child(1)")
+	WebElement startSOAP;
+	@FindBy (css = "div.jtk-endpoint:nth-child(6) > svg:nth-child(1) > circle:nth-child(1)")
+	WebElement endSOAP;
 	@FindBy (css = "div.jtk-endpoint:nth-child(4) > svg:nth-child(1) > circle:nth-child(1)")
+	WebElement radioFlashStart;
+	@FindBy (css = "div.jtk-endpoint:nth-child(5) > svg:nth-child(1) > circle:nth-child(1)")
 	WebElement radioFlashEnd;
 	@FindBy (css = ".jtk-demo-main")
 	WebElement sTable;
 	@FindBy (css = ".page-header > h1:nth-child(1)")
 	WebElement geaderTitle;
+	@FindBy (css = "div.footer:nth-child(3) > button:nth-child(1)")
+	WebElement btnSave;
 	
 	WebDriver driver;
 	WebDriverWait wait;
@@ -46,7 +52,7 @@ public class BuildPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void buildProcess () {
+	public void buildProcess (String ProcessName) {
 		
 		try {
 		    
@@ -76,13 +82,13 @@ public class BuildPage {
 		
 		processType.click();
 		
-		setProcessName.sendKeys("$$$$$$$");
+		setProcessName.sendKeys(ProcessName);
 		
 		btnCreate.click();
 		
 		try {
 		    
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 	    
 		} catch (InterruptedException e) {
 	    
@@ -90,23 +96,13 @@ public class BuildPage {
 			
 	    }   
 		
-//		Actions ats2 = new Actions(driver);
-//		
-//		ats2.dragAndDrop(radioFlashStart, radioFlashEnd).perform();
+		Actions ats2 = new Actions(driver);
 		
-		try {
-		    
-			Thread.sleep(1000);
-			
-			Actions ats = new Actions(driver);
-			
-			ats.clickAndHold(SOAP).moveToElement(radioFlashEnd, 15 ,15).release(radioFlashEnd).build().perform();
-			
-		} catch (InterruptedException e) {
-			
-			e.printStackTrace();
-			
-	    }   
+		ats2.dragAndDrop(radioFlashStart, startSOAP).build().perform();
+		
+		ats2.dragAndDrop(endSOAP, radioFlashEnd).build().perform();
+		
+		btnSave.click();
 		
 	}
 	

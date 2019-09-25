@@ -95,6 +95,8 @@ public class CustomerMngPage {
 	WebElement createSuccessNoti;
 	@FindBy (css = "div.has-error:nth-child(1) > div:nth-child(2) > p:nth-child(2)")
 	WebElement errLimitPassword;
+	@FindBy (css = ".has-error > div:nth-child(2) > p:nth-child(2)")
+	WebElement emailRequireData;
 	
 	//Button
 	@FindBy (css = ".open > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)")
@@ -169,6 +171,12 @@ public class CustomerMngPage {
 		inpAccountName.sendKeys(sAccountName);
 		
 		inpEmail.sendKeys(sEmail + "@gmail.com");
+		
+		if(emailRequireData.isDisplayed()) {
+			
+			System.out.println("Required email");
+			
+		}
 		
 		accType.click();
 		
