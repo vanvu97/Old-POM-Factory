@@ -31,7 +31,7 @@ public class ActivatedProcessPage {
 	@FindBy (css = ".page-header > h1:nth-child(1)")
 	WebElement getTitle;
 	//Open Schedule Table
-	@FindBy (css = "ul.noBrd-tree:nth-child(4) > li:nth-child(1) > ul:nth-child(4) > li:nth-child(1) > ul:nth-child(4) > li:nth-child(1) > a:nth-child(2)")
+	@FindBy (css = "ul.noBrd-tree:nth-child(4) > li:nth-child(1) > ul:nth-child(4) > li:nth-child(2) > ul:nth-child(4) > li:nth-child(1) > a:nth-child(2) > span:nth-child(1)")
 	WebElement firstProcess;
 	@FindBy (css = ".open > ul:nth-child(4) > li:nth-child(1) > a:nth-child(1)")
 	WebElement createScheduleText;
@@ -95,6 +95,8 @@ public class ActivatedProcessPage {
 	//Error Message
 	@FindBy (css = ".lobibox-notify-body")
 	WebElement error10Mins;
+	@FindBy (css = ".lobibox-notify")
+	WebElement errorAlreadySchedule;
 	
 	WebDriver driver;
 	WebDriverWait wait;
@@ -129,7 +131,7 @@ public class ActivatedProcessPage {
 		
 	}
 	
-	public void scheduleSection(String sProcessName) {
+	public void scheduleSection(String sProcessName, String sDescription) {
 		
 		try {
 		    
@@ -162,13 +164,13 @@ public class ActivatedProcessPage {
 	
 //		Assert.assertEquals(titlePanel.getText().trim(), "Create a schedule");
 		  
-		Description.sendKeys("XXX");
+		Description.sendKeys(sDescription);
 		
 		btnSetting.click();
 
 	}
 	
-	public void runOnetime(String setTime, String recurTime, String runKinds, String sOption,String sDescription) {
+	public void runOnetime(String setTime, String recurTime, String runKinds, String sOption) {
 		
 		switch(runKinds) {
 		
@@ -194,13 +196,17 @@ public class ActivatedProcessPage {
 			  timeStar.clear();
 			  	
 			  timeStar.sendKeys(setTime);
-				
+			  
 			  btnSave.click();
 			  
 			  String getText10Mins = error10Mins.getText();
 			  
+			  String getTextAlreadySchedule = errorAlreadySchedule.getText();
+			  
 			  Assert.assertNotEquals(getText10Mins, "Scheduler could not run immediately. Time to run scheduler need to be greater than current time 10 minutes.");
-				  	
+				
+			  Assert.assertNotEquals(getTextAlreadySchedule, "The process has already been scheduled.");
+			  
 			  break;	
 		    
 		  case "Daily":
@@ -237,8 +243,12 @@ public class ActivatedProcessPage {
 			  btnSave.click();
 			  
 			  String getText10Mins2 = error10Mins.getText();
+
+			  String getTextAlreadySchedule2 = errorAlreadySchedule.getText();
 			  
 			  Assert.assertNotEquals(getText10Mins2, "Scheduler could not run immediately. Time to run scheduler need to be greater than current time 10 minutes.");
+			  
+			  Assert.assertNotEquals(getTextAlreadySchedule2, "The process has already been scheduled.");
 			  
 			  break;
 			  	
@@ -276,7 +286,7 @@ public class ActivatedProcessPage {
 	  				
 	  				JavascriptExecutor executor4 = (JavascriptExecutor)driver;
 		  			executor4.executeScript("arguments[0].click();", listDays);
-	  				
+		  			
 	  				sMonday.click();
 		  			
 		  			sTuesday.click();
@@ -319,8 +329,12 @@ public class ActivatedProcessPage {
 			  btnSave.click();
 			  
 			  String getText10Mins3 = error10Mins.getText();
+
+			  String getTextAlreadySchedule3 = errorAlreadySchedule.getText();
 			  
 			  Assert.assertNotEquals(getText10Mins3, "Scheduler could not run immediately. Time to run scheduler need to be greater than current time 10 minutes.");
+			  
+			  Assert.assertNotEquals(getTextAlreadySchedule3, "The process has already been scheduled.");
 			  
 			  break;
 			  
@@ -388,11 +402,13 @@ public class ActivatedProcessPage {
 				  
 			  }
 			  
+			  String getText10Mins4 = error10Mins.getText();
+
+			  String getTextAlreadySchedule4 = errorAlreadySchedule.getText();
 			  
+			  Assert.assertNotEquals(getText10Mins4, "Scheduler could not run immediately. Time to run scheduler need to be greater than current time 10 minutes.");
 			  
-//			  String getText10Mins4 = error10Mins.getText();
-//			  
-//			  Assert.assertNotEquals(getText10Mins4, "Scheduler could not run immediately. Time to run scheduler need to be greater than current time 10 minutes.");
+			  Assert.assertNotEquals(getTextAlreadySchedule4, "The process has already been scheduled.");
 			  
 			  break;
 			  

@@ -6,7 +6,7 @@
       <class name="vTest.BuildTest">
         <methods>
           <include name="tearDown"/>
-          <include name="main" invocation-numbers="0"/>
+          <include name="main" invocation-numbers="0 1 2 3"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- vTest.BuildTest -->

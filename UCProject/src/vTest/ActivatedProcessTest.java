@@ -40,9 +40,9 @@ public class ActivatedProcessTest extends BaseTest{
 	  
 	  activatePgs.doucumenentTrackingPgs();
 	  
-	  activatePgs.scheduleSection(sProcessName);
+	  activatePgs.scheduleSection(sProcessName, sDescription);
 	  
-	  activatePgs.runOnetime(setTime, recurTime,runKinds , sOption, sDescription);
+	  activatePgs.runOnetime(setTime, recurTime,runKinds , sOption);
 	  
   }
   
@@ -166,7 +166,7 @@ public class ActivatedProcessTest extends BaseTest{
 			
 		}
 
-//		driver.close();
+		driver.close();
   
 	}
   

@@ -22,7 +22,7 @@ public class BuildPage {
 	WebElement setProcessName;
 	@FindBy (css = ".btn-hover-stroke-info")
 	WebElement btnCreate;
-	@FindBy (css = "div.window:nth-child(4) > a:nth-child(1) > div:nth-child(1)")
+	@FindBy (css = "div.window:nth-child(4) > a:nth-child(1) > div:nth-child(2) > h4:nth-child(1)")
 	WebElement SOAP;
 	@FindBy (css = "div.jtk-endpoint:nth-child(7) > svg:nth-child(1) > circle:nth-child(1)")
 	WebElement startSOAP;
@@ -30,7 +30,7 @@ public class BuildPage {
 	WebElement endSOAP;
 	@FindBy (css = "div.jtk-endpoint:nth-child(4) > svg:nth-child(1) > circle:nth-child(1)")
 	WebElement radioFlashStart;
-	@FindBy (css = "div.jtk-endpoint:nth-child(5) > svg:nth-child(1) > circle:nth-child(1)")
+	@FindBy (css = "div.jtk-endpoint:nth-child(3) > svg:nth-child(1) > circle:nth-child(1)")
 	WebElement radioFlashEnd;
 	@FindBy (css = ".jtk-demo-main")
 	WebElement sTable;
@@ -88,7 +88,7 @@ public class BuildPage {
 		
 		try {
 		    
-			Thread.sleep(4000);
+			Thread.sleep(3000);
 	    
 		} catch (InterruptedException e) {
 	    
@@ -98,9 +98,7 @@ public class BuildPage {
 		
 		Actions ats2 = new Actions(driver);
 		
-		ats2.dragAndDrop(radioFlashStart, startSOAP).build().perform();
-		
-		ats2.dragAndDrop(endSOAP, radioFlashEnd).build().perform();
+		ats2.dragAndDrop(radioFlashStart, radioFlashEnd).build().perform();
 		
 		btnSave.click();
 		

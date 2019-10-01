@@ -287,6 +287,8 @@ public class CustomerMngPage {
 		
 		Assert.assertNotEquals(getTitleCreateAccount, "Create Account");
 		
+		System.out.println("Create account Successfully!!!");
+		
 	}
 
 	public void editAccount (String editAccount, String sAccountname) {
