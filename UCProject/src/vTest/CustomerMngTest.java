@@ -31,8 +31,8 @@ public class CustomerMngTest extends BaseTest {
 	CustomerMngPage MngPgs;
 	
 	
-	@Test(dataProvider="loginData"/*, invocationCount = 3*/)
-  public void CreateAccount(String userName, String password, String sAccountName, String sEmail, String sAccountType, String sEnable,String sNewPassword ,
+	@Test(dataProvider="CustomerData"/*, invocationCount = 3*/)
+  public void CreateAccount(String userName, String password,String AddOrDelete, String sAccountName, String sEmail, String sAccountType, String sEnable,String sNewPassword ,
 		  String sRetypePassword , String sCode, String sFullName, String sAddress, String Company, String sCountry, String CountryCode, String PhoneNo) throws InterruptedException, FileNotFoundException {
 		
 		loginUC = new UCLoginPage(driver);
@@ -43,21 +43,17 @@ public class CustomerMngTest extends BaseTest {
 		
 		MngPgs.reachToCustomerSection();
 		
-		MngPgs.AddCustomer(sAccountName, sEmail, sAccountType, sEnable ,sNewPassword ,sRetypePassword 
+		MngPgs.AddCustomer(AddOrDelete, sAccountName, sEmail, sAccountType, sEnable ,sNewPassword ,sRetypePassword 
 				,sCode, sFullName, sAddress, Company, sCountry, CountryCode, PhoneNo);
-		
-//		MngPgs.editAccount(password, sAccountName); 
 		
 //		MngPgs.loginAccoutTest(sAccountName, sNewPassword);
 		
-//		MngPgs.deleteAccount();
-		
 	}
 	
-	@DataProvider(name = "loginData")
+	@DataProvider(name = "CustomerData")
 	public Object[][] dataProvider() throws Exception {
 		
-	     Object[][] testObjArray = CustomerExcelFile.getTableArray(Links.PATH_TO_EXCEL_Customer,"LoginData", 1);
+	     Object[][] testObjArray = CustomerExcelFile.getTableArray(Links.PATH_TO_EXCEL_Customer,"Customer", 1);
 
 	     return (testObjArray);
 		
@@ -113,7 +109,7 @@ public class CustomerMngTest extends BaseTest {
 			 
 			 Row row = sheet.getRow(i);
 			 
-			 Cell cell = row.createCell(16);
+			 Cell cell = row.createCell(17);
 			 
 			 cell.setCellValue("FAILED");
 			 
@@ -160,7 +156,7 @@ public class CustomerMngTest extends BaseTest {
 			 
 			 Row row = sheet.getRow(i);
 			 
-			 Cell cell = row.createCell(16);
+			 Cell cell = row.createCell(17);
 			 
 			 cell.setCellValue("PASSED");
 			 
