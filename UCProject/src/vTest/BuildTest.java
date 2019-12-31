@@ -36,7 +36,7 @@ public class BuildTest extends BaseTest{
 	  
 	  buildPgs = new BuildPage(driver);
 	  
-	  loginUC.LoginUC("MrRobot0001", "123123123");
+	  loginUC.LoginUC("admin", "123456");
 	  
 	  buildPgs.buildProcess(ProcessName);
 	  

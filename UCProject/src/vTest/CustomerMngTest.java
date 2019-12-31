@@ -170,7 +170,7 @@ public class CustomerMngTest extends BaseTest {
 			
 		}
 
-//		driver.close();
+		driver.close();
     
 	}
 	

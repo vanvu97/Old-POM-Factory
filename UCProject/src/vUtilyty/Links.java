@@ -20,10 +20,8 @@ public class Links {
 	public static final String PATH_TO_EXCEL_Schedule = System.getProperty("user.dir") + File.separator +"\\src\\data\\" + File.separator + "ScheduleExcel.xlsx";
 	public static final String PATH_TO_EXCEL_Build = System.getProperty("user.dir") + File.separator +"\\src\\data\\" + File.separator + "BuildExcel.xlsx";
 	public static final String URL_UC = "http://172.16.0.104:8089/#!/";
-	public static final String URL_UC_QCCIP = "http://172.16.3.177:8883/";
+	public static final String URL_UC_QCCIP = "http://172.16.3.177:8883/#!/";
 	public static final String URL_UC_Customer = "http://172.16.0.104:8089/#!/customers";
     public static final String PATH_TO_IMG = System.getProperty("user.dir") + File.separator + "Error" + File.separator + formattedDate + ".png";
-	
-	
 
   }
