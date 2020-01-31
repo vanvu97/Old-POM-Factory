@@ -18,6 +18,7 @@ public class RecipePage {
 	WebElement InputName;
 	@FindBy (css = ".btn-hover-stroke-info")
 	WebElement btnCreate;
+	
 	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[2]/div[2]/ng-include/div/div[2]/div/div/div[3]/a")
 	WebElement DISK;
 	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[2]/div[2]/ng-include/div/div[2]/div/div/div[4]/a")
@@ -32,6 +33,7 @@ public class RecipePage {
 	WebElement DISK2;
 	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[1]/a/div[2]/h4")
 	WebElement to;
+	
 	@FindBy (css = "div.jtk-endpoint:nth-child(6) > svg:nth-child(1) > circle:nth-child(1)")
 	WebElement StartEnd;
 	@FindBy (css = "div.jtk-endpoint:nth-child(9) > svg:nth-child(1) > circle:nth-child(1)")
@@ -48,10 +50,68 @@ public class RecipePage {
 	WebElement DISKEnd;
 	@FindBy (css = "div.jtk-endpoint:nth-child(7) > svg:nth-child(1) > circle:nth-child(1)")
 	WebElement End;
+	
+	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[3]/div[1]/a/i")
+	WebElement SOAPConfig;
+	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[2]/div[1]/ng-include/div[2]/form/div/div[1]/div[3]/div/select")
+	WebElement SOAPAction;
+	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[2]/div[1]/ng-include/div[2]/form/div/div[1]/div[3]/div/select/option[2]")
+	WebElement ActionGet;
+	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[2]/div[1]/ng-include/div[2]/form/div/div[1]/div[3]/div/select/option[3]")
+	WebElement ActionSend;
+	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[2]/div[1]/ng-include/div[2]/form/div/div[1]/div[5]/div[1]/div/input")
+	WebElement sendWSDL_URL;
+	@FindBy (css = "textarea.ng-pristine")
+	WebElement sendEnvelope;
+	@FindBy (css = "#save-btn")
+	WebElement saveBTN;
+	
+	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[4]/div[1]/a/i")
+	WebElement MAPConfig;
+	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[2]/div[1]/ng-include/div[2]/form/div/div[1]/div[2]/div/div/button[1]")
+	WebElement clickMap;
+	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[2]/div[1]/ng-include/div[2]/form/div/div[1]/div[2]/div/div/div/div[1]/div/input")
+	WebElement inpMapName;
+	@FindBy (css = "li.abn-tree-row:nth-child(1) > a:nth-child(1) > span:nth-child(2)")
+	WebElement selectMAP;
+	
+	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[5]/div[1]/a/i")
+	WebElement DISKConfig;
+	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[2]/div[1]/ng-include/div/form/div/div/div/div[3]/div/select")
+	WebElement DISKAction;
+	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[2]/div[1]/ng-include/div/form/div/div/div/div[3]/div/select/option[1]")
+	WebElement DiskGet;
+	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[2]/div[1]/ng-include/div/form/div/div/div/div[3]/div/select/option[2]")
+	WebElement DiskSend;
+	@FindBy (css = "div.form-group:nth-child(4) > div:nth-child(2) > div:nth-child(1) > button:nth-child(1)")
+	WebElement DiskConnection;
+	@FindBy (css = "div.form-group:nth-child(5) > div:nth-child(2) > div:nth-child(1) > button:nth-child(1)")
+	WebElement DiskOperation;
+	@FindBy (css = ".open > div:nth-child(2) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(1) > a:nth-child(1)")
+	WebElement selectDisk;
+	
 	@FindBy (css = "div.di__ui-layout-action:nth-child(4) > button:nth-child(1)")
 	WebElement btnSave;
+	@FindBy (css = ".lobibox-notify")
+	WebElement notiPopup;
+	@FindBy (css = ".btn-success")
+	WebElement btnExecute;
 
-	
+	String RecipeName = "TestCreate";
+	String WSDL_URL = "https://stdemo508.smartturn.com/services/OccamService";
+	String Envelope = "<x:Envelope xmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ba=\"http://www.smartturn.com/services/OccamService/ba\" xmlns:occ=\"http://www.smartturn.com/services/occamtypes\">\n" + 
+			"    <x:Header/>\n" + 
+			"    <x:Body>\n" + 
+			"        <ba:lookUpBusinessAffiliates>\n" + 
+			"            <ba:inCredential>\n" + 
+			"                <occ:UserId>admin@dicentral.com</occ:UserId>\n" + 
+			"                <occ:Password>Test.123</occ:Password>\n" + 
+			"            </ba:inCredential>\n" + 
+			"        </ba:lookUpBusinessAffiliates>\n" + 
+			"    </x:Body>\n" + 
+			"</x:Envelope>";
+	String MapName = "Map";
+			
 	
 	WebDriver driver;
 	WebDriverWait wait;
@@ -87,7 +147,7 @@ public class RecipePage {
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", BtnRecipe);
 		
-		InputName.sendKeys("TestCreate");
+		InputName.sendKeys(RecipeName);
 		
 		JavascriptExecutor executor2 = (JavascriptExecutor)driver;
 		executor2.executeScript("arguments[0].click();", btnCreate);
@@ -134,6 +194,126 @@ public class RecipePage {
 		DropConnect.dragAndDrop(MAPEnd, DISKStart).build().perform();
 		
 		DropConnect.dragAndDrop(DISKEnd, End).build().perform();
+		
+//		------------------Configuration SOAP----------------------------
+		
+		DropNe.moveToElement(SOAP2).build().perform();
+		
+		SOAPConfig.click();
+		
+		executor.executeScript("arguments[0].click();", SOAPAction);
+		
+		executor.executeScript("arguments[0].click();", ActionGet);
+		
+		sendWSDL_URL.click();
+		
+		sendWSDL_URL.sendKeys(WSDL_URL);
+		
+		sendEnvelope.sendKeys(Envelope);
+		
+		saveBTN.click();
+		
+		if(notiPopup.getText().contains("successful")) {
+			
+			System.out.println("The SOAP was saved successful!");
+			
+		}else {
+			
+			System.out.println("Save Failed");
+			
+		}
+		
+//		------------------Configuration MAP----------------------------
+		
+		DropNe.moveToElement(MAP2).build().perform();
+		
+		MAPConfig.click();
+		
+		executor.executeScript("arguments[0].click();", clickMap);
+		
+		inpMapName.sendKeys(MapName);
+		
+
+		try {
+		    
+			Thread.sleep(2000);
+			
+			selectMAP.click();
+	    
+		} catch (InterruptedException e) {
+	    
+			e.printStackTrace();
+	    } 
+		
+		executor.executeScript("arguments[0].click();", saveBTN);
+
+		if(notiPopup.getText().contains("successful")) {
+			
+			System.out.println("The MAP was saved successful!");
+			
+		}else {
+			
+			System.out.println("Save Failed");
+			
+		}
+		
+//		------------------Configuration DISK----------------------------
+		
+		DropNe.moveToElement(DISK2).build().perform();
+		
+		DISKConfig.click();
+		
+		DISKAction.click();
+		
+		DiskSend.click();
+		
+		DiskConnection.click();
+		
+		DiskConnection.sendKeys("321");
+		
+		selectDisk.click();
+		
+		DiskOperation.click();
+		
+		DiskOperation.sendKeys("123");
+		
+		selectDisk.click();
+		
+		saveBTN.click();
+
+		if(notiPopup.getText().contains("successful")) {
+			
+			System.out.println("The DISK was saved successful!");
+			
+		}else {
+			
+			System.out.println("Save Failed");
+			
+		}
+		
+		btnSave.click();
+		
+		if(notiPopup.getText().contains("successful")) {
+			
+			System.out.println("The recipe " + RecipeName + " was saved successful!");
+			
+		}else {
+			
+			System.out.println("Save Failed");
+			
+		}
+		
+		try {
+		    
+			Thread.sleep(2000);
+			
+			executor.executeScript("arguments[0].click();", btnExecute);
+	    
+		} catch (InterruptedException e) {
+	    
+			e.printStackTrace();
+	    } 
+		
 		
 	}
 	
