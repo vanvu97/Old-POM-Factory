@@ -19,7 +19,7 @@ public class BaseTest {
 		options.setProfile(new FirefoxProfile());
 		options.addPreference("dom.webnotifications.enabled", false);
 		driver = new FirefoxDriver(options);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		
 //		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vuvan\\Downloads\\Driver\\ChromeDriver-76.0.3809.68\\chromedriver.exe");
 //		ChromeOptions options = new ChromeOptions();

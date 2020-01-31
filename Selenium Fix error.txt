@@ -83,3 +83,5 @@ List<WebElement> tableRows = customerTable.findElements(By.tagName("tr"));
 Find 1st sibling depend on 2nd sibling
 
 WebElement hoverListProcess = driver.findElement(By.xpath("//*[contains(text(), '" + sProcessName + "')]/preceding-sibling::a[1]"));
+@FindBy (xpath = "//*[contains(text(), 'DISK')]")
+	WebElement Disk3;
