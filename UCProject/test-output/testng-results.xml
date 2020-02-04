@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22726" started-at="2020-02-04T04:17:44Z" finished-at="2020-02-04T04:18:07Z">
+  <suite name="Default suite" duration-ms="25578" started-at="2020-02-04T09:59:12Z" finished-at="2020-02-04T09:59:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22726" started-at="2020-02-04T04:17:44Z" finished-at="2020-02-04T04:18:07Z">
-      <class name="vTest.DiskOperationTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.DiskOperationTest@5c10285a]" name="setUp" is-config="true" duration-ms="4319" started-at="2020-02-04T11:17:44Z" finished-at="2020-02-04T11:17:49Z">
+    <test name="Default test" duration-ms="25578" started-at="2020-02-04T09:59:12Z" finished-at="2020-02-04T09:59:38Z">
+      <class name="vTest.MapTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.MapTest@627d8516]" name="setUp" is-config="true" duration-ms="6250" started-at="2020-02-04T16:59:12Z" finished-at="2020-02-04T16:59:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="login()[pri:0, instance:vTest.DiskOperationTest@5c10285a]" name="login" duration-ms="18385" started-at="2020-02-04T11:17:49Z" finished-at="2020-02-04T11:18:07Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:vTest.MapTest@627d8516]" name="login" duration-ms="19299" started-at="2020-02-04T16:59:19Z" finished-at="2020-02-04T16:59:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-      </class> <!-- vTest.DiskOperationTest -->
+      </class> <!-- vTest.MapTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

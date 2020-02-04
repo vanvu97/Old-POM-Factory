@@ -85,3 +85,15 @@ Find 1st sibling depend on 2nd sibling
 WebElement hoverListProcess = driver.findElement(By.xpath("//*[contains(text(), '" + sProcessName + "')]/preceding-sibling::a[1]"));
 @FindBy (xpath = "//*[contains(text(), 'DISK')]")
 	WebElement Disk3;
+
+Handle Dynamic Element
+
+        I often use "contains", but there are more. Here are some examples:
+           multiple condition: //div[@class='bubble-title' and contains(text(), 'Cover')]
+            partial match: //span[contains(text(), 'Assign Rate')]
+            starts-with: //input[starts-with(@id,'reportcombo')]
+            value has spaces: //div[./div/div[normalize-space(.)='More Actions...']]
+            sibling: //td[.='LoadType']/following-sibling::td[1]/select"
+            more complex: //td[contains(normalize-space(@class), 'actualcell sajcell-row-lines saj-special x-grid-row-collapsed')]
+        Take a look at the W3C XSL Functions page for some more ideas.
+

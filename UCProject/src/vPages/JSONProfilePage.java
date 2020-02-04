@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class XMLProfile {
+public class JSONProfilePage {
 	
 	@FindBy (css = "button.font-black")
 	WebElement btnCloseVideo;
@@ -16,8 +16,8 @@ public class XMLProfile {
 	WebElement btnNew;	
 	@FindBy (css = "select.form-control")
 	WebElement selectType;
-	@FindBy (css = "select.form-control > optgroup:nth-child(3) > option:nth-child(1)")
-	WebElement XMLprofile;
+	@FindBy (css = "select.ng-invalid > optgroup:nth-child(3) > option:nth-child(2)")
+	WebElement JSONprofile;
 	@FindBy (css = "input.ng-invalid")
 	WebElement inpName;
 	@FindBy (css = ".btn-hover-stroke-info")
@@ -42,7 +42,7 @@ public class XMLProfile {
 	WebDriverWait wait;
 
 	
-	public XMLProfile(WebDriver driver) {
+	public JSONProfilePage(WebDriver driver) {
 		
 		this.driver = driver;
 		
@@ -52,7 +52,7 @@ public class XMLProfile {
 		
 	}
 	
-	public void CreateXMLProfile(String SourceName, String TargetName) {
+	public void CreateJSONProfile(String SourceName, String TargetName) {
 		
 		try {
 		    
@@ -81,7 +81,7 @@ public class XMLProfile {
 			
 			executor.executeScript("arguments[0].click();", selectType);
 			
-			XMLprofile.click();
+			JSONprofile.click();
 			
 			inpName.sendKeys(SourceName);
 			
@@ -89,7 +89,7 @@ public class XMLProfile {
 			
 			btnImport.click();
 			
-			importFile.sendKeys("C:\\Users\\vuvan\\Desktop\\Sublime\\1Special.xml");
+			importFile.sendKeys("C:\\Users\\vuvan\\Desktop\\Sublime\\2SpecificJSON.json");
 	    
 			executor.executeScript("arguments[0].click();", btnCreate);
 			
@@ -126,7 +126,7 @@ public class XMLProfile {
 			
 			executor.executeScript("arguments[0].click();", selectType);
 			
-			XMLprofile.click();
+			JSONprofile.click();
 			
 			inpName.sendKeys(TargetName);
 			
@@ -134,7 +134,7 @@ public class XMLProfile {
 			
 			btnImport.click();
 			
-			importFile.sendKeys("C:\\Users\\vuvan\\Desktop\\Sublime\\1Special.xml");
+			importFile.sendKeys("C:\\Users\\vuvan\\Desktop\\Sublime\\2SpecificJSON.json");
 	    
 			executor.executeScript("arguments[0].click();", btnCreate);
 			

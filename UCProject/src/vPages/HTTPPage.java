@@ -1,5 +1,6 @@
 package vPages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DISKBase {
+public class HTTPPage {
 	
 	@FindBy (css = "button.font-black")
 	WebElement btnCloseVideo;
@@ -16,10 +17,10 @@ public class DISKBase {
 	WebElement btnNew;	
 	@FindBy (css = "select.form-control")
 	WebElement selectType;
-	@FindBy (css = "select.ng-invalid > optgroup:nth-child(5) > option:nth-child(2)")
-	WebElement DiskOperation;
-	@FindBy (css = "select.ng-invalid > optgroup:nth-child(6) > option:nth-child(2)")
-	WebElement DiskConnection;
+	@FindBy (css = "select.form-control > optgroup:nth-child(5) > option:nth-child(3)")
+	WebElement HTTPOperation;
+	@FindBy (css = "select.form-control > optgroup:nth-child(6) > option:nth-child(3)")
+	WebElement HTTPConnection;
 	@FindBy (css = "input.ng-invalid")
 	WebElement inpName;
 	@FindBy (css = ".btn-hover-stroke-info")
@@ -48,9 +49,10 @@ public class DISKBase {
 	
 	WebDriver driver;
 	WebDriverWait wait;
+	Logger log = Logger.getLogger("devpinoyLogger");
 
 	
-	public DISKBase(WebDriver driver) {
+	public HTTPPage(WebDriver driver) {
 		
 		this.driver = driver;
 		
@@ -60,7 +62,7 @@ public class DISKBase {
 		
 	}
 	
-	public void CreateDiskOperation(String SourceName) {
+	public void CreateHttpOperation(String SourceName) {
 		
 		try {
 		    
@@ -89,7 +91,9 @@ public class DISKBase {
 			
 			executor.executeScript("arguments[0].click();", selectType);
 			
-			DiskOperation.click();
+			HTTPOperation.click();
+			
+			executor.executeScript("arguments[0].click();", HTTPOperation);
 			
 			inpName.sendKeys(SourceName);
 			
@@ -97,17 +101,9 @@ public class DISKBase {
 			
 			Thread.sleep(2000);
 			
-			connectionAction.click();
+			executor.executeScript("arguments[0].click();", btnSave);
 			
-			actionSend.click();
-			
-			checkDiskOperation.click();
-			
-			fileNamingOption.click();
-			
-			errorIfExist.click();
-			
-			btnSave.click();
+//			btnSave.click();
 			
 		} catch (InterruptedException e) {
 	    
@@ -125,7 +121,7 @@ public class DISKBase {
 	}
 	
 	
-	public void CreateDiskConnection (String TargetName, String Directory) {
+	public void CreateHttpConnection (String TargetName, String UrlDirectory) {
 		
 		Actions actions = new Actions(driver);
 		
@@ -145,7 +141,7 @@ public class DISKBase {
 			
 			executor.executeScript("arguments[0].click();", selectType);
 			
-			DiskConnection.click();
+			HTTPConnection.click();
 			
 			inpName.sendKeys(TargetName);
 			
@@ -153,7 +149,7 @@ public class DISKBase {
 			
 			Thread.sleep(2000);
 			
-			impDirectory.sendKeys(Directory);
+			impDirectory.sendKeys(UrlDirectory);
 			
 			btnSave.click();
 			
@@ -171,6 +167,7 @@ public class DISKBase {
 			e.printStackTrace();
 	    }   
 		
+		System.out.println("HTTP Client Done!");
 		
 	}
 	

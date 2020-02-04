@@ -2,21 +2,21 @@ package vTest;
 
 import org.testng.annotations.Test;
 
+import vPages.MapPage;
 import vPages.UCLoginPage;
-import vPages.XMLProfilePage;
 import vUtilyty.BaseTest;
 
-public class XMLProfileTest extends BaseTest{
+public class MapTest extends BaseTest{
 	UCLoginPage loginUC;
-	XMLProfilePage XML;
+	MapPage Map;
 	
 	@Test()
 	public void login() {
 		loginUC = new UCLoginPage(driver);
-		XML = new XMLProfilePage(driver);
+		Map = new MapPage(driver);
 		loginUC.LoginUC("admin", "123456");
 		
-		XML.CreateXMLProfile("Source XML TestAuto","Target XML TestAuto");
+		Map.CreateMapEditor("Source XML TestAuto","Target XML TestAuto", "Test Map Editor");
 	}
 	
 }

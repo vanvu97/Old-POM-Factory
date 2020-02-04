@@ -2,18 +2,18 @@ package vTest;
 
 import org.testng.annotations.Test;
 
-import vPages.DISKBase;
+import vPages.DISKPage;
 import vPages.UCLoginPage;
 import vUtilyty.BaseTest;
 
-public class DiskOperationTest extends BaseTest{
+public class DISKTest extends BaseTest{
 	UCLoginPage loginUC;
-	DISKBase DiskOperation;
+	DISKPage DiskOperation;
 	
 	@Test()
 	public void login() {
 		loginUC = new UCLoginPage(driver);
-		DiskOperation = new DISKBase(driver);
+		DiskOperation = new DISKPage(driver);
 		loginUC.LoginUC("admin", "123456");
 		
 		DiskOperation.CreateDiskOperation("Disk Operation Name");
