@@ -2,21 +2,21 @@ package vTest;
 
 import org.testng.annotations.Test;
 
+import vPages.JSONProfileBase;
 import vPages.UCLoginPage;
-import vPages.XMLProfile;
 import vUtilyty.BaseTest;
 
-public class XMLProfileTest extends BaseTest{
+public class JSONProfileTest extends BaseTest{
 	UCLoginPage loginUC;
-	XMLProfile XML;
+	JSONProfileBase JSON;
 	
 	@Test()
 	public void login() {
 		loginUC = new UCLoginPage(driver);
-		XML = new XMLProfile(driver);
+		JSON = new JSONProfileBase(driver);
 		loginUC.LoginUC("admin", "123456");
 		
-		XML.CreateXMLProfile("Source XML TestAuto","Target XML TestAuto");
+		JSON.CreateJSONProfile("Source JSON TestAuto","Target JSON TestAuto");
 	}
 	
 }

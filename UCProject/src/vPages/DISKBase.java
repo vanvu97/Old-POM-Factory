@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class XMLProfile {
+public class DISKBase {
 	
 	@FindBy (css = "button.font-black")
 	WebElement btnCloseVideo;
@@ -16,24 +16,32 @@ public class XMLProfile {
 	WebElement btnNew;	
 	@FindBy (css = "select.form-control")
 	WebElement selectType;
-	@FindBy (css = "select.form-control > optgroup:nth-child(3) > option:nth-child(1)")
-	WebElement XMLprofile;
+	@FindBy (css = "select.ng-invalid > optgroup:nth-child(5) > option:nth-child(2)")
+	WebElement DiskOperation;
+	@FindBy (css = "select.ng-invalid > optgroup:nth-child(6) > option:nth-child(2)")
+	WebElement DiskConnection;
 	@FindBy (css = "input.ng-invalid")
 	WebElement inpName;
 	@FindBy (css = ".btn-hover-stroke-info")
 	WebElement btnCreate;
-	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div/div[1]/div/div/div[3]/button")
-	WebElement btnImport;
-	@FindBy (css = "#import_file")
-	WebElement importFile;
-	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div/div[2]/div[1]/div/div/div/div[1]/div/div[1]/button[4]")
-	WebElement btnExpandAll;
 	@FindBy (css = ".btn-hover-stroke-green")
 	WebElement btnSave;
 	@FindBy (css = "li.uib-tab:nth-child(3)")
 	WebElement hoverActivates;
 	@FindBy (xpath = "/html/body/div[2]/div/div/div/div[2]/div[2]/ul/li[3]/a/uib-tab-heading/a")
 	WebElement closeActivates;
+	@FindBy (css = "select.ng-not-empty")
+	WebElement connectionAction;
+	@FindBy (css = "select.ng-not-empty > option:nth-child(2)")
+	WebElement actionSend;
+	@FindBy (css = ".checkbox > label:nth-child(1) > input:nth-child(1)")
+	WebElement checkDiskOperation;
+	@FindBy (css = "div.card-body:nth-child(3) > div:nth-child(2) > div:nth-child(2) > select:nth-child(1)")
+	WebElement fileNamingOption;
+	@FindBy (css = "div.card-body:nth-child(3) > div:nth-child(2) > div:nth-child(2) > select:nth-child(1) > option:nth-child(4)")
+	WebElement errorIfExist;
+	@FindBy (css = ".col-sm-8 > input:nth-child(1)")
+	WebElement impDirectory;
 	@FindBy (css = ".lobibox-notify")
 	WebElement notificationPopup;
 	
@@ -42,7 +50,7 @@ public class XMLProfile {
 	WebDriverWait wait;
 
 	
-	public XMLProfile(WebDriver driver) {
+	public DISKBase(WebDriver driver) {
 		
 		this.driver = driver;
 		
@@ -52,7 +60,7 @@ public class XMLProfile {
 		
 	}
 	
-	public void CreateXMLProfile(String SourceName, String TargetName) {
+	public void CreateDiskOperation(String SourceName) {
 		
 		try {
 		    
@@ -81,23 +89,25 @@ public class XMLProfile {
 			
 			executor.executeScript("arguments[0].click();", selectType);
 			
-			XMLprofile.click();
+			DiskOperation.click();
 			
 			inpName.sendKeys(SourceName);
 			
 			executor.executeScript("arguments[0].click();", btnCreate);
 			
-			btnImport.click();
+			Thread.sleep(2000);
 			
-			importFile.sendKeys("C:\\Users\\vuvan\\Desktop\\Sublime\\1Special.xml");
-	    
-			executor.executeScript("arguments[0].click();", btnCreate);
+			connectionAction.click();
 			
-//			btnExpandAll.click();
+			actionSend.click();
 			
-			Thread.sleep(1000);
-
-			executor.executeScript("arguments[0].click();", btnSave);
+			checkDiskOperation.click();
+			
+			fileNamingOption.click();
+			
+			errorIfExist.click();
+			
+			btnSave.click();
 			
 		} catch (InterruptedException e) {
 	    
@@ -112,51 +122,55 @@ public class XMLProfile {
 			
 		}
 		
+	}
+	
+	
+	public void CreateDiskConnection (String TargetName, String Directory) {
+		
 		Actions actions = new Actions(driver);
+		
 	  	actions.moveToElement(hoverActivates).click().build().perform();
-	  	executor.executeScript("arguments[0].click();", closeActivates);
+		
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		
+		executor.executeScript("arguments[0].click();", closeActivates);
+		
+		executor.executeScript("arguments[0].click();", btnNew);
 		
 		try {
-	
-			executor.executeScript("arguments[0].click();", btnNew);
-	
+		    
 			Thread.sleep(1000);
 			
 			selectType.click();
 			
 			executor.executeScript("arguments[0].click();", selectType);
 			
-			XMLprofile.click();
+			DiskConnection.click();
 			
 			inpName.sendKeys(TargetName);
 			
 			executor.executeScript("arguments[0].click();", btnCreate);
 			
-			btnImport.click();
+			Thread.sleep(2000);
 			
-			importFile.sendKeys("C:\\Users\\vuvan\\Desktop\\Sublime\\1Special.xml");
-	    
-			executor.executeScript("arguments[0].click();", btnCreate);
+			impDirectory.sendKeys(Directory);
 			
-//			btnExpandAll.click();
+			btnSave.click();
 			
-			Thread.sleep(1000);
-
-			executor.executeScript("arguments[0].click();", btnSave);
+			if(notificationPopup.isDisplayed()) {
+				
+				String Notification = notificationPopup.getText();
+				
+				System.out.println(Notification);
+				
+			}
+			
 			
 		} catch (InterruptedException e) {
 	    
 			e.printStackTrace();
-	    }  
+	    }   
 		
-		if(notificationPopup.isDisplayed()) {
-			
-			String Notification = notificationPopup.getText();
-			
-			System.out.println(Notification);
-			
-		}
-	
 		
 	}
 	

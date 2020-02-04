@@ -8,14 +8,21 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value=".quantumWizButtonPaperbuttonLabel"/>
-			<item value="div.freebirdFormviewerViewNumberedItemContainer:nth-child(6) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; input:nth-child(1)"/>
-			<item value="input.ng-isolate-scope"/>
-			<item value=".ng-touched"/>
-			<item value=".page-header &gt; h1:nth-child(1)"/>
-			<item value=".has-error &gt; div:nth-child(2) &gt; p:nth-child(3)"/>
-			<item value="#headerRepeater &gt; tbody:nth-child(2) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; div:nth-child(1) &gt; input:nth-child(1)"/>
-			<item value="text"/>
+			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[4]/div[1]/a/i"/>
+			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[9]/svg/circle"/>
+			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[6]/svg/circle"/>
+			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[2]/div[2]/ng-include/div/div[2]/div/div/div[3]/a"/>
+			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[4]/a/div[2]/h4"/>
+			<item value="div.jtk-endpoint:nth-child(3) &gt; svg:nth-child(1) &gt; circle:nth-child(1)"/>
+			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[2]/div[2]/ng-include/div/div[2]/div/div/div[4]/a"/>
+			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[2]/div[2]/ng-include/div/div[2]/div/div/div[6]/a"/>
+			<item value="Disk2"/>
+			<item value="750d6fe2-c7da-4d81-809d-98779d5d46b0"/>
+			<item value="07c54bac-4205-42b1-9c9a-c24f5aa05c57"/>
+			<item value="#d7e83670-849f-4e5e-b5a9-e124e88813da &gt; a:nth-child(1)"/>
+			<item value="#d7e83670-849f-4e5e-b5a9-e124e88813da &gt; a:nth-child(1) &gt; div:nth-child(2) &gt; h4:nth-child(1)"/>
+			<item value="#d7e83670-849f-4e5e-b5a9-e124e88813da &gt; div:nth-child(2)"/>
+			<item value="div.jtk-endpoint:nth-child(4) &gt; svg:nth-child(1) &gt; circle:nth-child(1)"/>
 		</list>
 		<list key="replacehistory">
 		</list>
