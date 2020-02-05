@@ -8,21 +8,21 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[2]/div[1]/ng-include/div[2]/form/div/div[1]/div[5]/div/div/div/div[1]/div/input"/>
+			<item value=".open &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; input:nth-child(1)"/>
+			<item value=".ng-touched"/>
+			<item value=".open &gt; div:nth-child(2) &gt; div:nth-child(2) &gt; ul:nth-child(1) &gt; li:nth-child(1) &gt; a:nth-child(1)"/>
+			<item value=".open &gt; div:nth-child(2) &gt; div:nth-child(2) &gt; ul:nth-child(1) &gt; li:nth-child(1) &gt; a:nth-child(1) &gt; span:nth-child(2)"/>
+			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[2]/div[1]/ng-include/div[2]/form/div/div[1]/div[4]/div/div/button[1]"/>
+			<item value="#httpClientProperty_home_3419635f-fb4d-4a14-87b2-961c4e23571c &gt; div:nth-child(4) &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; button:nth-child(1)"/>
+			<item value="div.jtk-endpoint:nth-child(9) &gt; svg:nth-child(1) &gt; circle:nth-child(1)"/>
+			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[3]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[4]/a/div[2]/h4&apos;"/>
+			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[3]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[3]/a/div[2]/h4"/>
+			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[3]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[3]/div[1]"/>
+			<item value=".btn-hover-stroke-info"/>
 			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[4]/div[1]/a/i"/>
 			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[9]/svg/circle"/>
 			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[6]/svg/circle"/>
-			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[2]/div[2]/ng-include/div/div[2]/div/div/div[3]/a"/>
-			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[1]/div/div/div[4]/a/div[2]/h4"/>
-			<item value="div.jtk-endpoint:nth-child(3) &gt; svg:nth-child(1) &gt; circle:nth-child(1)"/>
-			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[2]/div[2]/ng-include/div/div[2]/div/div/div[4]/a"/>
-			<item value="/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/ng-include/div/div[1]/div[3]/div/div/div/div[2]/div[2]/ng-include/div/div[2]/div/div/div[6]/a"/>
-			<item value="Disk2"/>
-			<item value="750d6fe2-c7da-4d81-809d-98779d5d46b0"/>
-			<item value="07c54bac-4205-42b1-9c9a-c24f5aa05c57"/>
-			<item value="#d7e83670-849f-4e5e-b5a9-e124e88813da &gt; a:nth-child(1)"/>
-			<item value="#d7e83670-849f-4e5e-b5a9-e124e88813da &gt; a:nth-child(1) &gt; div:nth-child(2) &gt; h4:nth-child(1)"/>
-			<item value="#d7e83670-849f-4e5e-b5a9-e124e88813da &gt; div:nth-child(2)"/>
-			<item value="div.jtk-endpoint:nth-child(4) &gt; svg:nth-child(1) &gt; circle:nth-child(1)"/>
 		</list>
 		<list key="replacehistory">
 		</list>

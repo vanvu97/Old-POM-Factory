@@ -22,7 +22,6 @@
 <fullyQualifiedTypeName name="diUtlities.Links"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="vUtilyty.Links"/>
-<fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.io.File"/>
@@ -38,5 +37,6 @@
 <fullyQualifiedTypeName name="vUtilyty.BuildExcel"/>
 <fullyQualifiedTypeName name="org.apache.commons.lang3.RandomStringUtils"/>
 <fullyQualifiedTypeName name="org.testng.annotations.AfterTest"/>
+<fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
 </qualifiedTypeNameHistroy>

@@ -18,8 +18,14 @@ public class RecipeTest extends BaseTest{
 	XMLProfilePage profileXML;
 	JSONProfilePage profileJSON;
 	
-	String HttpOpera = "!!!SpeciFic1";
-	String HttpConnect = "!!!SpeciFic2";
+	String HttpOperationFile = "!!!SpeciFic1";
+	String HttpConnectionFile = "!!!SpeciFic2";
+	String DiskOperationName = "!!A Disk Operation";
+	String DiskConnectionName = "!!A Disk Connection";
+	String HttpConnectionUrl = "https://my-json-server.typicode.com/typicode/demo/db";
+	String DiskDirectory = "vvVanVu";
+	String RecipeName = "Recipe HTTP";
+	String importMapName = "Map Name";
 	
 	@Test()
 	public void login() throws InterruptedException {
@@ -32,10 +38,14 @@ public class RecipeTest extends BaseTest{
 //		Disk.CreateDiskConnection("Target Full", "VanVu2");
 //		Disk.CreateDiskOperation("Source Full");
 
-		HTTP.CreateHttpOperation(HttpOpera);
-		HTTP.CreateHttpConnection(HttpConnect, "https://my-json-server.typicode.com/typicode/demo/db");
+		HTTP.CreateHttpOperation(HttpOperationFile);
+		HTTP.CreateHttpConnection(HttpConnectionFile, HttpConnectionUrl);
 		
-		Recipe.CreateHTTPRecipe("HTTP Auto", HttpConnect, HttpOpera, "!!vvMapJson");
+		Disk.CreateDiskConnection(DiskConnectionName, DiskDirectory);
+		Disk.CreateDiskOperation(DiskOperationName);
+		
+		Recipe.CreateHTTPRecipe(RecipeName, HttpConnectionFile, 
+				HttpOperationFile, importMapName, DiskOperationName, DiskConnectionName);
 	}
 	
 }

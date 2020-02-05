@@ -60,7 +60,7 @@ public class DISKPage {
 		
 	}
 	
-	public void CreateDiskOperation(String SourceName) {
+	public void CreateDiskOperation(String OprerationName) {
 		
 		try {
 		    
@@ -91,7 +91,7 @@ public class DISKPage {
 			
 			DiskOperation.click();
 			
-			inpName.sendKeys(SourceName);
+			inpName.sendKeys(OprerationName);
 			
 			executor.executeScript("arguments[0].click();", btnCreate);
 			
@@ -125,7 +125,7 @@ public class DISKPage {
 	}
 	
 	
-	public void CreateDiskConnection (String TargetName, String Directory) {
+	public void CreateDiskConnection (String ConnectionName, String Directory) {
 		
 		Actions actions = new Actions(driver);
 		
@@ -147,7 +147,7 @@ public class DISKPage {
 			
 			DiskConnection.click();
 			
-			inpName.sendKeys(TargetName);
+			inpName.sendKeys(ConnectionName);
 			
 			executor.executeScript("arguments[0].click();", btnCreate);
 			

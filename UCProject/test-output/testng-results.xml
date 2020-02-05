@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="25578" started-at="2020-02-04T09:59:12Z" finished-at="2020-02-04T09:59:38Z">
+  <suite name="Default suite" duration-ms="30047" started-at="2020-02-05T02:24:24Z" finished-at="2020-02-05T02:24:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="25578" started-at="2020-02-04T09:59:12Z" finished-at="2020-02-04T09:59:38Z">
+    <test name="Default test" duration-ms="30047" started-at="2020-02-05T02:24:24Z" finished-at="2020-02-05T02:24:54Z">
       <class name="vTest.MapTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.MapTest@627d8516]" name="setUp" is-config="true" duration-ms="6250" started-at="2020-02-04T16:59:12Z" finished-at="2020-02-04T16:59:19Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:vTest.MapTest@627d8516]" name="setUp" is-config="true" duration-ms="10784" started-at="2020-02-05T09:24:24Z" finished-at="2020-02-05T09:24:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="login()[pri:0, instance:vTest.MapTest@627d8516]" name="login" duration-ms="19299" started-at="2020-02-04T16:59:19Z" finished-at="2020-02-04T16:59:38Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:vTest.MapTest@627d8516]" name="login" duration-ms="19239" started-at="2020-02-05T09:24:35Z" finished-at="2020-02-05T09:24:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
