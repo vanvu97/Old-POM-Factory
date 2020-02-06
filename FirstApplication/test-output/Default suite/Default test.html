@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Feb 05 17:41:09 ICT 2020</td>
+<td>Started on:</td><td>Thu Feb 06 14:30:07 ICT 2020</td>
 </tr>
-<tr><td>Total time:</td><td>46 seconds (46133 ms)</td>
+<tr><td>Total time:</td><td>61 seconds (61851 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,13 +75,14 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='vTest.RecipeTest.login()'><b>login</b><br>Test class: vTest.RecipeTest</td>
-<td><div><pre>org.openqa.selenium.ElementNotInteractableException: Element &lt;input id=&quot;sourceProfileName&quot; class=&quot;form-control menu-search-field ng-pristine ng-untouched ng-valid ng-empty&quot; type=&quot;text&quot;&gt; is not reachable by keyboard
+<td title='vTest.GetDocumentTrackingTest.login()'><b>login</b><br>Test class: vTest.GetDocumentTrackingTest</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: The element reference of &lt;td&gt; is stale; either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:48&apos;
 System info: host: &apos;DICVUVAN&apos;, ip: &apos;192.168.0.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 73.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200130174018, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 16888, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: b72eb025-3310-45aa-96f3-4f39bf0ac49e
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 73.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200130174018, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 16500, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 65e25728-f7bd-4c48-b638-28dda9fac4a3
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -93,15 +94,9 @@ Session ID: b72eb025-3310-45aa-96f3-4f39bf0ac49e
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy9.sendKeys(Unknown Source)
-	at vPages.MapPage.CreateMapEditor(MapPage.java:121)
-	at vTest.RecipeTest.login(RecipeTest.java:61)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:166)
+	at vPages.GetDocumentTrackingPage.CreateXMLProfile(GetDocumentTrackingPage.java:143)
+	at vTest.GetDocumentTrackingTest.login(GetDocumentTrackingTest.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -126,13 +121,14 @@ Session ID: b72eb025-3310-45aa-96f3-4f39bf0ac49e
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1433464429", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1433464429'><pre>org.openqa.selenium.ElementNotInteractableException: Element &lt;input id=&quot;sourceProfileName&quot; class=&quot;form-control menu-search-field ng-pristine ng-untouched ng-valid ng-empty&quot; type=&quot;text&quot;&gt; is not reachable by keyboard
+</pre></div><a href='#' onClick='toggleBox("stack-trace543921564", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace543921564'><pre>org.openqa.selenium.StaleElementReferenceException: The element reference of &lt;td&gt; is stale; either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:48&apos;
 System info: host: &apos;DICVUVAN&apos;, ip: &apos;192.168.0.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 73.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200130174018, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 16888, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: b72eb025-3310-45aa-96f3-4f39bf0ac49e
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 73.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200130174018, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 16500, moz:profile: C:\Users\vuvan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 65e25728-f7bd-4c48-b638-28dda9fac4a3
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -144,15 +140,9 @@ Session ID: b72eb025-3310-45aa-96f3-4f39bf0ac49e
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy9.sendKeys(Unknown Source)
-	at vPages.MapPage.CreateMapEditor(MapPage.java:121)
-	at vTest.RecipeTest.login(RecipeTest.java:61)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:166)
+	at vPages.GetDocumentTrackingPage.CreateXMLProfile(GetDocumentTrackingPage.java:143)
+	at vTest.GetDocumentTrackingTest.login(GetDocumentTrackingTest.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -178,8 +168,8 @@ Session ID: b72eb025-3310-45aa-96f3-4f39bf0ac49e
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>39</td>
-<td>vTest.RecipeTest@3cae7b8b</td></tr>
+<td>56</td>
+<td>vTest.GetDocumentTrackingTest@53c68ce</td></tr>
 </table><p>
 </body>
 </html>
